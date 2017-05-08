@@ -30,7 +30,7 @@
   "locateWidget": "top-left",
   "searchWidget": "bottom-left",
   "appid": "",
-  "group": "908dd46e749d4565a17d2b646ace7b1a",
+  "group": "",
   "title": "",
   "portalUrl": "https://www.arcgis.com",
   "oauthappid": "",
@@ -46,8 +46,10 @@
     "elevationSync": {
       "url": null
     },
-    "geocode": [{
-      "url": null
-    }]
+    "geocode": [
+      {
+        "url": null
+      }
+    ]
   }
 }

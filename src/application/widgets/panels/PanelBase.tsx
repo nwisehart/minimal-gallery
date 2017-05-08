@@ -30,12 +30,17 @@ export default (props: IPanelProps) => {
                 <div class="card block trailer-1 animate-fade-in card-fade" style={`background-color: ${props.config.cardColor};`}>
                     <figure class="card-image-wrap">
                         <a title={props.i18n.ui.galleryTip} role="link" tabindex="0" onkeypress={handleKeyPress}>
-                            <img class="card-image clickable"
-                                src={props.item.thumbnailUrl}
+                            <img class="card-image clickable thumbnail-min"
+                                img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"
                                 alt={props.item.title}
                                 onmouseover={handleMouseOver}
                                 onmouseleave={handleMouseOut}
                                 onclick={props.itemClickHandler}
+                                style={`
+                                    background-image: url(${props.item.thumbnailUrl});
+                                    background-repeat: no-repeat;
+                                    background-size: cover;
+                                `}
                             />
                         </a>
                         <div
@@ -53,7 +58,7 @@ export default (props: IPanelProps) => {
                     </figure>
                     <div class="card-content" style={`color: ${props.config.fontColor}`}>
                         <a title={props.i18n.ui.galleryTip} style={`color: ${props.config.linkColor}`}>
-                            <h5 class="clickable" onclick={props.itemClickHandler}>
+                            <h5 tabindex="0" class="clickable" onclick={props.itemClickHandler}>
                                 {props.item.title}
                             </h5>
                         </a>

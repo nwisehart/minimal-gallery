@@ -109,3 +109,8 @@
     float: left;
     margin-right: 1.5rem;
 }
+
+.thumbnail-min {
+    padding-top: 66.5%;
+    height: 0px;
+}

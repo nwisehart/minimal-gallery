@@ -11,7 +11,7 @@ interface IHeaderProps {
 export default (props: IHeaderProps) => {
     const headSearch = props.config.headerSearch ? (
         <nav class="class-top-nav-list right" role="navigation" title="usernav">
-            <form class="inline-block padding-leader-half" onsubmit={props.onSearch}>
+            <form class="inline-block padding-leader-half" role="search" onsubmit={props.onSearch}>
                 <input
                     title={props.config.searchPlaceholder}
                     type="search"
@@ -24,7 +24,7 @@ export default (props: IHeaderProps) => {
         </nav>
     ) : null;
     const headImage = props.config.headerImage ? (
-        <img src={props.config.headerImageLocation} class="header-image" />
+        <img src={props.config.headerImageLocation} class="header-image" alt={props.config.headerText} />
     ) : null;
     return {
         render() {

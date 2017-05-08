@@ -491,10 +491,9 @@ class ApplicationBase {
     const isEsriHomePath = esriHomePathIndex !== -1 ? true : false;
     const appLocationIndex = isEsriAppsPath ? esriAppsPathIndex : isEsriHomePath ? esriHomePathIndex : null;
 
-    if (!appLocationIndex) {
+    if (!isEsriAppsPath || !isEsriHomePath) {
       return;
     }
-
     const portalInstance = location.pathname.substr(0, appLocationIndex);
     const host = location.host;
     return `https://${host}${portalInstance}`;

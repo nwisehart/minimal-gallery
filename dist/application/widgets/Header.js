@@ -3,10 +3,10 @@ define(["require", "exports", "esri/widgets/support/widget"], function (require,
     Object.defineProperty(exports, "__esModule", { value: true });
     exports.default = function (props) {
         var headSearch = props.config.headerSearch ? (widget_1.jsxFactory.createElement("nav", { class: "class-top-nav-list right", role: "navigation", title: "usernav" },
-            widget_1.jsxFactory.createElement("form", { class: "inline-block padding-leader-half", onsubmit: props.onSearch },
+            widget_1.jsxFactory.createElement("form", { class: "inline-block padding-leader-half", role: "search", onsubmit: props.onSearch },
                 widget_1.jsxFactory.createElement("input", { title: props.config.searchPlaceholder, type: "search", placeholder: props.config.searchPlaceholder, name: "q", style: "margin-top: -1px;", oninput: handleSearchChange }),
                 widget_1.jsxFactory.createElement("button", { type: "submit", class: "hide" }, props.config.searchPlaceholder)))) : null;
-        var headImage = props.config.headerImage ? (widget_1.jsxFactory.createElement("img", { src: props.config.headerImageLocation, class: "header-image" })) : null;
+        var headImage = props.config.headerImage ? (widget_1.jsxFactory.createElement("img", { src: props.config.headerImageLocation, class: "header-image", alt: props.config.headerText })) : null;
         return {
             render: function () {
                 return (widget_1.jsxFactory.createElement("header", { class: "top-nav fade-in", style: "background-color: " + props.config.headColor },
