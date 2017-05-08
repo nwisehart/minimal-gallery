@@ -377,7 +377,7 @@ define(["require", "exports", "dojo/_base/kernel", "esri/config", "esri/core/pro
             var isEsriAppsPath = esriAppsPathIndex !== -1 ? true : false;
             var isEsriHomePath = esriHomePathIndex !== -1 ? true : false;
             var appLocationIndex = isEsriAppsPath ? esriAppsPathIndex : isEsriHomePath ? esriHomePathIndex : null;
-            if (!appLocationIndex) {
+            if (!isEsriAppsPath || !isEsriHomePath) {
                 return;
             }
             var portalInstance = location.pathname.substr(0, appLocationIndex);
