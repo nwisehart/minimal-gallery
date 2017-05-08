@@ -370,17 +370,22 @@ define(["require", "exports", "dojo/_base/kernel", "esri/config", "esri/core/pro
             esriConfig.request.proxyUrl = proxyUrl;
         };
         ApplicationBase.prototype._getEsriEnvironmentPortalUrl = function () {
+            var pathname = location.pathname;
             var esriAppsPath = "/apps/";
             var esriHomePath = "/home/";
-            var esriAppsPathIndex = location.pathname.indexOf(esriAppsPath);
-            var esriHomePathIndex = location.pathname.indexOf(esriHomePath);
+            var esriAppsPathIndex = pathname.indexOf(esriAppsPath);
+            var esriHomePathIndex = pathname.indexOf(esriHomePath);
             var isEsriAppsPath = esriAppsPathIndex !== -1 ? true : false;
             var isEsriHomePath = esriHomePathIndex !== -1 ? true : false;
-            var appLocationIndex = isEsriAppsPath ? esriAppsPathIndex : isEsriHomePath ? esriHomePathIndex : null;
-            if (!isEsriAppsPath || !isEsriHomePath) {
+            var appLocationIndex = isEsriAppsPath ?
+                esriAppsPathIndex :
+                isEsriHomePath ?
+                    esriHomePathIndex :
+                    undefined;
+            if (appLocationIndex === undefined) {
                 return;
             }
-            var portalInstance = location.pathname.substr(0, appLocationIndex);
+            var portalInstance = pathname.substr(0, appLocationIndex);
             var host = location.host;
             return "https://" + host + portalInstance;
         };
