@@ -52,7 +52,7 @@ export default () => (
                 },
                 i18n: {},
                 itemClickHandler,
-                items: [{ type: "Web Map" }, { type: "Web Scene" }, { type: "Web Mapping Application" }]
+                items: [{ type: "Web Map", title: "foo" }, { type: "Web Scene", title: "bar" }, { type: "Web Mapping Application", title: "foobar" }]
             });
             projector.initialize(galleryComponent.render);
             const divs = projector.queryAll("div").execute();

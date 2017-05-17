@@ -73,7 +73,6 @@ define(["require", "exports", "esri/widgets/support/widget", "dojo/promise/all",
                 ViewPublic.status = "loaded";
                 props.projector.scheduleRender();
             }).otherwise(function (err) {
-                // console.error(err);
                 ViewPublic.status = "failed";
                 props.projector.scheduleRender();
             });

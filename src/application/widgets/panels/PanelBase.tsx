@@ -16,7 +16,7 @@ interface IPanelProps {
 
 export default (props: IPanelProps) => {
     const author = props.config.showAuthor ? (
-        <p class="font-size--1 card-last hug-bottom">
+        <p class="font-size--1 card-last hug-bottom" key={`${props.item.title}-author`}>
             {props.item.owner}
         </p>
     ) : null;
@@ -27,7 +27,11 @@ export default (props: IPanelProps) => {
 
         render() {
             return (
-                <div class="card block trailer-1 animate-fade-in card-fade" style={`background-color: ${props.config.cardColor};`}>
+                <div
+                    class="card block trailer-1 animate-fade-in card-fade"
+                    style={`background-color: ${props.config.cardColor};`}
+                    key={`${props.item.title}-div`}
+                >
                     <figure class="card-image-wrap">
                         <a title={props.i18n.ui.galleryTip} role="link" tabindex="0" onkeypress={handleKeyPress}>
                             <img class="card-image clickable thumbnail-min"
@@ -45,7 +49,6 @@ export default (props: IPanelProps) => {
                         </a>
                         <div
                             class="card-image-caption"
-                            key="cardCaption"
                             style={`
                                 opacity: ${PanelBaseComponent.captionOpacity};
                                 transform: translate(0, ${PanelBaseComponent.captionTransform}%);
@@ -68,11 +71,13 @@ export default (props: IPanelProps) => {
                                 class="open-out-icon btn btn-transparent icon-ui-description"
                                 title={props.extItem} href={props.extLink}
                                 style={`color: ${props.config.buttonBgColor}`}
+                                key={`${props.item.title}-info-icon`}
                             />
                             <a
                                 class="open-out-icon btn btn-transparent icon-ui-maximize"
                                 title={props.extTitle} href={props.maxLink}
                                 style={`color: ${props.config.buttonBgColor}`}
+                                key={`${props.item.title}-open-out-icon`}
                             />
                         </div>
                     </div>

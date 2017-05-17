@@ -1,12 +1,11 @@
 /// <amd-dependency path="esri/core/tsSupport/declareExtendsHelper" name="__extends" />
 /// <amd-dependency path="esri/core/tsSupport/decorateHelper" name="__decorate" />
 
-import {subclass, declared, property} from "esri/core/accessorSupport/decorators";
+import {declared, property, subclass} from "esri/core/accessorSupport/decorators";
+import { jsxFactory, renderable } from "esri/widgets/support/widget";
 import * as Widget from "esri/widgets/Widget";
-import * as when from "dojo/when";
-import { renderable, jsxFactory } from "esri/widgets/support/widget";
-import { ApplicationConfig, ApplicationBaseResult, ApplicationBaseResults } from "../../boilerplate/interfaces";
 import ApplicationBase from "../../boilerplate/ApplicationBase";
+import { ApplicationConfig } from "../../boilerplate/interfaces";
 
 import Viewer from "./Viewer";
 

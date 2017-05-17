@@ -1,17 +1,17 @@
 /// <amd-dependency path="esri/core/tsSupport/declareExtendsHelper" name="__extends" />
 /// <amd-dependency path="esri/core/tsSupport/decorateHelper" name="__decorate" />
 
-import * as Widget from "esri/widgets/Widget";
-import * as when from "dojo/when";
+import * as all from "dojo/promise/all";
 import { declared, property, subclass } from "esri/core/accessorSupport/decorators";
 import { jsxFactory, renderable } from "esri/widgets/support/widget";
-import { ApplicationConfig, ApplicationBaseResult, ApplicationBaseResults } from "../../boilerplate/interfaces";
+import * as Widget from "esri/widgets/Widget";
 import ApplicationBase from "../../boilerplate/ApplicationBase";
+import { ApplicationConfig } from "../../boilerplate/interfaces";
 
 import Gallery from "./Gallery";
 import Header from "./Header";
-import Viewer from "./Viewer";
 import Pager from "./Pager";
+import Viewer from "./Viewer";
 
 const filterMap = {
     "Web Map": "webmap",
@@ -54,9 +54,9 @@ export default class Main extends declared(Widget) {
             groupQueryResults: null,
             headComponent: { render: () => null },
             i18n: params.i18n,
+            items: null,
             itemPointer: 0,
             itemsPerPage: 20,
-            items: null,
             loadMessage: "init",
             loadStatus: "loading",
             pagerComponent: { render: () => null },
@@ -145,65 +145,75 @@ export default class Main extends declared(Widget) {
     }
 
     private processItems(response) {
-        document.body.setAttribute("style", `background-color: ${this.state.boilerplateResult.config.bgColor}`);
-        this.state = {
-            ...this.state,
-            groupQueryResults: response.results
-        };
+        const promises = response.results.map((item) => item.load());
+        all(promises).then((items) => {
+            document.body.setAttribute("style", `background-color: ${this.state.boilerplateResult.config.bgColor}`);
+            this.state = {
+                ...this.state,
+                groupQueryResults: response.results
+            };
 
-        let filteredResults;
-        const filters = this.state.boilerplateResult.config.filter;
-        if (filters) {
-            const filterKey = filters.split(",").reduce((p, c, i) => {
-                p[c] = true;
-                return p;
-            }, {});
-            filteredResults = response.results.filter((item) => {
-                return filterKey[filterMap[item.type]];
-            });
-        } else {
-            filteredResults = response.results.filter((item) => {
-                return item.type === "Web Map" ||
-                    item.type === "Web Mapping Application" ||
-                    item.type === "Web Scene";
-            });
-        }
-
-        const headComponent = (
-            this.state.boilerplateResult.config.showHeader ?
-            Header({
-                config: this.state.boilerplateResult.config,
-                i18n: this.state.i18n,
-                onSearch: this.handleSearch
-            }) :
-            {
-                render: () => null
+            let filteredResults;
+            const filters = this.state.boilerplateResult.config.filter;
+            if (filters) {
+                const filterKey = filters.split(",").reduce((p, c, i) => {
+                    p[c] = true;
+                    return p;
+                }, {});
+                filteredResults = response.results.filter((item) => {
+                    return filterKey[filterMap[item.type]];
+                });
+            } else {
+                filteredResults = response.results.filter((item) => {
+                    return item.type === "Web Map" ||
+                        item.type === "Web Mapping Application" ||
+                        item.type === "Web Scene";
+                });
             }
-        );
 
-        const pagerComponent = Pager({
-            config: this.state.boilerplateResult.config,
-            i18n: this.state.i18n,
-            pointHandler: this.goToPointer,
-            perPage: this.state.itemsPerPage,
-            pointer: this.state.itemPointer,
-            total: filteredResults.length
-        });
+            const headComponent = (
+                this.state.boilerplateResult.config.showHeader ?
+                Header({
+                    config: this.state.boilerplateResult.config,
+                    i18n: this.state.i18n,
+                    onSearch: this.handleSearch
+                }) :
+                {
+                    render: () => null
+                }
+            );
 
-        this.state = {
-            ...this.state,
-            galleryComponent: Gallery({
+            const pagerComponent = Pager({
                 config: this.state.boilerplateResult.config,
                 i18n: this.state.i18n,
-                itemClickHandler: this.itemClickHandler,
-                items: filteredResults.slice(0, this.state.itemsPerPage)
-            }),
-            headComponent,
-            items: filteredResults,
-            searchResults: filteredResults,
-            loadStatus: "loaded",
-            pagerComponent
-        };
+                keyCode: Math.random().toString(36).substring(7),
+                pointHandler: this.goToPointer,
+                perPage: this.state.itemsPerPage,
+                pointer: this.state.itemPointer,
+                total: filteredResults.length
+            });
+
+            this.state = {
+                ...this.state,
+                galleryComponent: Gallery({
+                    config: this.state.boilerplateResult.config,
+                    i18n: this.state.i18n,
+                    itemClickHandler: this.itemClickHandler,
+                    items: filteredResults.slice(0, this.state.itemsPerPage)
+                }),
+                headComponent,
+                items: filteredResults,
+                searchResults: filteredResults,
+                loadStatus: "loaded",
+                pagerComponent
+            };
+        }, (err) => {
+            console.log("failed!");
+            this.state = {
+                ...this.state,
+                status: "failed"
+            };
+        })
     }
 
     private handleBoilerplateError(err) {
@@ -258,58 +268,36 @@ export default class Main extends declared(Widget) {
 
         this.state = {
             ...this.state,
-            itemPointer: 0,
-            loadStatus: "searching",
+            galleryComponent: Gallery({
+                config: this.state.boilerplateResult.config,
+                i18n: this.state.i18n,
+                itemClickHandler: this.itemClickHandler,
+                items: searchResults.slice(0, this.state.itemsPerPage)
+            }),
+            loadStatus: "loaded",
+            pagerComponent: Pager({
+                config: this.state.boilerplateResult.config,
+                i18n: this.state.i18n,
+                keyCode: Math.random().toString(36).substring(7),
+                perPage: this.state.itemsPerPage,
+                pointHandler: this.goToPointer,
+                pointer: 0,
+                total: searchResults.length
+            }),
             searchResults
         };
-
-        setTimeout(() => {
-            this.state = {
-                ...this.state,
-                galleryComponent: Gallery({
-                    config: this.state.boilerplateResult.config,
-                    i18n: this.state.i18n,
-                    itemClickHandler: this.itemClickHandler,
-                    items: searchResults.slice(0, this.state.itemsPerPage)
-                }),
-                loadStatus: "loaded",
-                pagerComponent: Pager({
-                    config: this.state.boilerplateResult.config,
-                    i18n: this.state.i18n,
-                    perPage: this.state.itemsPerPage,
-                    pointHandler: this.goToPointer,
-                    pointer: 0,
-                    total: searchResults.length
-                })
-            };
-        }, 250);
     }
 
     private goToPointer(pointer) {
         this.state = {
             ...this.state,
-            itemPointer: pointer,
-            loadStatus: "searching"
+            galleryComponent: Gallery({
+                config: this.state.boilerplateResult.config,
+                i18n: this.state.i18n,
+                itemClickHandler: this.itemClickHandler,
+                items: this.state.searchResults.slice(pointer, pointer + this.state.itemsPerPage)
+            }),
+            loadStatus: "loaded"
         };
-        setTimeout(() => {
-            this.state = {
-                ...this.state,
-                galleryComponent: Gallery({
-                    config: this.state.boilerplateResult.config,
-                    i18n: this.state.i18n,
-                    itemClickHandler: this.itemClickHandler,
-                    items: this.state.searchResults.slice(pointer, pointer + this.state.itemsPerPage)
-                }),
-                loadStatus: "loaded",
-                pagerComponent: Pager({
-                    config: this.state.boilerplateResult.config,
-                    i18n: this.state.i18n,
-                    perPage: this.state.itemsPerPage,
-                    pointHandler: this.goToPointer,
-                    pointer: this.state.itemPointer,
-                    total: this.state.searchResults.length
-                })
-            };
-        }, 150);
     }
 }

@@ -6,29 +6,37 @@ var __assign = (this && this.__assign) || Object.assign || function(t) {
     }
     return t;
 };
-define(["require", "exports", "esri/widgets/support/widget", "./panels/PanelComposites"], function (require, exports, widget_1, PanelComposites_1) {
+define(["require", "exports", "./panels/PanelComposites", "esri/widgets/support/widget", "../utilities/createMapping"], function (require, exports, PanelComposites_1, widget_1, createMapping_1) {
     "use strict";
     Object.defineProperty(exports, "__esModule", { value: true });
+    var itemMapping = createMapping_1.default(function (blob) {
+        return blob.item.title;
+    }, function (blob, index) {
+        if (blob.item.type === "Web Map") {
+            return PanelComposites_1.MapPanel(__assign({}, blob.props, { item: blob.item }));
+        }
+        else if (blob.item.type === "Web Mapping Application") {
+            return PanelComposites_1.AppPanel(__assign({}, blob.props, { item: blob.item }));
+        }
+        return PanelComposites_1.ScenePanel(__assign({}, blob.props, { item: blob.item }));
+    }, function () {
+        return null;
+    });
     exports.default = function (props) {
-        var childProps = {
-            config: props.config,
-            i18n: props.i18n,
-            itemClickHandler: props.itemClickHandler
-        };
-        var displayItems = props.items.map(function (item, index) {
-            if (item.type === "Web Map") {
-                return PanelComposites_1.MapPanel(__assign({}, childProps, { item: item }));
+        var blobs = props.items.map(function (item) { return ({
+            item: item,
+            props: {
+                config: props.config,
+                i18n: props.i18n,
+                itemClickHandler: props.itemClickHandler
             }
-            else if (item.type === "Web Mapping Application") {
-                return PanelComposites_1.AppPanel(__assign({}, childProps, { item: item }));
-            }
-            return PanelComposites_1.ScenePanel(__assign({}, childProps, { item: item }));
-        });
+        }); });
+        itemMapping.map(blobs);
         return {
             render: function () {
                 return (widget_1.jsxFactory.createElement("div", { class: "grid-container leader-1" },
                     widget_1.jsxFactory.createElement("div", { class: "column-24" },
-                        widget_1.jsxFactory.createElement("div", { class: "block-group block-group-5-up tablet-block-group-2-up phone-block-group-1-up" }, displayItems.map(function (item) { return item.render(); })))));
+                        widget_1.jsxFactory.createElement("div", { class: "block-group block-group-5-up tablet-block-group-2-up phone-block-group-1-up" }, itemMapping.results.map(function (item) { return item.render(); })))));
             }
         };
     };

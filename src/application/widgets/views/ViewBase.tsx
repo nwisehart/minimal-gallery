@@ -109,7 +109,6 @@ export default (props: IViewProps) => {
             ViewPublic.status = "loaded";
             props.projector.scheduleRender();
         }).otherwise((err) => {
-            // console.error(err);
             ViewPublic.status = "failed";
             props.projector.scheduleRender();
         });

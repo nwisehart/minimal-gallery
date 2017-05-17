@@ -17,6 +17,6 @@ define(["require", "exports", "./PanelBase"], function (require, exports, PanelB
         }, maxLink: "viewApp.html?itemId=" + props.item.id + "&type=webscene" }))); };
     exports.AppPanel = function (props) { return (PanelBase_1.default(__assign({}, props, { captionColor: props.config.appCaptionColor, extItem: props.i18n.ui.itemExtTip, extLink: "http://jsapi.maps.arcgis.com/home/item.html?id=" + props.item.id, extTitle: props.i18n.ui.appExtTip, itemClickHandler: function () {
             props.itemClickHandler(props.item.url, "webapp");
-        }, maxLink: "viewApp.html?itemId=" + encodeURIComponent(props.item.url) + "&type=webapp" }))); };
+        }, maxLink: props.item.url }))); };
 });
 //# sourceMappingURL=PanelComposites.js.map

@@ -47,3 +47,6 @@ ViewerTests();
 
 import ViewerAppTests from "./viewApp/widgets/Viewer.spec";
 ViewerAppTests();
+
+import createMappingTests from "./application/utilities/createMapping.spec";
+createMappingTests();

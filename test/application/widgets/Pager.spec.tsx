@@ -19,6 +19,7 @@ export default () => (
                         noResults: "Sorry, not sorry."
                     }
                 },
+                keyCode: "abc123",
                 perPage: 20,
                 pointHandler,
                 pointer: 0,
@@ -91,6 +92,7 @@ export default () => (
                         noResults: "Sorry, not sorry."
                     }
                 },
+                keyCode: "abc123",
                 perPage: 20,
                 pointHandler,
                 pointer: 0,
@@ -104,20 +106,6 @@ export default () => (
             expect(pageButtons.length).to.equal(123);
         });
 
-        it ("should fire the pointHandler when any pageButton is clicked except the active one", () => {
-            const links = projector.queryAll("a");
-            const pageButtons = links.execute().filter((link) => {
-                return link.properties.id.slice(0, 4) === "page";
-            });
-            expect(pageButtons.length).to.equal(3);
-            pageButtons.forEach((link) => {
-                if (link.properties['onclick']) {
-                    link.properties['onclick']();
-                }
-            });
-            expect(pointHandler.callCount).to.equal(2);
-        });
-
         it ("shouldn't show any pager if there's only one page", (done) => {
             pagerComponent = Pager({
                 config: {},
@@ -126,6 +114,7 @@ export default () => (
                         noResults: "Sorry, not sorry."
                     }
                 },
+                keyCode: "abc123",
                 perPage: 20,
                 pointHandler,
                 pointer: 0,
@@ -147,6 +136,7 @@ export default () => (
                         noResults: "Sorry, not sorry."
                     }
                 },
+                keyCode: "abc123",
                 perPage: 20,
                 pointHandler,
                 pointer: 0,

@@ -17,7 +17,7 @@
   "headerText": "Group Gallery",
   "headerTextURL": "http://www.esri.com/",
   "headerImage": true,
-  "headerImageLocation": "http://jsapi.maps.arcgis.com/sharing/rest/community/groups/db0e225e408c4ecea055088cd4d09b84/info/Screenshot_2015-10-28_09.36.16.png?token=8HWZulEOi_WGVceCVpYwdgQ7II4b5wLV1nHPmHr_Tlt3V60j_ogkZiF7oEWVb_O1ujzx3doZJnQO9JvciLkK-VMlG9xbeInzD6uWD1ozSQjN4j0GO1gsvOEMoRYIcCNDZy8jjTUIqCKCAtCT-emszyoi1HEwQ8SoIvNMxuv6M3mM1u_vxcnFBq51FkH6cX70",
+  "headerImageLocation": "http://jsapi.maps.arcgis.com/sharing/rest/community/groups/db0e225e408c4ecea055088cd4d09b84/info/Screenshot_2015-10-28_09.36.16.png",
   "headerSearch": true,
   "searchPlaceholder": "Search",
   "showAgolLink": true,

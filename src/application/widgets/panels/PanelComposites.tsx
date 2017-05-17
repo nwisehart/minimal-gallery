@@ -47,7 +47,7 @@ export const AppPanel = (props: IPanelCompositeProps) => (
         itemClickHandler: () => {
             props.itemClickHandler(props.item.url, "webapp");
         },
-        maxLink: `viewApp.html?itemId=${encodeURIComponent(props.item.url)}&type=webapp`
+        maxLink: props.item.url
     })
 );
 
