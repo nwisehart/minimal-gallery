@@ -1,5 +1,19 @@
 import Portal = require("esri/portal/Portal");
 import PortalItem = require("esri/portal/PortalItem");
+import PortalQueryResult = require("esri/portal/PortalQueryResult");
+import PortalQueryParams = require("esri/portal/PortalQueryParams");
+
+import WebMap = require("esri/WebMap");
+import WebScene = require("esri/WebScene");
+
+export type Direction = "ltr" | "rtl";
+
+export interface ApplicationBaseItemPromises {
+  webMap?: IPromise<any>;
+  webScene?: IPromise<any>;
+  groupInfo?: IPromise<any>;
+  groupItems?: IPromise<any>;
+}
 
 export interface ApplicationConfigs {
   application?: ApplicationConfig;
@@ -10,8 +24,6 @@ export interface ApplicationConfigs {
 
 export interface ApplicationConfig {
   appid?: string;
-  basemapUrl?: string;
-  basemapReferenceUrl?: string;
   center?: string;
   components?: string;
   embed?: boolean;
@@ -41,23 +53,25 @@ export interface ApplicationBaseSettings {
   };
   group?: {
     default?: string;
-    itemParams?: {
-      [propname: string]: any;
-    };
+    itemParams?: PortalQueryParams;
     fetchItems?: boolean;
     fetchInfo?: boolean;
+    fetchMultiple?: boolean;
   };
   portal?: {
     fetch?: boolean;
   };
+  rightToLeftLocales?: string[];
   urlParams?: string[];
-  webmap?: {
+  webMap?: {
     default?: string;
     fetch?: boolean;
+    fetchMultiple?: boolean;
   };
-  webscene?: {
+  webScene?: {
     default?: string;
     fetch?: boolean;
+    fetchMultiple?: boolean;
   }
 }
 
@@ -67,14 +81,41 @@ export interface ApplicationBaseResult {
   promise: IPromise<any>;
 }
 
+export interface ApplicationBasePortalItemResult extends ApplicationBaseResult {
+  value: PortalItem;
+  promise: IPromise<PortalItem>;
+}
+
+export interface ApplicationBasePortalQueryResult extends ApplicationBaseResult {
+  value: PortalQueryResult;
+  promise: IPromise<PortalQueryResult>;
+}
+
 export interface ApplicationBaseResults {
-  applicationItem?: ApplicationBaseResult;
+  applicationItem?: ApplicationBasePortalItemResult;
   applicationData?: ApplicationBaseResult;
-  groupInfos?: ApplicationBaseResult[];
-  groupItems?: ApplicationBaseResult[];
+  groupInfos?: ApplicationBasePortalQueryResult;
+  groupItems?: ApplicationBasePortalQueryResult;
   localStorage?: ApplicationConfig;
   portal?: Portal;
   urlParams?: ApplicationConfig;
-  webMapItems?: ApplicationBaseResult[];
-  webSceneItems?: ApplicationBaseResult[];
+  webMapItems?: ApplicationBasePortalItemResult[];
+  webSceneItems?: ApplicationBasePortalItemResult[];
 }
+
+export interface ApplicationProxy {
+  sourceUrl: string,
+  proxyUrl: string,
+  proxyId: string
+}
+
+export interface ApplicationBaseConstructorOptions {
+  config: ApplicationConfig | string;
+  settings: ApplicationBaseSettings | string;
+}
+
+export interface CreateMapFromItemOptions {
+  item: PortalItem;
+  appProxies?: ApplicationProxy[];
+}
+

@@ -133,10 +133,11 @@ export default class Main extends declared(Widget) {
                 sortField: (boilerplateResult.config.sortField ? boilerplateResult.config.sortField : "num-views"),
                 sortOrder: (boilerplateResult.config.sortOrder ? boilerplateResult.config.sortOrder : "desc"),
                 start: 0
-            }
+            } as __esri.PortalQueryParams
         ).then(
             this.processItems,
             (err) => {
+                console.error(err);
                 this.state = {
                     ...this.state,
                     loadStatus: "failed"
@@ -208,7 +209,7 @@ export default class Main extends declared(Widget) {
                 pagerComponent
             };
         }, (err) => {
-            console.log("failed!");
+            console.error(err);
             this.state = {
                 ...this.state,
                 status: "failed"
@@ -217,6 +218,7 @@ export default class Main extends declared(Widget) {
     }
 
     private handleBoilerplateError(err) {
+        console.error(err);
         this.state = {
             ...this.state,
             loadStatus: "failed"

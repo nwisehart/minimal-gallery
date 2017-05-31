@@ -100,6 +100,7 @@ define(["require", "exports", "esri/core/tsSupport/declareExtendsHelper", "esri/
                 sortOrder: (boilerplateResult.config.sortOrder ? boilerplateResult.config.sortOrder : "desc"),
                 start: 0
             }).then(this.processItems, function (err) {
+                console.error(err);
                 _this.state = __assign({}, _this.state, { loadStatus: "failed" });
             });
         };
@@ -152,11 +153,12 @@ define(["require", "exports", "esri/core/tsSupport/declareExtendsHelper", "esri/
                         items: filteredResults.slice(0, _this.state.itemsPerPage)
                     }), headComponent: headComponent, items: filteredResults, searchResults: filteredResults, loadStatus: "loaded", pagerComponent: pagerComponent });
             }, function (err) {
-                console.log("failed!");
+                console.error(err);
                 _this.state = __assign({}, _this.state, { status: "failed" });
             });
         };
         Main.prototype.handleBoilerplateError = function (err) {
+            console.error(err);
             this.state = __assign({}, this.state, { loadStatus: "failed" });
         };
         Main.prototype.handleBoilerplateProgress = function (progress) {

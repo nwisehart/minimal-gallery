@@ -1,13 +1,22 @@
 /*
   Copyright 2017 Esri
+
   Licensed under the Apache License, Version 2.0 (the "License");
+
   you may not use this file except in compliance with the License.
+
   You may obtain a copy of the License at
+
     http://www.apache.org/licenses/LICENSE-2.0
+
   Unless required by applicable law or agreed to in writing, software
+
   distributed under the License is distributed on an "AS IS" BASIS,
+
   WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+
   See the License for the specific language governing permissions and
+
   limitations under the License.​
 */
 
@@ -26,22 +35,18 @@ import Portal = require("esri/portal/Portal");
 import PortalItem = require("esri/portal/PortalItem");
 import PortalQueryParams = require("esri/portal/PortalQueryParams");
 
+import declare from "./declareDecorator";
+
 import {
-  ApplicationConfig,
-  ApplicationConfigs,
+  Direction,
+  ApplicationBaseItemPromises,
+  ApplicationBaseConstructorOptions,
   ApplicationBaseResult,
   ApplicationBaseResults,
-  ApplicationBaseSettings
+  ApplicationBaseSettings,
+  ApplicationConfig,
+  ApplicationConfigs
 } from "./interfaces";
-
-type Direction = "ltr" | "rtl";
-
-interface ApplicationBaseItemPromises {
-  webmap?: IPromise<any>;
-  webscene?: IPromise<any>;
-  groupInfo?: IPromise<any>;
-  groupItems?: IPromise<any>;
-}
 
 const defaultConfig = {
   portalUrl: "https://www.arcgis.com",
@@ -51,18 +56,20 @@ const defaultConfig = {
     elevationSync: {},
     geocode: []
   }
-}
+};
 
 const defaultSettings = {
   environment: {},
   group: {},
   localStorage: {},
   portal: {},
+  rightToLeftLocales: ["ar", "he"],
   urlParams: [],
-  webmap: {},
-  webscene: {}
+  webMap: {},
+  webScene: {}
 };
 
+@declare()
 class ApplicationBase {
 
   //--------------------------------------------------------------------------
@@ -71,23 +78,31 @@ class ApplicationBase {
   //
   //--------------------------------------------------------------------------
 
-  constructor(applicationConfig: any, ApplicationBaseConfig: any) {
-    if (typeof applicationConfig === "string") {
-      applicationConfig = JSON.parse(applicationConfig);
-    }
+  constructor(options: ApplicationBaseConstructorOptions) {
+    const { config, settings } = options;
 
-    if (typeof ApplicationBaseConfig === "string") {
-      ApplicationBaseConfig = JSON.parse(ApplicationBaseConfig);
-    }
+    const applicationConfig = typeof config === "string" ?
+      JSON.parse(config) as ApplicationConfig :
+      config;
 
-    this.settings = {
-      ...defaultSettings,
-      ...ApplicationBaseConfig
-    }
-    this.config = {
+    const applicationBaseSettings = typeof settings === "string" ?
+      JSON.parse(settings) as ApplicationBaseSettings :
+      settings;
+
+    const configMixin = {
       ...defaultConfig,
       ...applicationConfig
     };
+
+    const settingsMixin = {
+      ...defaultSettings,
+      ...applicationBaseSettings
+    };
+
+    this._mixinSettingsDefaults(settingsMixin);
+
+    this.config = configMixin;
+    this.settings = settingsMixin;
   }
 
   //--------------------------------------------------------------------------
@@ -124,7 +139,7 @@ class ApplicationBase {
   //----------------------------------
   //  locale
   //----------------------------------
-  locale = kernel.locale;
+  locale: string = kernel.locale;
 
   //----------------------------------
   //  units
@@ -137,9 +152,8 @@ class ApplicationBase {
   //
   //--------------------------------------------------------------------------
 
-  queryGroupItems(groupId: string, itemParams: any, portal?: Portal): IPromise<any> {
-
-    if (!portal) {
+  queryGroupItems(groupId: string, itemParams: PortalQueryParams, portal?: Portal): IPromise<any> {
+    if (!portal || !groupId) {
       portal = this.portal;
     }
 
@@ -160,55 +174,66 @@ class ApplicationBase {
   }
 
   load(): IPromise<ApplicationBase> {
-    const urlParams = this._getUrlParamValues(this.settings.urlParams);
-    this.results.urlParams = urlParams
+    const { settings } = this;
+    const {
+      environment: environmentSettings,
+      group: groupSettings,
+      localStorage: localStorageSettings,
+      portal: portalSettings,
+      webMap: webMapSettings,
+      webScene: websceneSettings,
+      urlParams: urlParamsSettings
+    } = settings;
+    const { isEsri, webTierSecurity } = environmentSettings;
+
+    const urlParams = this._getUrlParamValues(urlParamsSettings);
+    this.results.urlParams = urlParams;
 
     this.config = this._mixinAllConfigs({
       config: this.config,
       url: urlParams
     });
 
-    if (this.settings.environment.isEsri) {
+    if (isEsri) {
       const esriPortalUrl = this._getEsriEnvironmentPortalUrl();
       this.config.portalUrl = esriPortalUrl;
       this.config.proxyUrl = this._getEsriEnvironmentProxyUrl(esriPortalUrl);
     }
 
-    this._setPortalUrl(this.config.portalUrl)
-    this._setProxyUrl(this.config.proxyUrl);
+    const { portalUrl, proxyUrl, oauthappid, appid } = this.config;
 
-    this.direction = this._getLanguageDirection();
+    this._setPortalUrl(portalUrl);
+    this._setProxyUrl(proxyUrl);
 
-    const checkSignIn = this._checkSignIn(this.config.oauthappid, this.config.portalUrl);
+    const rtlLocales = this.settings.rightToLeftLocales;
+    this.direction = this._getLanguageDirection(rtlLocales);
+
+    this._registerOauthInfos(oauthappid, portalUrl);
+
+    const checkSignIn = IdentityManager.checkSignInStatus(`${portalUrl}/sharing`);
     return checkSignIn.always(() => {
-      const appId = this.config.appid;
+      const loadApplicationItem = appid ?
+        this._loadItem(appid) :
+        promiseUtils.resolve();
 
-      const queryApplicationItem = appId ?
-        this._queryItem(appId) : promiseUtils.resolve();
-
-      const queryApplicationData = appId ?
-        queryApplicationItem.then(itemInfo => {
+      const fetchApplicationData = appid ?
+        loadApplicationItem.then(itemInfo => {
           return itemInfo instanceof PortalItem ?
             itemInfo.fetchData() :
             undefined;
         }) :
         promiseUtils.resolve();
 
-      const queryPortal = this.settings.portal.fetch ?
-        this._queryPortal() :
+      const loadPortal = portalSettings.fetch ?
+        new Portal().load() :
         promiseUtils.resolve();
 
       return promiseUtils.eachAlways([
-        queryApplicationItem,
-        queryApplicationData,
-        queryPortal
+        loadApplicationItem,
+        fetchApplicationData,
+        loadPortal
       ]).always(applicationArgs => {
         const [applicationItemResponse, applicationDataResponse, portalResponse] = applicationArgs;
-
-        const localStorage = this.settings.localStorage.fetch ?
-          this._getLocalConfig(appId) :
-          null;
-        this.results.localStorage = localStorage;
 
         const applicationItem = applicationItemResponse ?
           applicationItemResponse.value :
@@ -218,14 +243,20 @@ class ApplicationBase {
           applicationDataResponse.value :
           null;
 
-        this.results.applicationItem = applicationItem;
-        this.results.applicationData = applicationData;
+        const localStorage = localStorageSettings.fetch ?
+          this._getLocalConfig(appid) :
+          null;
+
+        this.results.localStorage = localStorage;
+        this.results.applicationItem = applicationItemResponse;
+        this.results.applicationData = applicationDataResponse;
 
         const applicationConfig = applicationData ?
           applicationData.values :
           null;
 
-        const portal = portalResponse ? portalResponse.value : null;
+        const portal = portalResponse ? portalResponse.value :
+          null;
         this.portal = portal;
 
         this.units = this._getUnits(portal);
@@ -237,44 +268,50 @@ class ApplicationBase {
           application: applicationConfig
         });
 
-        this._setupCORS(portal.authorizedCrossOriginDomains, this.settings.environment.webTierSecurity);
+        this._setUpCORS(portal.authorizedCrossOriginDomains, webTierSecurity);
         this._setGeometryService(this.config, portal);
 
         const { webmap, webscene, group } = this.config;
 
-        const webmapPromises = [];
-        const webscenePromises = [];
+        const webMapPromises = [];
+        const webScenePromises = [];
         const groupInfoPromises = [];
         const groupItemsPromises = [];
 
-        const isWebMapEnabled = this.settings.webmap.fetch && webmap;
-        const isWebSceneEnabled = this.settings.webscene.fetch && webscene;
-        const isGroupInfoEnabled = this.settings.group.fetchInfo && group;
-        const isGroupItemsEnabled = this.settings.group.fetchItems && group;
-        const itemParams = this.settings.group.itemParams;
-        const defaultWebMap = this.settings.webmap.default;
-        const defaultWebScene = this.settings.webscene.default;
-        const defaultGroup = this.settings.group.default;
+        const isWebMapEnabled = webMapSettings.fetch && webmap;
+        const isWebSceneEnabled = websceneSettings.fetch && webscene;
+        const isGroupInfoEnabled = groupSettings.fetchInfo && group;
+        const isGroupItemsEnabled = groupSettings.fetchItems && group;
+        const itemParams = groupSettings.itemParams;
+        const defaultWebMap = webMapSettings.default;
+        const defaultWebScene = websceneSettings.default;
+        const defaultGroup = groupSettings.default;
+        const fetchMultipleWebmaps = webMapSettings.fetchMultiple;
+        const fetchMultipleWebscenes = websceneSettings.fetchMultiple;
+        const fetchMultipleGroups = groupSettings.fetchMultiple;
 
         if (isWebMapEnabled) {
-          const webmaps = this._getPropertyArray(webmap);
-          webmaps.forEach(id => {
+          const webMaps = this._getPropertyArray(webmap);
+          const allowedWebmaps = this._limitItemSize(webMaps, fetchMultipleWebmaps);
+          allowedWebmaps.forEach(id => {
             const webMapId = this._getDefaultId(id, defaultWebMap);
-            webmapPromises.push(this._queryItem(webMapId));
+            webMapPromises.push(this._loadItem(webMapId));
           });
         }
 
         if (isWebSceneEnabled) {
-          const webscenes = this._getPropertyArray(webscene);
-          webscenes.forEach(id => {
+          const webScenes = this._getPropertyArray(webscene);
+          const allowedWebsenes = this._limitItemSize(webScenes, fetchMultipleWebscenes);
+          allowedWebsenes.forEach(id => {
             const webSceneId = this._getDefaultId(id, defaultWebScene);
-            webscenePromises.push(this._queryItem(webSceneId));
+            webScenePromises.push(this._loadItem(webSceneId));
           });
         }
 
         if (isGroupInfoEnabled) {
           const groups = this._getPropertyArray(group);
-          groups.forEach(id => {
+          const allowedGroups = this._limitItemSize(groups, fetchMultipleGroups);
+          allowedGroups.forEach(id => {
             const groupId = this._getDefaultId(id, defaultGroup);
             groupInfoPromises.push(this._queryGroupInfo(groupId, portal));
           });
@@ -288,36 +325,34 @@ class ApplicationBase {
         }
 
         const promises: ApplicationBaseItemPromises = {
-          webmap: webmapPromises.length ?
-            promiseUtils.eachAlways(webmapPromises) :
+          webMap: webMapPromises ?
+            promiseUtils.eachAlways(webMapPromises) :
             promiseUtils.resolve(),
-          webscene: webscenePromises.length ?
-            promiseUtils.eachAlways(webscenePromises) :
+          webScene: webScenePromises ?
+            promiseUtils.eachAlways(webScenePromises) :
             promiseUtils.resolve(),
-          groupInfo: groupInfoPromises.length ?
+          groupInfo: groupInfoPromises ?
             promiseUtils.eachAlways(groupInfoPromises) :
             promiseUtils.resolve(),
-          groupItems: groupItemsPromises.length ?
+          groupItems: groupItemsPromises ?
             promiseUtils.eachAlways(groupItemsPromises) :
             promiseUtils.resolve()
         };
 
         return promiseUtils.eachAlways(promises).always(itemArgs => {
-          const webmapResponses = itemArgs.webmap.value || [];
-          const websceneResponses = itemArgs.webscene.value || [];
-          const groupInfoResponses = itemArgs.groupInfo.value || [];
-          const groupItemsResponses = itemArgs.groupItems.value || [];
+          const webMapResponses = itemArgs.webMap.value;
+          const webSceneResponses = itemArgs.webScene.value;
+          const groupInfoResponses = itemArgs.groupInfo.value;
+          const groupItemsResponses = itemArgs.groupItems.value;
 
-          //console.log(applicationItem);
-          // todo: mixin sourceUrl with proxyUrl
-          // const appProxies = applicationInfo.appProxies;
+          const itemInfo = applicationItem ?
+            applicationItem.itemInfo :
+            null;
+          this._overwriteItemsExtent(webMapResponses, itemInfo);
+          this._overwriteItemsExtent(webSceneResponses, itemInfo);
 
-          const itemInfo = applicationItem ? applicationItem.itemInfo : null;
-          this._overwriteItems(webmapResponses, itemInfo);
-          this._overwriteItems(websceneResponses, itemInfo);
-
-          this.results.webMapItems = webmapResponses;
-          this.results.webSceneItems = websceneResponses;
+          this.results.webMapItems = webMapResponses;
+          this.results.webSceneItems = webSceneResponses;
           this.results.groupInfos = groupInfoResponses;
           this.results.groupItems = groupItemsResponses;
 
@@ -333,10 +368,75 @@ class ApplicationBase {
   //
   //--------------------------------------------------------------------------
 
+  private _mixinSettingsDefaults(settings: ApplicationBaseSettings): void {
+    const userEnvironmentSettings = settings.environment;
+    const userLocalStorageSettings = settings.localStorage;
+    const userGroupSettings = settings.group;
+    const userPortalSettings = settings.portal;
+    const userWebmapSettings = settings.webMap;
+    const userWebsceneSettings = settings.webScene;
+
+    settings.environment = {
+      isEsri: false,
+      webTierSecurity: false,
+      ...userEnvironmentSettings
+    };
+
+    settings.localStorage = {
+      fetch: true,
+      ...userLocalStorageSettings
+    };
+
+    const itemParams = {
+      "sortField": "modified",
+      "sortOrder": "desc",
+      "num": 9,
+      "start": 0
+    } as PortalQueryParams;
+
+    settings.group = {
+      default: "908dd46e749d4565a17d2b646ace7b1a",
+      fetchInfo: true,
+      fetchItems: true,
+      fetchMultiple: true,
+      itemParams: itemParams,
+      ...userGroupSettings
+    };
+
+    settings.portal = {
+      fetch: true,
+      ...userPortalSettings
+    };
+
+    settings.webMap = {
+      default: "1970c1995b8f44749f4b9b6e81b5ba45",
+      fetch: true,
+      fetchMultiple: true,
+      ...userWebmapSettings
+    };
+
+    settings.webScene = {
+      default: "e8f078ba0c1546b6a6e0727f877742a5",
+      fetch: true,
+      fetchMultiple: true,
+      ...userWebsceneSettings
+    };
+  }
+
+  private _limitItemSize(items: string[], allowMultiple: boolean): string[] {
+    const firstItem = items[0];
+    return allowMultiple ?
+      items :
+      firstItem ?
+        [firstItem] :
+        [];
+  }
+
   private _getPropertyArray(property: string | string[]): string[] {
     if (typeof property === "string") {
       return property.split(",");
     }
+
     if (Array.isArray(property)) {
       return property;
     }
@@ -344,38 +444,58 @@ class ApplicationBase {
     return [];
   }
 
+  private _getEsriEnvironmentPortalUrl(): string {
+    const pathname = location.pathname;
+    const esriAppsPath = "/apps/";
+    const esriHomePath = "/home/";
+    const esriAppsPathIndex = pathname.indexOf(esriAppsPath);
+    const esriHomePathIndex = pathname.indexOf(esriHomePath);
+    const isEsriAppsPath = esriAppsPathIndex !== -1;
+    const isEsriHomePath = esriHomePathIndex !== -1;
+    const appLocationIndex = isEsriAppsPath ?
+      esriAppsPathIndex :
+      isEsriHomePath ?
+        esriHomePathIndex :
+        undefined;
+
+    if (appLocationIndex === undefined) {
+      return;
+    }
+
+    const portalInstance = pathname.substr(0, appLocationIndex);
+    const host = location.host;
+    return `https://${host}${portalInstance}`;
+  }
+
+  private _getEsriEnvironmentProxyUrl(portalUrl: string): string {
+    if (!portalUrl) {
+      return;
+    }
+
+    return `${portalUrl}/sharing/proxy`;
+  }
+
   private _getUnits(portal: Portal): string {
+    const USRegion = "US";
+    const USLocale = "en-us";
     const user = portal.user;
     const userRegion = user && user.region;
     const userUnits = user && user.units;
     const responseUnits = portal.units;
     const responseRegion = portal.region;
     const ipCountryCode = portal.ipCntryCode;
-    const isEnglishUnits = (userRegion === "US") ||
-      (userRegion && responseRegion === "US") ||
+    const isEnglishUnits = (userRegion === USRegion) ||
+      (userRegion && responseRegion === USRegion) ||
       (userRegion && !responseRegion) ||
-      (!user && ipCountryCode === "US") ||
-      (!user && !ipCountryCode && kernel.locale === "en-us");
-    const units = userUnits ? userUnits : responseUnits ? responseUnits : isEnglishUnits ? "english" : "metric";
+      (!user && ipCountryCode === USRegion) ||
+      (!user && !ipCountryCode && kernel.locale === USLocale);
+    const units = userUnits ?
+      userUnits :
+      responseUnits ?
+        responseUnits :
+        isEnglishUnits ?
+          "english" : "metric";
     return units;
-  }
-
-  private _getLocalConfig(appid: string): ApplicationConfig {
-    if (!(window.localStorage && appid)) {
-      return;
-    }
-
-    const localStoragePrefix = "application_base_config_";
-    const lsItem = localStorage.getItem(localStoragePrefix + appid);
-    const localConfig = lsItem && JSON.parse(lsItem);
-    return localConfig;
-  }
-
-  private _queryItem(id: string): IPromise<PortalItem> {
-    const item = new PortalItem({
-      id: id
-    });
-    return item.load();
   }
 
   private _queryGroupInfo(groupId: string, portal: Portal): IPromise<any> {
@@ -385,27 +505,25 @@ class ApplicationBase {
     return portal.queryGroups(params);
   }
 
-  private _setupCORS(authorizedDomains: any, webTierSecurity: boolean): void {
-    if (!webTierSecurity || !authorizedDomains || !authorizedDomains.length) {
+  private _loadItem(id: string): IPromise<PortalItem> {
+    const item = new PortalItem({
+      id: id
+    });
+    return item.load();
+  }
+
+  private _getLocalConfig(appid: string): ApplicationConfig {
+    if (!window.localStorage || !appid) {
       return;
     }
 
-    authorizedDomains.forEach(authorizedDomain => {
-      const isDefined = (authorizedDomain !== undefined) && (authorizedDomain !== null);
-      if (isDefined && authorizedDomain.length) {
-        esriConfig.request.corsEnabledServers.push({
-          host: authorizedDomain,
-          withCredentials: true
-        });
-      }
-    });
+    const lsItemId = `application_base_config_${appid}`;
+    const lsItem = localStorage.getItem(lsItemId);
+    const localConfig = lsItem && JSON.parse(lsItem);
+    return localConfig;
   }
 
-  private _queryPortal(): IPromise<Portal> {
-    return new Portal().load();
-  }
-
-  private _overwriteItems(responses: ApplicationBaseResult[], applicationItem: PortalItem): void {
+  private _overwriteItemsExtent(responses: ApplicationBaseResult[], applicationItem: PortalItem): void {
     if (!responses) {
       return;
     }
@@ -424,41 +542,31 @@ class ApplicationBase {
     }
 
     const applicationExtent = applicationItem.extent;
-
-    item.extent = applicationExtent ? applicationExtent : item.extent;
-  }
-
-  private _setGeometryService(config: ApplicationConfig, ptl: Portal): void {
-    const portal = ptl as any; // todo: fix next api release. helperServices are not on portal currently.
-    const configHelperServices = config.helperServices;
-    const portalHelperServices = portal && portal.helperServices;
-    const configGeometryUrl = configHelperServices && configHelperServices.geometry && configHelperServices.geometry.url;
-    const portalGeometryUrl = portalHelperServices && portalHelperServices.geometry && portalHelperServices.geometry.url;
-    const geometryUrl = portalGeometryUrl || configGeometryUrl;
-    if (!geometryUrl) {
-      return;
-    }
-    esriConfig.geometryServiceUrl = geometryUrl;
+    item.extent = applicationExtent ?
+      applicationExtent :
+      item.extent;
   }
 
   private _getDefaultId(id: string, defaultId: string): string {
     const defaultUrlParam = "default";
-    const trimmedId = id ? id.trim() : "";
+    const trimmedId = id ?
+      id.trim() :
+      "";
     const useDefaultId = (!trimmedId || trimmedId === defaultUrlParam) && defaultId;
-    if (useDefaultId) {
-      return defaultId;
-    }
-    return id;
+
+    return useDefaultId ?
+      defaultId :
+      id;
   }
 
-  private _getLanguageDirection(): Direction {
-    const LTR = "ltr";
-    const RTL = "rtl";
-    const RTLLangs = ["ar", "he"];
-    const isRTL = RTLLangs.some(language => {
+  private _getLanguageDirection(rtlLocales: string[] = ["ar", "he"]): Direction {
+    const isRTL = rtlLocales.some(language => {
       return kernel.locale.indexOf(language) !== -1;
     });
-    return isRTL ? RTL : LTR;
+
+    return isRTL ?
+      "rtl" :
+      "ltr";
   }
 
   private _mixinAllConfigs(params: ApplicationConfigs): ApplicationConfig {
@@ -471,55 +579,73 @@ class ApplicationBase {
       ...appConfig,
       ...localConfig,
       ...urlConfig
+    };
+  }
+
+  private _setUpCORS(authorizedDomains: string[], webTierSecurity: boolean): void {
+    if (!webTierSecurity || !authorizedDomains || !authorizedDomains.length) {
+      return;
     }
+
+    authorizedDomains.forEach(authorizedDomain => {
+      const isDefined = (authorizedDomain !== undefined) && (authorizedDomain !== null);
+      if (isDefined && authorizedDomain.length) {
+        esriConfig.request.corsEnabledServers.push({
+          host: authorizedDomain,
+          withCredentials: true
+        });
+      }
+    });
+  }
+
+  private _setGeometryService(config: ApplicationConfig, portal: Portal): void {
+    const configHelperServices = config.helperServices;
+    const anyPortal = portal as any;
+    const portalHelperServices = anyPortal && anyPortal.helperServices;
+    const configGeometryUrl = configHelperServices && configHelperServices.geometry && configHelperServices.geometry.url;
+    const portalGeometryUrl = portalHelperServices && portalHelperServices.geometry && portalHelperServices.geometry.url;
+    const geometryServiceUrl = portalGeometryUrl || configGeometryUrl;
+
+    if (!geometryServiceUrl) {
+      return;
+    }
+
+    esriConfig.geometryServiceUrl = geometryServiceUrl;
   }
 
   private _setPortalUrl(portalUrl: string): void {
+    if (!portalUrl) {
+      return;
+    }
+
     esriConfig.portalUrl = portalUrl;
   }
 
   private _setProxyUrl(proxyUrl: string): void {
-    esriConfig.request.proxyUrl = proxyUrl;
-  }
-
-  private _getEsriEnvironmentPortalUrl(): string {
-    const esriAppsPath = "/apps/";
-    const esriHomePath = "/home/";
-    const esriAppsPathIndex = location.pathname.indexOf(esriAppsPath);
-    const esriHomePathIndex = location.pathname.indexOf(esriHomePath);
-    const isEsriAppsPath = esriAppsPathIndex !== -1 ? true : false;
-    const isEsriHomePath = esriHomePathIndex !== -1 ? true : false;
-    const appLocationIndex = isEsriAppsPath ? esriAppsPathIndex : isEsriHomePath ? esriHomePathIndex : null;
-
-    if (!appLocationIndex) {
+    if (!proxyUrl) {
       return;
     }
 
-    const portalInstance = location.pathname.substr(0, appLocationIndex);
-    const host = location.host;
-    return `https://${host}${portalInstance}`;
+    esriConfig.request.proxyUrl = proxyUrl;
   }
 
-  private _getEsriEnvironmentProxyUrl(portalUrl: string): string {
-    const esriProxyPath = "/sharing/proxy";
-    return `${portalUrl}${esriProxyPath}`;
-  }
+  private _registerOauthInfos(oauthappid: string, portalUrl: string): void {
+    if (!oauthappid) {
+      return;
+    }
 
-  private _checkSignIn(oauthappid: string, portalUrl: string): IPromise<void> {
-    const sharingPath = "/sharing";
-    const info = oauthappid ?
+    const info =
       new OAuthInfo({
         appId: oauthappid,
         portalUrl: portalUrl,
         popup: true
-      }) : null;
+      });
 
-    if (info) {
-      IdentityManager.registerOAuthInfos([info]);
+    if (!info) {
+      return;
     }
 
-    const signedIn = IdentityManager.checkSignInStatus(portalUrl + sharingPath);
-    return signedIn.always(promiseUtils.resolve);
+    IdentityManager.registerOAuthInfos([info]);
   }
 
   private _getUrlParamValues(urlParams: string[]): ApplicationConfig {
@@ -533,14 +659,14 @@ class ApplicationBase {
     urlParams.forEach(param => {
       const urlParamValue = urlObject[param];
       if (urlParamValue) {
-        formattedUrlObject[param] = this._foramatUrlParamValue(urlParamValue);
+        formattedUrlObject[param] = this._formatUrlParamValue(urlParamValue);
       }
     });
 
     return formattedUrlObject;
   }
 
-  private _urlToObject(): any {
+  private _urlToObject(): Object {
     const query = (window.location.search || "?").substr(1),
       map = {};
     const urlRE = /([^&=]+)=?([^&]*)(?:&+|$)/g;
@@ -551,21 +677,25 @@ class ApplicationBase {
     return map;
   }
 
-  private _foramatUrlParamValue(urlParamValue: any): any {
-    if (typeof urlParamValue === "string") {
-      switch (urlParamValue.toLowerCase()) {
-        case "true":
-          return true;
-        case "false":
-          return false;
-        default:
-          return urlParamValue;
-      }
+  private _formatUrlParamValue(urlParamValue: string): string | boolean {
+    if (typeof urlParamValue !== "string") {
+      return urlParamValue;
     }
+
+    const lowerCaseValue = urlParamValue.toLowerCase();
+
+    if (lowerCaseValue === "true") {
+      return true;
+    }
+
+    if (lowerCaseValue === "false") {
+      return false;
+    }
+
     return urlParamValue;
   }
 
-  private _stripStringTags(value: string) {
+  private _stripStringTags(value: string): string {
     const tagsRE = /<\/?[^>]+>/g;
     return value.replace(tagsRE, "");
   }
