@@ -26,6 +26,20 @@ export default (props: IPanelProps) => {
         captionTransform: 0,
 
         render() {
+            const caption = props.config.showItemType ? (
+                <div
+                    class="card-image-caption"
+                    style={`
+                        opacity: ${PanelBaseComponent.captionOpacity};
+                        transform: translate(0, ${PanelBaseComponent.captionTransform}%);
+                        background-color: ${convertHex(props.captionColor, 80)};
+                        color: ${props.config.captionTextColor}
+                    `}
+                >
+                    {props.item.displayName}
+                </div>
+            ) : null;
+
             return (
                 <div
                     class="card block trailer-1 animate-fade-in card-fade"
@@ -47,17 +61,7 @@ export default (props: IPanelProps) => {
                                 `}
                             />
                         </a>
-                        <div
-                            class="card-image-caption"
-                            style={`
-                                opacity: ${PanelBaseComponent.captionOpacity};
-                                transform: translate(0, ${PanelBaseComponent.captionTransform}%);
-                                background-color: ${convertHex(props.captionColor, 80)};
-                                color: ${props.config.captionTextColor}
-                            `}
-                        >
-                            {props.item.displayName}
-                        </div>
+                        {caption}
                     </figure>
                     <div class="card-content" style={`color: ${props.config.fontColor}`}>
                         <a title={props.i18n.ui.galleryTip} style={`color: ${props.config.linkColor}`}>
