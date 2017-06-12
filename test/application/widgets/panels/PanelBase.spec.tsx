@@ -94,5 +94,55 @@ export default () => (
             projector.initialize(panelComponent.render);
             expect(projector.query("p").exists()).to.equal(false);
         });
+
+        it("should not show the item type if props.showItemType === false", () => {
+            panelComponent = BasePanel({
+                i18n: { ui: { galleryTip: "foobar" } },
+                item: {},
+                captionColor: "#123456",
+                config: {
+                    captionColor: "123456",
+                    cardColor: "123456",
+                    fontColor: "123456",
+                    group: "abc123",
+                    linkColor: "123456",
+                    showItemType: false
+                },
+                itemClickHandler,
+                maxLink: "http://abc.123.com",
+                extTitle: "abc123",
+                extLink: "http://abc.123.com",
+                extItem: "abc123"
+            });
+            projector.initialize(panelComponent.render);
+            expect(
+                projector.queryAll("div").execute().filter((vnode) => vnode.properties.class === "card-image-caption").length
+            ).to.equal(0);
+        });
+
+        it("should show the item type if props.showItemType === true", () => {
+            panelComponent = BasePanel({
+                i18n: { ui: { galleryTip: "foobar" } },
+                item: {},
+                captionColor: "#123456",
+                config: {
+                    captionColor: "123456",
+                    cardColor: "123456",
+                    fontColor: "123456",
+                    group: "abc123",
+                    linkColor: "123456",
+                    showItemType: true
+                },
+                itemClickHandler,
+                maxLink: "http://abc.123.com",
+                extTitle: "abc123",
+                extLink: "http://abc.123.com",
+                extItem: "abc123"
+            });
+            projector.initialize(panelComponent.render);
+            expect(
+                projector.queryAll("div").execute().filter((vnode) => vnode.properties.class === "card-image-caption").length
+            ).to.equal(1);
+        });
     })
 );
