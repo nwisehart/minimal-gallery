@@ -66,26 +66,26 @@ define(["require", "exports", "esri/core/tsSupport/declareExtendsHelper", "esri/
         }
         Main.prototype.render = function () {
             if (this.state.loadStatus === "loaded") {
-                return (widget_1.jsxFactory.createElement("div", null,
+                return (widget_1.jsxFactory("div", null,
                     this.state.headComponent.render(),
                     this.state.galleryComponent.render(),
                     this.state.viewComponent.render(),
                     this.state.pagerComponent.render()));
             }
             else if (this.state.loadStatus === "failed") {
-                return (widget_1.jsxFactory.createElement("h3", { class: "center-style" }, this.state.i18n.appLoading.failed));
+                return (widget_1.jsxFactory("h3", { class: "center-style" }, this.state.i18n.appLoading.failed));
             }
             else if (this.state.loadStatus === "searching") {
-                return (widget_1.jsxFactory.createElement("div", null,
+                return (widget_1.jsxFactory("div", null,
                     this.state.headComponent.render(),
-                    widget_1.jsxFactory.createElement("div", { class: "loader is-active padding-leader-3 padding-trailer-3 center-style", key: "loader" },
-                        widget_1.jsxFactory.createElement("div", { class: "loader-bars" }),
-                        widget_1.jsxFactory.createElement("div", { bind: this, class: "loader-text" }, this.state.i18n.appLoading[this.state.loadMessage]))));
+                    widget_1.jsxFactory("div", { class: "loader is-active padding-leader-3 padding-trailer-3 center-style", key: "loader" },
+                        widget_1.jsxFactory("div", { class: "loader-bars" }),
+                        widget_1.jsxFactory("div", { bind: this, class: "loader-text" }, this.state.i18n.appLoading[this.state.loadMessage]))));
             }
-            return (widget_1.jsxFactory.createElement("div", null,
-                widget_1.jsxFactory.createElement("div", { class: "loader is-active padding-leader-3 padding-trailer-3 center-style", key: "loader" },
-                    widget_1.jsxFactory.createElement("div", { class: "loader-bars" }),
-                    widget_1.jsxFactory.createElement("div", { bind: this, class: "loader-text" }, this.state.i18n.appLoading[this.state.loadMessage]))));
+            return (widget_1.jsxFactory("div", null,
+                widget_1.jsxFactory("div", { class: "loader is-active padding-leader-3 padding-trailer-3 center-style", key: "loader" },
+                    widget_1.jsxFactory("div", { class: "loader-bars" }),
+                    widget_1.jsxFactory("div", { bind: this, class: "loader-text" }, this.state.i18n.appLoading[this.state.loadMessage]))));
         };
         Main.prototype.handleBoilerplateLoad = function (boilerplateResult) {
             var _this = this;

@@ -34,9 +34,9 @@ define(["require", "exports", "./panels/PanelComposites", "esri/widgets/support/
         itemMapping.map(blobs);
         return {
             render: function () {
-                return (widget_1.jsxFactory.createElement("div", { class: "grid-container leader-1" },
-                    widget_1.jsxFactory.createElement("div", { class: "column-24" },
-                        widget_1.jsxFactory.createElement("div", { class: "block-group block-group-5-up tablet-block-group-2-up phone-block-group-1-up" }, itemMapping.results.map(function (item) { return item.render(); })))));
+                return (widget_1.jsxFactory("div", { class: "grid-container leader-1" },
+                    widget_1.jsxFactory("div", { class: "column-24" },
+                        widget_1.jsxFactory("div", { class: "block-group block-group-5-up tablet-block-group-2-up phone-block-group-1-up" }, itemMapping.results.map(function (item) { return item.render(); })))));
             }
         };
     };

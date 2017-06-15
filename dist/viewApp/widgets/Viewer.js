@@ -26,13 +26,13 @@ define(["require", "exports", "esri/widgets/support/widget", "../../application/
         }
         else {
             view = {
-                render: function () { return (widget_1.jsxFactory.createElement("h3", { class: "center-style" }, props.i18n.viewLoading.sorry)); }
+                render: function () { return (widget_1.jsxFactory("h3", { class: "center-style" }, props.i18n.viewLoading.sorry)); }
             };
         }
         return {
             render: function () {
-                return (widget_1.jsxFactory.createElement("div", { id: "view-container", key: "view-container", classes: containerClasses, style: "background-color: " + convertHex(viewBackgroundColor, 85) },
-                    widget_1.jsxFactory.createElement("div", { id: "map-container", style: "width: 100%; height: 100%" }, view.render())));
+                return (widget_1.jsxFactory("div", { id: "view-container", key: "view-container", classes: containerClasses, style: "background-color: " + convertHex(viewBackgroundColor, 85) },
+                    widget_1.jsxFactory("div", { id: "map-container", style: "width: 100%; height: 100%" }, view.render())));
             }
         };
         function convertHex(hex, opacity) {
