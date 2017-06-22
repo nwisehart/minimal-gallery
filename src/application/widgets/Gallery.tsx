@@ -1,5 +1,5 @@
 import { AppPanel, MapPanel, ScenePanel } from "./panels/PanelComposites";
-import { jsxFactory } from "esri/widgets/support/widget";
+import { tsx } from "esri/widgets/support/widget";
 import createMapping from "../utilities/createMapping";
 
 interface IGalleryProps {
