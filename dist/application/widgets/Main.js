@@ -150,7 +150,8 @@ define(["require", "exports", "esri/core/tsSupport/declareExtendsHelper", "esri/
                         config: _this.state.boilerplateResult.config,
                         i18n: _this.state.i18n,
                         itemClickHandler: _this.itemClickHandler,
-                        items: filteredResults.slice(0, _this.state.itemsPerPage)
+                        items: filteredResults.slice(0, _this.state.itemsPerPage),
+                        portalUrl: _this.state.boilerplateResult.portal.url
                     }), headComponent: headComponent, items: filteredResults, searchResults: filteredResults, loadStatus: "loaded", pagerComponent: pagerComponent });
             }, function (err) {
                 console.error(err);
@@ -196,7 +197,8 @@ define(["require", "exports", "esri/core/tsSupport/declareExtendsHelper", "esri/
                     config: this.state.boilerplateResult.config,
                     i18n: this.state.i18n,
                     itemClickHandler: this.itemClickHandler,
-                    items: searchResults.slice(0, this.state.itemsPerPage)
+                    items: searchResults.slice(0, this.state.itemsPerPage),
+                    portalUrl: this.state.boilerplateResult.portal.url
                 }), loadStatus: "loaded", pagerComponent: Pager_1.default({
                     config: this.state.boilerplateResult.config,
                     i18n: this.state.i18n,
@@ -212,7 +214,8 @@ define(["require", "exports", "esri/core/tsSupport/declareExtendsHelper", "esri/
                     config: this.state.boilerplateResult.config,
                     i18n: this.state.i18n,
                     itemClickHandler: this.itemClickHandler,
-                    items: this.state.searchResults.slice(pointer, pointer + this.state.itemsPerPage)
+                    items: this.state.searchResults.slice(pointer, pointer + this.state.itemsPerPage),
+                    portalUrl: this.state.boilerplateResult.portal.url
                 }), loadStatus: "loaded" });
         };
         return Main;

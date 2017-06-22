@@ -9,6 +9,7 @@ interface IGalleryProps {
     i18n: any;
     itemClickHandler: any;
     items: any[];
+    portalUrl: string;
 }
 
 const itemMapping = createMapping(
@@ -34,7 +35,8 @@ export default (props: IGalleryProps) => {
         props: {
             config: props.config,
             i18n: props.i18n,
-            itemClickHandler: props.itemClickHandler
+            itemClickHandler: props.itemClickHandler,
+            portalUrl: props.portalUrl
         }
     }));
     itemMapping.map(blobs);

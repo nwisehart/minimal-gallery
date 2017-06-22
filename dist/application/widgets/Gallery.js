@@ -28,7 +28,8 @@ define(["require", "exports", "./panels/PanelComposites", "esri/widgets/support/
             props: {
                 config: props.config,
                 i18n: props.i18n,
-                itemClickHandler: props.itemClickHandler
+                itemClickHandler: props.itemClickHandler,
+                portalUrl: props.portalUrl
             }
         }); });
         itemMapping.map(blobs);
