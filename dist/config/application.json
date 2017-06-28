@@ -16,6 +16,7 @@
   "showHeader": true,
   "showItemType": true,
   "headerText": "Group Gallery",
+  "headerTextColor": "#000000",
   "headerTextURL": "http://www.esri.com/",
   "headerImage": true,
   "headerImageLocation": "http://arcgis.com/sharing/rest/community/groups/db0e225e408c4ecea055088cd4d09b84/info/Screenshot_2015-10-28_09.36.16.png",

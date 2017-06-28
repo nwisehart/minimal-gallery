@@ -15,14 +15,14 @@ define(["require", "exports", "esri/widgets/support/widget"], function (require,
                             widget_1.tsx("div", { class: "tablet-hide" },
                                 widget_1.tsx("a", { href: props.config.headerTextURL },
                                     headImage,
-                                    widget_1.tsx("a", { class: "top-nav-title", style: "color: " + props.config.fontColor }, props.config.headerText)),
+                                    widget_1.tsx("a", { class: "top-nav-title", style: "color: " + props.config.headerTextColor }, props.config.headerText)),
                                 widget_1.tsx("nav", { class: "top-nav-list", role: "navigation", title: "topnav" },
-                                    widget_1.tsx("a", { class: "top-nav-link", href: props.config.agolLinkLocation.replace("${GROUP_ID}", props.config.group), style: "color: " + props.config.fontColor }, props.config.agolLinkText)),
+                                    widget_1.tsx("a", { class: "top-nav-link", href: props.config.agolLinkLocation.replace("${GROUP_ID}", props.config.group), style: "color: " + props.config.headerTextColor }, props.config.agolLinkText)),
                                 headSearch),
                             widget_1.tsx("div", { class: "tablet-show top-nav-flex" },
                                 widget_1.tsx("header", { class: "top-nav-flex-title" },
                                     widget_1.tsx("a", { href: props.config.headerTextURL },
-                                        widget_1.tsx("a", { class: "top-nav-title", style: "color: " + props.config.fontColor }, props.config.headerText))),
+                                        widget_1.tsx("a", { class: "top-nav-title", style: "color: " + props.config.headerTextColor }, props.config.headerText))),
                                 headSearch)))));
             }
         };
