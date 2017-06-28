@@ -23,6 +23,7 @@ This is a group gallery built with the Esri [ArcGIS API for JavaScript v4.3](htt
 - `"showHeader"`: A boolean (true/false) value controlling whether or not the header will be displayed
 - `"showItemType"`: A boolean (true/false) value controlling whether or not item types will be displayed for each gallery item
 - `"headerText"`: The gallery title shown in the header
+- `"headerTextColor"`: The color of the header text
 - `"headerTextURL"`: A location for the gallery title to link to
 - `"headerImage"`: Boolean value controlling whether or not an image will be displayed next to the gallery title
 - `"headerImageLocation"`: The URL for the image to be displayed next to the gallery title
