@@ -1,6 +1,6 @@
 # Embedded Group Gallery Application
 
-This is a group gallery built with the Esri [ArcGIS API for JavaScript v4.3](https://developers.arcgis.com/javascript/) and the Esri [Application-Base](https://github.com/Esri/application-base-js)
+This is a group gallery built with the Esri [ArcGIS API for JavaScript v4.4](https://developers.arcgis.com/javascript/) and the Esri [Application-Base](https://github.com/Esri/application-base-js)
 
 ## Configuration
 
@@ -44,12 +44,32 @@ This is a group gallery built with the Esri [ArcGIS API for JavaScript v4.3](htt
 
 ## Development
 
-If you wish to build additional functionality into the application, a test server, development dependencies, unit tests, and convenient npm scripts are available in this repository. First, clone the repository and install the dependencies using `npm install` or `npm i`.
+If you wish to build additional functionality into the application, development dependencies, unit tests, and convenient npm scripts are available in this repository. First, clone the repository and install the dependencies using `npm i`.
 
-Once the operation is complete, `npm start` will start a test server on `localhost:5555` serving the `/dist/` directory. It will also watch the `/src/` directory for changes to the source typescript files, and transpile them to javascript in the `/dist/` directory on the fly.
+Once the operation is complete, `npm start` will compile the TypeScript to JavaScript in the `/dist/` directory. It will also watch the `/src/` directory for changes to the source TypeScript files, and transpile them to JavaScript in the `/dist/` directory as you edit.
 
-You can also run the test suite with `npm test`.
+You can run the test suite with `npm test` to help determine if the basic functionality of the application is intact.
 
 ## Deployment
 
 When ready to deploy the application, serve the contents of the `/dist/` directory from your web server.
+
+## Issues
+
+Found a bug or want to request a new feature? Please let us know by submitting an issue.
+
+## Contributing
+
+Anyone and everyone is welcome to contribute.
+
+## Licensing
+
+Copyright 2017 Esri
+
+Licensed under the Apache License, Version 2.0 (the "License"); you may not use this file except in compliance with the License. You may obtain a copy of the License at
+
+[http://www.apache.org/licenses/LICENSE-2.0](http://www.apache.org/licenses/LICENSE-2.0)
+
+Unless required by applicable law or agreed to in writing, software distributed under the License is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions and limitations under the License.​
+
+A copy of the license is available in the repository's [LICENSE](./LICENSE) file.
