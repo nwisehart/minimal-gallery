@@ -114,3 +114,8 @@
     padding-top: 66.5%;
     height: 0px;
 }
+
+.top-nav-link {
+    float: right;
+    margin-right: 1.5rem;
+}

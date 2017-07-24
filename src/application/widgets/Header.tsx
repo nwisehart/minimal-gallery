@@ -26,6 +26,16 @@ export default (props: IHeaderProps) => {
     const headImage = props.config.headerImage ? (
         <img src={props.config.headerImageLocation} class="header-image" alt={props.config.headerText} />
     ) : null;
+    const agolLink = props.config.showAgolLink ? (
+        <a
+            class="top-nav-link"
+            href={props.config.agolLinkLocation.replace("${GROUP_ID}", props.config.group)}
+            style={`color: ${props.config.headerTextColor}`}
+            title={props.config.agolLinkText}
+        >
+            {props.config.agolLinkText}
+        </a>
+    ) : null;
     return {
         render() {
             return (
@@ -39,16 +49,8 @@ export default (props: IHeaderProps) => {
                                         {props.config.headerText}
                                     </a>
                                 </a>
-                                <nav class="top-nav-list" role="navigation" title="topnav">
-                                    <a
-                                        class="top-nav-link"
-                                        href={props.config.agolLinkLocation.replace("${GROUP_ID}", props.config.group)}
-                                        style={`color: ${props.config.headerTextColor}`}
-                                    >
-                                        {props.config.agolLinkText}
-                                    </a>
-                                </nav>
                                 {headSearch}
+                                {agolLink}
                             </div>
 
                             <div class="tablet-show top-nav-flex">
