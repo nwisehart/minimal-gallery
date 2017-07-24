@@ -2,7 +2,14 @@ define(["require", "exports", "esri/widgets/support/widget"], function (require,
     "use strict";
     Object.defineProperty(exports, "__esModule", { value: true });
     exports.default = function (props) {
-        var author = props.config.showAuthor ? (widget_1.tsx("p", { class: "font-size--1 card-last hug-bottom", key: props.item.title + "-author" }, props.item.owner)) : null;
+        var author = props.config.showAuthor ? (widget_1.tsx("p", { class: "font-size--1 card-last hug-bottom author-text", key: props.item.title + "-author" }, props.item.owner)) : null;
+        var itemDescription = null;
+        if (props.config.showItemDescriptions) {
+            var itemDescriptionText = props.item.description ?
+                extractContent(props.item.description).substring(0, props.config.descriptionTruncLength) + "..." :
+                null;
+            itemDescription = widget_1.tsx("p", { class: "item-description-text" }, itemDescriptionText);
+        }
         var PanelBaseComponent = {
             captionOpacity: 1,
             captionTransform: 0,
@@ -16,6 +23,7 @@ define(["require", "exports", "esri/widgets/support/widget"], function (require,
                     widget_1.tsx("div", { class: "card-content", style: "color: " + props.config.fontColor },
                         widget_1.tsx("a", { title: props.i18n.ui.galleryTip, style: "color: " + props.config.linkColor },
                             widget_1.tsx("h5", { tabindex: "0", class: "clickable", onclick: props.itemClickHandler }, props.item.title)),
+                        itemDescription,
                         author,
                         widget_1.tsx("div", { class: "open-out-container" },
                             widget_1.tsx("a", { class: "open-out-icon btn btn-transparent icon-ui-description", title: props.extItem, href: props.extLink, style: "color: " + props.config.buttonBgColor, key: props.item.title + "-info-icon" }),
@@ -45,5 +53,11 @@ define(["require", "exports", "esri/widgets/support/widget"], function (require,
         }
         return PanelBaseComponent;
     };
+    function extractContent(s) {
+        var span = document.createElement('span');
+        span.innerHTML = s;
+        return [span.textContent || span.innerText].toString().replace(/ +/g, ' ');
+    }
+    ;
 });
 //# sourceMappingURL=PanelBase.js.map

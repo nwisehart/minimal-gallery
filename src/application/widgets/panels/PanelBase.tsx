@@ -17,10 +17,18 @@ interface IPanelProps {
 
 export default (props: IPanelProps) => {
     const author = props.config.showAuthor ? (
-        <p class="font-size--1 card-last hug-bottom" key={`${props.item.title}-author`}>
+        <p class="font-size--1 card-last hug-bottom author-text" key={`${props.item.title}-author`}>
             {props.item.owner}
         </p>
     ) : null;
+
+    let itemDescription = null;
+    if (props.config.showItemDescriptions) {
+        const itemDescriptionText = props.item.description ?
+        extractContent(props.item.description).substring(0, props.config.descriptionTruncLength) + "..." :
+        null;
+        itemDescription = <p class="item-description-text">{itemDescriptionText}</p>;
+    }
 
     const PanelBaseComponent = {
         captionOpacity: 1,
@@ -70,6 +78,7 @@ export default (props: IPanelProps) => {
                                 {props.item.title}
                             </h5>
                         </a>
+                        {itemDescription}
                         {author}
                         <div class="open-out-container">
                             <a
@@ -117,4 +126,10 @@ export default (props: IPanelProps) => {
     }
 
     return PanelBaseComponent;
+};
+
+function extractContent(s) {
+  var span= document.createElement('span');
+  span.innerHTML= s;
+  return [span.textContent || span.innerText].toString().replace(/ +/g,' ');
 };
