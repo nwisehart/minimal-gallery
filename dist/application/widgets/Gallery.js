@@ -13,12 +13,12 @@ define(["require", "exports", "./panels/PanelComposites", "esri/widgets/support/
         return blob.item.title;
     }, function (blob, index) {
         if (blob.item.type === "Web Map") {
-            return PanelComposites_1.MapPanel(__assign({}, blob.props, { item: blob.item }));
+            return PanelComposites_1.MapPanel(__assign({}, blob.props, { item: blob.item, index: index }));
         }
         else if (blob.item.type === "Web Mapping Application") {
-            return PanelComposites_1.AppPanel(__assign({}, blob.props, { item: blob.item }));
+            return PanelComposites_1.AppPanel(__assign({}, blob.props, { item: blob.item, index: index }));
         }
-        return PanelComposites_1.ScenePanel(__assign({}, blob.props, { item: blob.item }));
+        return PanelComposites_1.ScenePanel(__assign({}, blob.props, { item: blob.item, index: index }));
     }, function () {
         return null;
     });

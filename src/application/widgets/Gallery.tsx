@@ -18,11 +18,11 @@ const itemMapping = createMapping(
     },
     (blob, index) => {
         if (blob.item.type === "Web Map") {
-            return MapPanel({ ...blob.props, item: blob.item });
+            return MapPanel({ ...blob.props, item: blob.item, index });
         } else if (blob.item.type === "Web Mapping Application") {
-            return AppPanel({ ...blob.props, item: blob.item });
+            return AppPanel({ ...blob.props, item: blob.item, index });
         }
-        return ScenePanel({ ...blob.props, item: blob.item });
+        return ScenePanel({ ...blob.props, item: blob.item, index });
     },
     () => {
         return null;

@@ -2,6 +2,7 @@ import { tsx } from "esri/widgets/support/widget";
 
 interface IPanelProps {
     i18n: any;
+    index: number;
     item: any;
     captionColor: string;
     config: {
@@ -22,12 +23,18 @@ export default (props: IPanelProps) => {
         </p>
     ) : null;
 
-    let itemDescription = null;
+    let descriptionElement;
+    let itemDescription;
     if (props.config.showItemDescriptions) {
-        const itemDescriptionText = props.item.description ?
-        extractContent(props.item.description).substring(0, props.config.descriptionTruncLength) + "..." :
-        null;
-        itemDescription = <p class="item-description-text">{itemDescriptionText}</p>;
+        let itemSnippet = props.item.snippet ? props.item.snippet : null;
+        if (itemSnippet.length > props.config.descriptionTruncLength) {
+            itemSnippet = itemSnippet.slice(0, props.config.descriptionTruncLength) + "...";
+        }
+        itemDescription = props.item.description ? extractContent(props.item.description) : null;
+        if (itemDescription && itemDescription.length > props.config.tooltipTruncLength) {
+            itemDescription = itemDescription.slice(0, props.config.tooltipTruncLength) + "...";
+        }
+        descriptionElement = <p class="item-description-text">{itemSnippet}</p>;
     }
 
     const PanelBaseComponent = {
@@ -52,7 +59,7 @@ export default (props: IPanelProps) => {
             return (
                 <div
                     class="card block trailer-1 animate-fade-in card-fade"
-                    style={`background-color: ${props.config.cardColor};`}
+                    style={`background-color: ${props.config.cardColor}; z-index: ${1000 - props.index}`}
                     key={`${props.item.title}-div`}
                 >
                     <figure class="card-image-wrap">
@@ -78,21 +85,47 @@ export default (props: IPanelProps) => {
                                 {props.item.title}
                             </h5>
                         </a>
-                        {itemDescription}
+                        {descriptionElement}
                         {author}
                         <div class="open-out-container">
                             <a
-                                class="open-out-icon btn btn-transparent icon-ui-description"
-                                title={props.extItem} href={props.extLink}
+                                class="open-out-icon btn btn-transparent toolbar-tooltip"
+                                aria-label={itemDescription ? itemDescription : props.extItem}
+                                title={props.extItem}
+                                href={props.extLink}
                                 style={`color: ${props.config.buttonBgColor}`}
                                 key={`${props.item.title}-info-icon`}
-                            />
+                            >
+                                <svg
+                                    xmlns="http://www.w3.org/2000/svg"
+                                    width="32"
+                                    height="32"
+                                    viewBox="0 0 32 32"
+                                    class="svg-icon"
+                                >
+                                    <path
+                                        d="M31.297 16.047c0 8.428-6.826 15.25-15.25 15.25S.797 24.475.797 16.047c0-8.424 6.826-15.25 15.25-15.25s15.25 6.826 15.25 15.25zM18 24V12h-4v12h-2v2h8v-2h-2zm0-18h-4v4h4V6z"
+                                    />
+                                </svg>
+                            </a>
                             <a
-                                class="open-out-icon btn btn-transparent icon-ui-maximize"
-                                title={props.extTitle} href={props.maxLink}
+                                class="open-out-icon btn btn-transparent toolbar-tooltip"
+                                aria-label={props.extTitle}
+                                title={props.extTitle}
+                                href={props.maxLink}
                                 style={`color: ${props.config.buttonBgColor}`}
                                 key={`${props.item.title}-open-out-icon`}
-                            />
+                            >
+                                <svg
+                                    xmlns="http://www.w3.org/2000/svg"
+                                    width="32"
+                                    height="32"
+                                    viewBox="0 0 32 32"
+                                    class="svg-icon"
+                                >
+                                    <path d="M2 4v24h28V4H2zm26 22H4V10h24v16z"/>
+                                </svg>
+                            </a>
                         </div>
                     </div>
                 </div>
