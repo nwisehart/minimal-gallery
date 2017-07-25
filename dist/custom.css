@@ -1,5 +1,5 @@
 #view-container {
-    z-index: 100;
+    z-index: 1000000;
     top: 0px;
     left: 0px;
     position: fixed;
@@ -129,54 +129,6 @@
 
 .author-text {
     font-style: italic;
-}
-
-.toolbar-tooltip-left:hover:before {
-    content: "";
-    display: inline-block;
-    position: absolute;
-    z-index: 1000001;
-    width: 0;
-    height: 0;
-    color: rgba(0,0,0,0.75);
-    pointer-events: none;
-    border: 5px solid transparent;
-    top: 50%;
-    bottom: 50%;
-    left: -9px;
-    right: 50%;
-    margin-top: -5px;
-    margin-right: -5px;
-    border-left-color: rgba(0,0,0,0.80);
-    border-bottom: 5px solid transparent;
-}
-
-.toolbar-tooltip-left:hover:after {
-    content: attr(aria-label);
-    font-size: 0.875rem;
-    display: inline-block;
-    position: absolute;
-    z-index: 1000000;
-    padding: 0.3875rem 0.775rem;
-    color: white;
-    font-size: 0.875rem;
-    text-align: center;
-    pointer-events: none;
-    background: rgba(0,0,0,0.80);
-    top: auto;
-    right: 100%;
-    margin-right: 9px;
-    bottom: 50%;
-    line-height: 1.5;
-    transform: translateY(50%);
-    border-radius: 4px;
-    width: 22em;
-    width: -moz-max-content;
-    width: -webkit-max-content;
-    max-width: 250px;
-    word-wrap: normal;
-    white-space: pre-line;
-    border-collapse: separate;
 }
 
 .toolbar-tooltip:hover:before {
