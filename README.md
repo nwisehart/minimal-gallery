@@ -11,6 +11,7 @@ This is a group gallery built with the Esri [ArcGIS API for JavaScript v4.4](htt
 - `"appCaptionColor"`: The color of the card caption for the 'Web Mapping Application' item type
 - `"mapCaptionColor"`: The color of the card caption for the 'Web Map' item type
 - `"sceneCaptionColor"`: The color of the card caption for the 'Web Scene' item type
+- `"fileCaptionColor"`: The color of the card caption for any item type qualifying as a 'file'
 - `"captionFontColor"`: The color of the text displaying the item type in the card caption
 - `"fontColor"`: The color of fonts on the page
 - `"headColor"`: The background color for the page header
