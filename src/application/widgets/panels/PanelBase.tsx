@@ -26,7 +26,7 @@ export default (props: IPanelProps) => {
     let tooltipSnippet;
     if (props.config.showSummaryTooltip) {
         tooltipSnippet = props.item.snippet ? props.item.snippet : null;
-        if (tooltipSnippet.length > props.config.tooltipTruncLength) {
+        if (tooltipSnippet && tooltipSnippet.length > props.config.tooltipTruncLength) {
             tooltipSnippet = tooltipSnippet.slice(0, props.config.tooltipTruncLength) + "...";
         }
     }
@@ -35,7 +35,7 @@ export default (props: IPanelProps) => {
     let summaryElement;
     if (props.config.showItemSummary) {
         cardSnippet = props.item.snippet ? props.item.snippet : null;
-        if (cardSnippet.length > props.config.summaryTruncLength) {
+        if (cardSnippet && cardSnippet.length > props.config.summaryTruncLength) {
             cardSnippet = cardSnippet.slice(0, props.config.summaryTruncLength) + "...";
         }
         summaryElement = <p class="item-description-text">{cardSnippet}</p>;

@@ -53,3 +53,18 @@ export const AppPanel = (props: IPanelCompositeProps) => (
     })
 );
 
+export const FilePanel = (props: IPanelCompositeProps) => (
+    PanelBase({
+        ...props,
+        captionColor: props.config.fileCaptionColor,
+        extItem: props.i18n.ui.itemExtTip,
+        extLink: `${props.portalUrl}/home/item.html?id=${props.item.id}`,
+        extTitle: props.i18n.ui.fileExtTip,
+        itemClickHandler: () => {
+            // const fileWindow = window.open(`${props.item.itemUrl}/data`, "_blank");
+            // fileWindow.focus();
+            window.location.href = `${props.item.itemUrl}/data`;
+        },
+        maxLink: `${props.item.itemUrl}/data`
+    })
+);

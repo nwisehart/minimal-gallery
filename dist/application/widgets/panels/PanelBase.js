@@ -6,7 +6,7 @@ define(["require", "exports", "esri/widgets/support/widget"], function (require,
         var tooltipSnippet;
         if (props.config.showSummaryTooltip) {
             tooltipSnippet = props.item.snippet ? props.item.snippet : null;
-            if (tooltipSnippet.length > props.config.tooltipTruncLength) {
+            if (tooltipSnippet && tooltipSnippet.length > props.config.tooltipTruncLength) {
                 tooltipSnippet = tooltipSnippet.slice(0, props.config.tooltipTruncLength) + "...";
             }
         }
@@ -14,7 +14,7 @@ define(["require", "exports", "esri/widgets/support/widget"], function (require,
         var summaryElement;
         if (props.config.showItemSummary) {
             cardSnippet = props.item.snippet ? props.item.snippet : null;
-            if (cardSnippet.length > props.config.summaryTruncLength) {
+            if (cardSnippet && cardSnippet.length > props.config.summaryTruncLength) {
                 cardSnippet = cardSnippet.slice(0, props.config.summaryTruncLength) + "...";
             }
             summaryElement = widget_1.tsx("p", { class: "item-description-text" }, cardSnippet);

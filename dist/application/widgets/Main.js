@@ -24,14 +24,9 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
     else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
     return c > 3 && r && Object.defineProperty(target, key, r), r;
 };
-define(["require", "exports", "esri/core/tsSupport/declareExtendsHelper", "esri/core/tsSupport/decorateHelper", "dojo/promise/all", "esri/core/accessorSupport/decorators", "esri/widgets/support/widget", "esri/widgets/Widget", "./Gallery", "./Header", "./Pager", "./Viewer"], function (require, exports, __extends, __decorate, all, decorators_1, widget_1, Widget, Gallery_1, Header_1, Pager_1, Viewer_1) {
+define(["require", "exports", "esri/core/tsSupport/declareExtendsHelper", "esri/core/tsSupport/decorateHelper", "dojo/promise/all", "esri/core/accessorSupport/decorators", "esri/widgets/support/widget", "esri/widgets/Widget", "../utilities/supportedItemTypes", "./Gallery", "./Header", "./Pager", "./Viewer"], function (require, exports, __extends, __decorate, all, decorators_1, widget_1, Widget, supportedItemTypes_1, Gallery_1, Header_1, Pager_1, Viewer_1) {
     "use strict";
     Object.defineProperty(exports, "__esModule", { value: true });
-    var filterMap = {
-        "Web Map": "webmap",
-        "Web Mapping Application": "webapp",
-        "Web Scene": "webscene"
-    };
     var Main = (function (_super) {
         __extends(Main, _super);
         function Main(params) {
@@ -118,14 +113,12 @@ define(["require", "exports", "esri/core/tsSupport/declareExtendsHelper", "esri/
                         return p;
                     }, {});
                     filteredResults = response.results.filter(function (item) {
-                        return filterKey_1[filterMap[item.type]];
+                        return filterKey_1[supportedItemTypes_1.default[item.type]];
                     });
                 }
                 else {
                     filteredResults = response.results.filter(function (item) {
-                        return item.type === "Web Map" ||
-                            item.type === "Web Mapping Application" ||
-                            item.type === "Web Scene";
+                        return supportedItemTypes_1.default[item.type];
                     });
                 }
                 var headComponent = (_this.state.boilerplateResult.config.showHeader ?

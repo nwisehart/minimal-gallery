@@ -18,5 +18,10 @@ define(["require", "exports", "./PanelBase"], function (require, exports, PanelB
     exports.AppPanel = function (props) { return (PanelBase_1.default(__assign({}, props, { captionColor: props.config.appCaptionColor, extItem: props.i18n.ui.itemExtTip, extLink: props.portalUrl + "/home/item.html?id=" + props.item.id, extTitle: props.i18n.ui.appExtTip, itemClickHandler: function () {
             props.itemClickHandler(props.item.url, "webapp");
         }, maxLink: props.item.url }))); };
+    exports.FilePanel = function (props) { return (PanelBase_1.default(__assign({}, props, { captionColor: props.config.fileCaptionColor, extItem: props.i18n.ui.itemExtTip, extLink: props.portalUrl + "/home/item.html?id=" + props.item.id, extTitle: props.i18n.ui.fileExtTip, itemClickHandler: function () {
+            // const fileWindow = window.open(`${props.item.itemUrl}/data`, "_blank");
+            // fileWindow.focus();
+            window.location.href = props.item.itemUrl + "/data";
+        }, maxLink: props.item.itemUrl + "/data" }))); };
 });
 //# sourceMappingURL=PanelComposites.js.map

@@ -1,4 +1,4 @@
-import { AppPanel, MapPanel, ScenePanel } from "./panels/PanelComposites";
+import { AppPanel, FilePanel, MapPanel, ScenePanel } from "./panels/PanelComposites";
 import { tsx } from "esri/widgets/support/widget";
 import createMapping from "../utilities/createMapping";
 
@@ -21,8 +21,11 @@ const itemMapping = createMapping(
             return MapPanel({ ...blob.props, item: blob.item, index });
         } else if (blob.item.type === "Web Mapping Application") {
             return AppPanel({ ...blob.props, item: blob.item, index });
+        } else if (blob.item.type === "Web Scene") {
+            return ScenePanel({ ...blob.props, item: blob.item, index });
+        } else {
+            return FilePanel({ ...blob.props, item: blob.item, index });
         }
-        return ScenePanel({ ...blob.props, item: blob.item, index });
     },
     () => {
         return null;

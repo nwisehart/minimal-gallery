@@ -7,17 +7,12 @@ import { tsx, renderable } from "esri/widgets/support/widget";
 import * as Widget from "esri/widgets/Widget";
 import ApplicationBase from "../../boilerplate/ApplicationBase";
 import { ApplicationConfig } from "../../boilerplate/interfaces";
+import supportedItemTypes from "../utilities/supportedItemTypes";
 
 import Gallery from "./Gallery";
 import Header from "./Header";
 import Pager from "./Pager";
 import Viewer from "./Viewer";
-
-const filterMap = {
-    "Web Map": "webmap",
-    "Web Mapping Application": "webapp",
-    "Web Scene": "webscene"
-};
 
 interface State {
     boilerplate: ApplicationBase;
@@ -162,15 +157,14 @@ export default class Main extends declared(Widget) {
                     return p;
                 }, {});
                 filteredResults = response.results.filter((item) => {
-                    return filterKey[filterMap[item.type]];
+                    return filterKey[supportedItemTypes[item.type]];
                 });
             } else {
                 filteredResults = response.results.filter((item) => {
-                    return item.type === "Web Map" ||
-                        item.type === "Web Mapping Application" ||
-                        item.type === "Web Scene";
+                    return supportedItemTypes[item.type];
                 });
             }
+
 
             const headComponent = (
                 this.state.boilerplateResult.config.showHeader ?
@@ -194,6 +188,7 @@ export default class Main extends declared(Widget) {
                 total: filteredResults.length
             });
 
+            
             this.state = {
                 ...this.state,
                 galleryComponent: Gallery({

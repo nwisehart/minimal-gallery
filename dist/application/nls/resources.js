@@ -5,6 +5,7 @@ define({
       "mapExtTip": "Open Fullscreen Map",
       "sceneExtTip": "Open Fullscreen Scene",
       "appExtTip": "Open Fullscreen Application",
+      "fileExtTip": "Download File",
       "itemExtTip": "Open ArcGIS Online Item Page",
       "galleryTip": "Open in Gallery"
     },
