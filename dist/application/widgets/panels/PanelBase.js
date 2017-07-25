@@ -3,18 +3,21 @@ define(["require", "exports", "esri/widgets/support/widget"], function (require,
     Object.defineProperty(exports, "__esModule", { value: true });
     exports.default = function (props) {
         var author = props.config.showAuthor ? (widget_1.tsx("p", { class: "font-size--1 card-last hug-bottom author-text", key: props.item.title + "-author" }, props.item.owner)) : null;
-        var descriptionElement;
-        var itemDescription;
-        if (props.config.showItemDescriptions) {
-            var itemSnippet = props.item.snippet ? props.item.snippet : null;
-            if (itemSnippet.length > props.config.descriptionTruncLength) {
-                itemSnippet = itemSnippet.slice(0, props.config.descriptionTruncLength) + "...";
+        var tooltipSnippet;
+        if (props.config.showSummaryTooltip) {
+            tooltipSnippet = props.item.snippet ? props.item.snippet : null;
+            if (tooltipSnippet.length > props.config.tooltipTruncLength) {
+                tooltipSnippet = tooltipSnippet.slice(0, props.config.tooltipTruncLength) + "...";
             }
-            itemDescription = props.item.description ? extractContent(props.item.description) : null;
-            if (itemDescription && itemDescription.length > props.config.tooltipTruncLength) {
-                itemDescription = itemDescription.slice(0, props.config.tooltipTruncLength) + "...";
+        }
+        var cardSnippet;
+        var summaryElement;
+        if (props.config.showItemSummary) {
+            cardSnippet = props.item.snippet ? props.item.snippet : null;
+            if (cardSnippet.length > props.config.summaryTruncLength) {
+                cardSnippet = cardSnippet.slice(0, props.config.summaryTruncLength) + "...";
             }
-            descriptionElement = widget_1.tsx("p", { class: "item-description-text" }, itemSnippet);
+            summaryElement = widget_1.tsx("p", { class: "item-description-text" }, cardSnippet);
         }
         var PanelBaseComponent = {
             captionOpacity: 1,
@@ -29,10 +32,10 @@ define(["require", "exports", "esri/widgets/support/widget"], function (require,
                     widget_1.tsx("div", { class: "card-content", style: "color: " + props.config.fontColor },
                         widget_1.tsx("a", { title: props.i18n.ui.galleryTip, style: "color: " + props.config.linkColor },
                             widget_1.tsx("h5", { tabindex: "0", class: "clickable", onclick: props.itemClickHandler }, props.item.title)),
-                        descriptionElement,
+                        summaryElement,
                         author,
                         widget_1.tsx("div", { class: "open-out-container" },
-                            widget_1.tsx("a", { class: "open-out-icon btn btn-transparent toolbar-tooltip", "aria-label": itemDescription ? itemDescription : props.extItem, title: props.extItem, href: props.extLink, style: "color: " + props.config.buttonBgColor, key: props.item.title + "-info-icon" },
+                            widget_1.tsx("a", { class: "open-out-icon btn btn-transparent toolbar-tooltip", "aria-label": tooltipSnippet ? tooltipSnippet : props.extItem, title: props.extItem, href: props.extLink, style: "color: " + props.config.buttonBgColor, key: props.item.title + "-info-icon" },
                                 widget_1.tsx("svg", { xmlns: "http://www.w3.org/2000/svg", width: "32", height: "32", viewBox: "0 0 32 32", class: "svg-icon" },
                                     widget_1.tsx("path", { d: "M31.297 16.047c0 8.428-6.826 15.25-15.25 15.25S.797 24.475.797 16.047c0-8.424 6.826-15.25 15.25-15.25s15.25 6.826 15.25 15.25zM18 24V12h-4v12h-2v2h8v-2h-2zm0-18h-4v4h4V6z" }))),
                             widget_1.tsx("a", { class: "open-out-icon btn btn-transparent toolbar-tooltip", "aria-label": props.extTitle, title: props.extTitle, href: props.maxLink, style: "color: " + props.config.buttonBgColor, key: props.item.title + "-open-out-icon" },

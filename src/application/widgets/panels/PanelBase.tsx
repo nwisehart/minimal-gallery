@@ -23,18 +23,22 @@ export default (props: IPanelProps) => {
         </p>
     ) : null;
 
-    let descriptionElement;
-    let itemDescription;
-    if (props.config.showItemDescriptions) {
-        let itemSnippet = props.item.snippet ? props.item.snippet : null;
-        if (itemSnippet.length > props.config.descriptionTruncLength) {
-            itemSnippet = itemSnippet.slice(0, props.config.descriptionTruncLength) + "...";
+    let tooltipSnippet;
+    if (props.config.showSummaryTooltip) {
+        tooltipSnippet = props.item.snippet ? props.item.snippet : null;
+        if (tooltipSnippet.length > props.config.tooltipTruncLength) {
+            tooltipSnippet = tooltipSnippet.slice(0, props.config.tooltipTruncLength) + "...";
         }
-        itemDescription = props.item.description ? extractContent(props.item.description) : null;
-        if (itemDescription && itemDescription.length > props.config.tooltipTruncLength) {
-            itemDescription = itemDescription.slice(0, props.config.tooltipTruncLength) + "...";
+    }
+
+    let cardSnippet;
+    let summaryElement;
+    if (props.config.showItemSummary) {
+        cardSnippet = props.item.snippet ? props.item.snippet : null;
+        if (cardSnippet.length > props.config.summaryTruncLength) {
+            cardSnippet = cardSnippet.slice(0, props.config.summaryTruncLength) + "...";
         }
-        descriptionElement = <p class="item-description-text">{itemSnippet}</p>;
+        summaryElement = <p class="item-description-text">{cardSnippet}</p>;
     }
 
     const PanelBaseComponent = {
@@ -85,12 +89,12 @@ export default (props: IPanelProps) => {
                                 {props.item.title}
                             </h5>
                         </a>
-                        {descriptionElement}
+                        {summaryElement}
                         {author}
                         <div class="open-out-container">
                             <a
                                 class="open-out-icon btn btn-transparent toolbar-tooltip"
-                                aria-label={itemDescription ? itemDescription : props.extItem}
+                                aria-label={tooltipSnippet ? tooltipSnippet : props.extItem}
                                 title={props.extItem}
                                 href={props.extLink}
                                 style={`color: ${props.config.buttonBgColor}`}

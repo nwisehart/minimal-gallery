@@ -5,6 +5,7 @@ interface IPanelCompositeProps {
         [propName: string]: any;
     };
     i18n: any;
+    index: number;
     item: any;
     itemClickHandler: any;
     portalUrl: string;
