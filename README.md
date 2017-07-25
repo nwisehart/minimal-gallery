@@ -33,8 +33,10 @@ This is a group gallery built with the Esri [ArcGIS API for JavaScript v4.4](htt
 - `"agolLinkText"`: The text displayed for the link to ArcGIS Online (or custom URL)
 - `"agolLinkLocation"`: The URL for the link displayed next to the gallery title. *`${GROUP_ID}` will be replaced dynamically with the ID of the group whose items are being displayed in the gallery*
 - `"itemsPerPage"`: The number of items to display per gallery page
-- `"showItemDescriptions"`: Boolean value controlling whether or not the item descriptions will be displayed under the title in the corresponding card
-- `"descriptionTruncLength"`: Specifies the number of characters to allow an item description to extend before truncating it with an ellipsis
+- `"showItemSummary"`: Boolean value controlling whether or not the item summaries will be displayed under the title in the corresponding card
+- `"summaryTruncLength"`: Specifies the number of characters to allow an item summary in the gallery card to extend before truncating it with an ellipsis
+- `"showSummaryTooltip"`: Boolean value controlling whether or not the 'Open ArcGIS Online Item Page' icon in the bottom right of the card will have a tooltip showing the summary for the item.
+- `"tooltipTruncLength"`: Specifies the number of characters to allow an item summary in the 'Open in ArcGIS Online' tooltip to extend before truncating it with an ellipsis
 - `"compassWidget"`: Controls the rendering of a [Compass](https://developers.arcgis.com/javascript/latest/api-reference/esri-widgets-Compass.html) widget on gallery-embedded or fullscreen maps and scenes
 - `"homeWidget"`: Controls the rendering of a [Home](https://developers.arcgis.com/javascript/latest/api-reference/esri-widgets-Home.html) widget on gallery-embedded or fullscreen maps and scenes
 - `"legendWidget"`: Controls the rendering of a [Legend](https://developers.arcgis.com/javascript/latest/api-reference/esri-widgets-Legend.html) widget on gallery-embedded or fullscreen maps and scenes
