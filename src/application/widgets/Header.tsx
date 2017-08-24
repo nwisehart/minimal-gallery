@@ -23,6 +23,20 @@ export default (props: IHeaderProps) => {
             </form>
         </nav>
     ) : null;
+    const tabletHeadSearch = props.config.headerSearch ? (
+        <nav class="class-top-nav-list right" role="navigation" title="usernav">
+            <form class="inline-block padding-leader-half" role="search" onsubmit={props.onSearch}>
+                <input
+                    title={props.config.searchPlaceholder}
+                    type="search"
+                    placeholder={props.config.searchPlaceholder}
+                    name="q" style="margin-top: -1px;"
+                    oninput={handleSearchChange}
+                />
+                <button type="submit" class="hide">{props.config.searchPlaceholder}</button>
+            </form>
+        </nav>
+    ) : null;
     const headImage = props.config.headerImage ? (
         <img src={props.config.headerImageLocation} class="header-image" alt={props.config.headerText} />
     ) : null;
@@ -60,8 +74,8 @@ export default (props: IHeaderProps) => {
                                             {props.config.headerText}
                                         </a>
                                     </a>
+                                    {tabletHeadSearch}
                                 </header>
-                                {headSearch}
                             </div>
                         </div>
 

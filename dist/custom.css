@@ -175,3 +175,12 @@
     white-space: pre-line;
     border-collapse: separate;
 }
+
+.card-below-image-caption {
+    transition: all 0.3s ease-in-out;
+    width: 100%;
+    box-sizing: border-box;
+    font-size: 0.875rem;
+    line-height: 1.55rem;
+    padding: .35rem 1.25rem .35rem 1.25rem;
+}

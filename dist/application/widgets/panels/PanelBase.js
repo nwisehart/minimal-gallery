@@ -20,10 +20,19 @@ define(["require", "exports", "esri/widgets/support/widget"], function (require,
             summaryElement = widget_1.tsx("p", { class: "item-description-text" }, cardSnippet);
         }
         var PanelBaseComponent = {
+            captionBelowOpacity: 0.8,
             captionOpacity: 1,
             captionTransform: 0,
             render: function () {
-                var caption = props.config.showItemType ? (widget_1.tsx("div", { class: "card-image-caption", style: "\n                        opacity: " + PanelBaseComponent.captionOpacity + ";\n                        transform: translate(0, " + PanelBaseComponent.captionTransform + "%);\n                        background-color: " + convertHex(props.captionColor, 80) + ";\n                        color: " + props.config.captionTextColor + "\n                    " }, props.item.displayName)) : null;
+                var caption = null;
+                if (props.config.showItemType) {
+                    if (props.config.itemTypeBelowThumbnail) {
+                        caption = (widget_1.tsx("div", { class: "card-below-image-caption", style: "\n                                opacity: " + PanelBaseComponent.captionBelowOpacity + ";\n                                background-color: " + convertHex(props.captionColor, 80) + ";\n                                color: " + props.config.captionTextColor + "\n                            " }, props.item.displayName));
+                    }
+                    else {
+                        caption = (widget_1.tsx("div", { class: "card-image-caption", style: "\n                                opacity: " + PanelBaseComponent.captionOpacity + ";\n                                transform: translate(0, " + PanelBaseComponent.captionTransform + "%);\n                                background-color: " + convertHex(props.captionColor, 80) + ";\n                                color: " + props.config.captionTextColor + "\n                            " }, props.item.displayName));
+                    }
+                }
                 return (widget_1.tsx("div", { class: "card block trailer-1 animate-fade-in card-fade", style: "background-color: " + props.config.cardColor + "; z-index: " + (1000 - props.index), key: props.item.title + "-div" },
                     widget_1.tsx("figure", { class: "card-image-wrap" },
                         widget_1.tsx("a", { title: props.i18n.ui.galleryTip, role: "link", tabindex: "0", onkeypress: handleKeyPress },
@@ -44,10 +53,12 @@ define(["require", "exports", "esri/widgets/support/widget"], function (require,
             }
         };
         function handleMouseOver() {
+            PanelBaseComponent.captionBelowOpacity = 1;
             PanelBaseComponent.captionOpacity = 0;
             PanelBaseComponent.captionTransform = 100;
         }
         function handleMouseOut() {
+            PanelBaseComponent.captionBelowOpacity = 0.8;
             PanelBaseComponent.captionOpacity = 1;
             PanelBaseComponent.captionTransform = 0;
         }

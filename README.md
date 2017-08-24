@@ -23,6 +23,7 @@ This is a group gallery built with the Esri [ArcGIS API for JavaScript v4.4](htt
 - `"sortField"`: The field by which items will be sorted in the gallery
 - `"showHeader"`: A boolean (true/false) value controlling whether or not the header will be displayed
 - `"showItemType"`: A boolean (true/false) value controlling whether or not item types will be displayed for each gallery item
+- `"itemTypeBelowThumbnail"`: Boolean value controlling where the item type will be displayed. If this is set to false, the item type will be displayed over the thumbnail and fade out on mouse-over. If set to true, the item type is displayed below the thumbnail.
 - `"headerText"`: The gallery title shown in the header
 - `"headerTextColor"`: The color of the header text
 - `"headerTextURL"`: A location for the gallery title to link to

@@ -42,23 +42,42 @@ export default (props: IPanelProps) => {
     }
 
     const PanelBaseComponent = {
+        captionBelowOpacity: 0.8,
         captionOpacity: 1,
         captionTransform: 0,
 
         render() {
-            const caption = props.config.showItemType ? (
-                <div
-                    class="card-image-caption"
-                    style={`
-                        opacity: ${PanelBaseComponent.captionOpacity};
-                        transform: translate(0, ${PanelBaseComponent.captionTransform}%);
-                        background-color: ${convertHex(props.captionColor, 80)};
-                        color: ${props.config.captionTextColor}
-                    `}
-                >
-                    {props.item.displayName}
-                </div>
-            ) : null;
+            let caption = null;
+            if (props.config.showItemType) {
+                if (props.config.itemTypeBelowThumbnail) {
+                    caption = (
+                        <div
+                            class="card-below-image-caption"
+                            style={`
+                                opacity: ${PanelBaseComponent.captionBelowOpacity};
+                                background-color: ${convertHex(props.captionColor, 80)};
+                                color: ${props.config.captionTextColor}
+                            `}
+                        >
+                            {props.item.displayName}
+                        </div>
+                    );
+                } else {
+                    caption = (
+                        <div
+                            class="card-image-caption"
+                            style={`
+                                opacity: ${PanelBaseComponent.captionOpacity};
+                                transform: translate(0, ${PanelBaseComponent.captionTransform}%);
+                                background-color: ${convertHex(props.captionColor, 80)};
+                                color: ${props.config.captionTextColor}
+                            `}
+                        >
+                            {props.item.displayName}
+                        </div>
+                    );
+                }
+            }
 
             return (
                 <div
@@ -138,11 +157,13 @@ export default (props: IPanelProps) => {
     };
 
     function handleMouseOver() {
+        PanelBaseComponent.captionBelowOpacity = 1;
         PanelBaseComponent.captionOpacity = 0;
         PanelBaseComponent.captionTransform = 100;
     }
 
     function handleMouseOut() {
+        PanelBaseComponent.captionBelowOpacity = 0.8;
         PanelBaseComponent.captionOpacity = 1;
         PanelBaseComponent.captionTransform = 0;
     }

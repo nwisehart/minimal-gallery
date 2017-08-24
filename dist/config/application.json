@@ -16,6 +16,7 @@
   "sortField": "title",
   "showHeader": true,
   "showItemType": true,
+  "itemTypeBelowThumbnail": true,
   "headerText": "Group Gallery",
   "headerTextColor": "#000000",
   "headerTextURL": "http://www.esri.com/",
