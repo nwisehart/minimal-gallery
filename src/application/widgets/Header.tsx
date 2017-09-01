@@ -43,7 +43,7 @@ export default (props: IHeaderProps) => {
     const agolLink = props.config.showAgolLink ? (
         <a
             class="top-nav-link"
-            href={props.config.agolLinkLocation.replace("${GROUP_ID}", props.config.group)}
+            href={appendProtocol(props.config.agolLinkLocation.replace("${GROUP_ID}", props.config.group))}
             style={`color: ${props.config.headerTextColor}`}
             title={props.config.agolLinkText}
         >
@@ -96,3 +96,10 @@ export default (props: IHeaderProps) => {
         }
     }
 };
+
+function appendProtocol(location) {
+    if (location.indexOf("http") === 0) {
+        return location;
+    }
+    return `http://${location}`;
+}

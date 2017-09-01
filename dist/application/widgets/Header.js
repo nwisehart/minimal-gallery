@@ -11,7 +11,7 @@ define(["require", "exports", "esri/widgets/support/widget"], function (require,
                 widget_1.tsx("input", { title: props.config.searchPlaceholder, type: "search", placeholder: props.config.searchPlaceholder, name: "q", style: "margin-top: -1px;", oninput: handleSearchChange }),
                 widget_1.tsx("button", { type: "submit", class: "hide" }, props.config.searchPlaceholder)))) : null;
         var headImage = props.config.headerImage ? (widget_1.tsx("img", { src: props.config.headerImageLocation, class: "header-image", alt: props.config.headerText })) : null;
-        var agolLink = props.config.showAgolLink ? (widget_1.tsx("a", { class: "top-nav-link", href: props.config.agolLinkLocation.replace("${GROUP_ID}", props.config.group), style: "color: " + props.config.headerTextColor, title: props.config.agolLinkText }, props.config.agolLinkText)) : null;
+        var agolLink = props.config.showAgolLink ? (widget_1.tsx("a", { class: "top-nav-link", href: appendProtocol(props.config.agolLinkLocation.replace("${GROUP_ID}", props.config.group)), style: "color: " + props.config.headerTextColor, title: props.config.agolLinkText }, props.config.agolLinkText)) : null;
         return {
             render: function () {
                 return (widget_1.tsx("header", { class: "top-nav fade-in", style: "background-color: " + props.config.headColor },
@@ -41,5 +41,11 @@ define(["require", "exports", "esri/widgets/support/widget"], function (require,
             }
         }
     };
+    function appendProtocol(location) {
+        if (location.indexOf("http") === 0) {
+            return location;
+        }
+        return "http://" + location;
+    }
 });
 //# sourceMappingURL=Header.js.map
