@@ -61,10 +61,8 @@ export const FilePanel = (props: IPanelCompositeProps) => (
         extLink: `${props.portalUrl}/home/item.html?id=${props.item.id}`,
         extTitle: props.i18n.ui.fileExtTip,
         itemClickHandler: () => {
-            // const fileWindow = window.open(`${props.item.itemUrl}/data`, "_blank");
-            // fileWindow.focus();
-            window.location.href = `${props.item.itemUrl}/data`;
+            window.location.href = `${props.portalUrl}/home/item.html?id=${props.item.id}`;
         },
-        maxLink: `${props.item.itemUrl}/data`
+        maxLink: null
     })
 );

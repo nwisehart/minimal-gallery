@@ -18,7 +18,7 @@ interface IPanelProps {
 
 export default (props: IPanelProps) => {
     const author = props.config.showAuthor ? (
-        <p class="font-size--1 card-last hug-bottom author-text break-word" key={`${props.item.title}-author`}>
+        <p class="font-size--1 card-last hug-bottom author-text" key={`${props.item.title}-author`}>
             {props.item.owner}
         </p>
     ) : null;
@@ -39,6 +39,35 @@ export default (props: IPanelProps) => {
             cardSnippet = cardSnippet.slice(0, props.config.summaryTruncLength) + "...";
         }
         summaryElement = <p class="item-description-text">{cardSnippet}</p>;
+    }
+
+    let maxLink
+    if (props.maxLink) {
+        maxLink = (
+            <a
+                class="open-out-icon btn btn-transparent toolbar-tooltip"
+                aria-label={props.extTitle}
+                title={props.extTitle}
+                href={props.maxLink}
+                style={`color: ${props.config.buttonBgColor}`}
+                key={`${props.item.title}-open-out-icon`}
+            >
+                <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="32"
+                    height="32"
+                    viewBox="0 0 32 32"
+                    class="svg-icon"
+                >
+                    <path d="M2 4v24h28V4H2zm26 22H4V10h24v16z"/>
+                </svg>
+            </a>
+        );
+    }
+
+    let mainTip = props.i18n.ui.galleryTip;
+    if (!props.maxLink) {
+        mainTip = props.i18n.ui.itemExtTip;
     }
 
     const PanelBaseComponent = {
@@ -86,7 +115,7 @@ export default (props: IPanelProps) => {
                     key={`${props.item.title}-div`}
                 >
                     <figure class="card-image-wrap">
-                        <a title={props.i18n.ui.galleryTip} role="link" tabindex="0" onkeypress={handleKeyPress}>
+                        <a title={mainTip} role="link" tabindex="0" onkeypress={handleKeyPress}>
                             <img class="card-image clickable thumbnail-min"
                                 img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"
                                 alt={props.item.title}
@@ -103,7 +132,7 @@ export default (props: IPanelProps) => {
                         {caption}
                     </figure>
                     <div class="card-content" style={`color: ${props.config.fontColor}`}>
-                        <a title={props.i18n.ui.galleryTip} style={`color: ${props.config.linkColor}`} class="break-word">
+                        <a title={mainTip} style={`color: ${props.config.linkColor}`} class="break-word">
                             <h5 tabindex="0" class="clickable" onclick={props.itemClickHandler}>
                                 {props.item.title}
                             </h5>
@@ -131,24 +160,7 @@ export default (props: IPanelProps) => {
                                     />
                                 </svg>
                             </a>
-                            <a
-                                class="open-out-icon btn btn-transparent toolbar-tooltip"
-                                aria-label={props.extTitle}
-                                title={props.extTitle}
-                                href={props.maxLink}
-                                style={`color: ${props.config.buttonBgColor}`}
-                                key={`${props.item.title}-open-out-icon`}
-                            >
-                                <svg
-                                    xmlns="http://www.w3.org/2000/svg"
-                                    width="32"
-                                    height="32"
-                                    viewBox="0 0 32 32"
-                                    class="svg-icon"
-                                >
-                                    <path d="M2 4v24h28V4H2zm26 22H4V10h24v16z"/>
-                                </svg>
-                            </a>
+                            {maxLink}
                         </div>
                     </div>
                 </div>

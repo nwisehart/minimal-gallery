@@ -48,7 +48,7 @@ export default (props: IGalleryProps) => {
             return (
                 <div class="grid-container leader-1">
                     <div class="column-24">
-                        <div class="block-group block-group-5-up tablet-block-group-2-up phone-block-group-1-up">
+                        <div class="block-group block-group-5-up tablet-block-group-3-up phone-block-group-1-up">
                             {itemMapping.results.map((item) => item.render())}
                         </div>
                     </div>

@@ -42,7 +42,7 @@ define(["require", "exports", "./panels/PanelComposites", "esri/widgets/support/
             render: function () {
                 return (widget_1.tsx("div", { class: "grid-container leader-1" },
                     widget_1.tsx("div", { class: "column-24" },
-                        widget_1.tsx("div", { class: "block-group block-group-5-up tablet-block-group-2-up phone-block-group-1-up" }, itemMapping.results.map(function (item) { return item.render(); })))));
+                        widget_1.tsx("div", { class: "block-group block-group-5-up tablet-block-group-3-up phone-block-group-1-up" }, itemMapping.results.map(function (item) { return item.render(); })))));
             }
         };
     };

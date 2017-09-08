@@ -128,8 +128,11 @@
 }
 
 .author-text {
+    padding-right: 5px;
     font-style: italic;
     max-width: calc(100% - 5rem);
+    overflow: hidden;
+    text-overflow: ellipsis;
 }
 
 .toolbar-tooltip:hover:before {
@@ -188,4 +191,18 @@
 
 .break-word {
     word-wrap: break-word;
+}
+
+@media screen and (max-width: 1200px) and (min-width: 860px) {
+    .block-group-5-up > .block {
+    -ms-flex-preferred-size: calc(25% - 1.5rem);
+    flex-basis: calc(25% - 1.5rem);
+    width: calc(25% - 1.5rem); }
+}
+
+@media screen and (max-width: 640px) and (min-width: 480px) {
+    .block-group-5-up > .block {
+    -ms-flex-preferred-size: calc(50% - 1.5rem);
+    flex-basis: calc(50% - 1.5rem);
+    width: calc(50% - 1.5rem); }
 }
