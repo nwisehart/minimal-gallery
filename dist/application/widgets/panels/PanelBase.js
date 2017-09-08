@@ -2,7 +2,7 @@ define(["require", "exports", "esri/widgets/support/widget"], function (require,
     "use strict";
     Object.defineProperty(exports, "__esModule", { value: true });
     exports.default = function (props) {
-        var author = props.config.showAuthor ? (widget_1.tsx("p", { class: "font-size--1 card-last hug-bottom author-text", key: props.item.title + "-author" }, props.item.owner)) : null;
+        var author = props.config.showAuthor ? (widget_1.tsx("p", { class: "font-size--1 card-last hug-bottom author-text break-word", key: props.item.title + "-author" }, props.item.owner)) : null;
         var tooltipSnippet;
         if (props.config.showSummaryTooltip) {
             tooltipSnippet = props.item.snippet ? props.item.snippet : null;
@@ -33,13 +33,13 @@ define(["require", "exports", "esri/widgets/support/widget"], function (require,
                         caption = (widget_1.tsx("div", { class: "card-image-caption", style: "\n                                opacity: " + PanelBaseComponent.captionOpacity + ";\n                                transform: translate(0, " + PanelBaseComponent.captionTransform + "%);\n                                background-color: " + convertHex(props.captionColor, 80) + ";\n                                color: " + props.config.captionTextColor + "\n                            " }, props.item.displayName));
                     }
                 }
-                return (widget_1.tsx("div", { class: "card block trailer-1 animate-fade-in card-fade", style: "background-color: " + props.config.cardColor + "; z-index: " + (1000 - props.index), key: props.item.title + "-div" },
+                return (widget_1.tsx("div", { class: "card block trailer-1 animate-fade-in card-fade", style: "background-color: " + props.config.cardColor + "; z-index: " + 1000, key: props.item.title + "-div" },
                     widget_1.tsx("figure", { class: "card-image-wrap" },
                         widget_1.tsx("a", { title: props.i18n.ui.galleryTip, role: "link", tabindex: "0", onkeypress: handleKeyPress },
                             widget_1.tsx("img", { class: "card-image clickable thumbnail-min", img: true, src: "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7", alt: props.item.title, onmouseover: handleMouseOver, onmouseleave: handleMouseOut, onclick: props.itemClickHandler, style: "\n                                    background-image: url(" + props.item.thumbnailUrl + ");\n                                    background-repeat: no-repeat;\n                                    background-size: cover;\n                                " })),
                         caption),
                     widget_1.tsx("div", { class: "card-content", style: "color: " + props.config.fontColor },
-                        widget_1.tsx("a", { title: props.i18n.ui.galleryTip, style: "color: " + props.config.linkColor },
+                        widget_1.tsx("a", { title: props.i18n.ui.galleryTip, style: "color: " + props.config.linkColor, class: "break-word" },
                             widget_1.tsx("h5", { tabindex: "0", class: "clickable", onclick: props.itemClickHandler }, props.item.title)),
                         summaryElement,
                         author,

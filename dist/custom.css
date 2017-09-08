@@ -129,6 +129,7 @@
 
 .author-text {
     font-style: italic;
+    max-width: calc(100% - 5rem);
 }
 
 .toolbar-tooltip:hover:before {
@@ -183,4 +184,8 @@
     font-size: 0.875rem;
     line-height: 1.55rem;
     padding: .35rem 1.25rem .35rem 1.25rem;
+}
+
+.break-word {
+    word-wrap: break-word;
 }

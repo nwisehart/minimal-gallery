@@ -18,7 +18,7 @@ interface IPanelProps {
 
 export default (props: IPanelProps) => {
     const author = props.config.showAuthor ? (
-        <p class="font-size--1 card-last hug-bottom author-text" key={`${props.item.title}-author`}>
+        <p class="font-size--1 card-last hug-bottom author-text break-word" key={`${props.item.title}-author`}>
             {props.item.owner}
         </p>
     ) : null;
@@ -82,7 +82,7 @@ export default (props: IPanelProps) => {
             return (
                 <div
                     class="card block trailer-1 animate-fade-in card-fade"
-                    style={`background-color: ${props.config.cardColor}; z-index: ${1000 - props.index}`}
+                    style={`background-color: ${props.config.cardColor}; z-index: ${1000}`}
                     key={`${props.item.title}-div`}
                 >
                     <figure class="card-image-wrap">
@@ -103,7 +103,7 @@ export default (props: IPanelProps) => {
                         {caption}
                     </figure>
                     <div class="card-content" style={`color: ${props.config.fontColor}`}>
-                        <a title={props.i18n.ui.galleryTip} style={`color: ${props.config.linkColor}`}>
+                        <a title={props.i18n.ui.galleryTip} style={`color: ${props.config.linkColor}`} class="break-word">
                             <h5 tabindex="0" class="clickable" onclick={props.itemClickHandler}>
                                 {props.item.title}
                             </h5>
