@@ -1,25 +1,19 @@
-var package_path = window.location.pathname.substring(0, window.location.pathname.lastIndexOf("/"));
+
+var file_path = window.location.pathname;
+var dist_path = file_path.slice(0, file_path.lastIndexOf("/"));
+var application_path = dist_path.slice(0, dist_path.lastIndexOf("/"));
+var template_apps_path = application_path.slice(0, application_path.lastIndexOf("/"));
+
 dojoConfig = {
   async: true,
   packages: [
     {
-      name: "application",
-      location: package_path + "/application",
-      main: "entrypoint"
-    },
-    {
-      name: "boilerplate",
-      location: package_path + "/boilerplate",
-      main: "boilerplate"
+      name: "esriApplicationBase",
+      location: template_apps_path + "/node_modules/@esri/application-base-js"
     },
     {
       name: "config",
-      location: package_path + "/config"
-    },
-    {
-      name: "viewApp",
-      location: package_path + "/viewApp",
-      main: "entrypoint"
+      location: dist_path + "/config"
     }
   ]
 };
