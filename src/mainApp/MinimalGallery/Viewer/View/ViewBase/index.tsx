@@ -111,7 +111,6 @@ export default class ViewBase extends Component<ViewState, ComponentState> {
             "top-left": true,
             "top-right": true
         };
-        console.log(this.props.widgets);
         const modules = Object.keys(this.props.widgets).reduce((p, c, i) => {
             if (positions[this.props.widgets[c]]) {
                 p.push({

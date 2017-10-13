@@ -35,7 +35,11 @@ This is a group gallery built with the Esri [ArcGIS API for JavaScript v4.4](htt
 - `"agolLinkText"`: The text displayed for the link to ArcGIS Online (or custom URL)
 - `"agolLinkLocation"`: The URL for the link displayed next to the gallery title. *`${GROUP_ID}` will be replaced dynamically with the ID of the group whose items are being displayed in the gallery*
 - `"itemsPerPage"`: The number of items to display per gallery page
-- `"showItemSummary"`: Boolean value controlling whether or not the item summaries will be displayed under the title in the corresponding card
+- `"showItemTitle"`: Boolean value controlling whether or not the item title will be displayed in each card
+- `"showItemSummary"`: Boolean value controlling whether or not the item summaries will be displayed in each card
+- `"showItemPageLink"`: Boolean value controlling whether or not the item page link will be displayed
+- `"openFullscreenSeparateTab"`: If true, opening maps, apps and scenes from the gallery fullscreen will always create a new tab
+- `"alwaysOpenFullscreen"`: If true, maps, apps and scenes will always be opened fullscreen instead of in the gallery
 - `"summaryTruncLength"`: Specifies the number of characters to allow an item summary in the gallery card to extend before truncating it with an ellipsis
 - `"showSummaryTooltip"`: Boolean value controlling whether or not the 'Open ArcGIS Online Item Page' icon in the bottom right of the card will have a tooltip showing the summary for the item.
 - `"tooltipTruncLength"`: Specifies the number of characters to allow an item summary in the 'Open in ArcGIS Online' tooltip to extend before truncating it with an ellipsis

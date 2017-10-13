@@ -3,7 +3,7 @@ import { PUSH, locationChange } from "../_actions";
 export const router = () => (next: any) => (action: any) => {
     switch (action.type) {
         case PUSH:
-            history.pushState(action.payload, "", action.payload);
+            window.history.pushState(action.payload, "", action.payload);
             break;
         default:
             return next(action);
@@ -17,7 +17,7 @@ export function startHistoryListener(store: __Component.Store) {
         hash: window.location.hash
     }));
 
-    history["onpushstate"] = (event: any) => {
+    window.history["onpushstate"] = (event: any) => {
         const url = new URL(`${window.location.origin}${window.location.pathname}${event.state}`);
         store.dispatch(locationChange({
             pathname: url.pathname,
@@ -37,8 +37,8 @@ export function startHistoryListener(store: __Component.Store) {
 }
 
 (function(history: any){
-    var pushState = history.pushState;
-    history.pushState = function(state: any) {
+    var pushState = window.history.pushState;
+    window.history.pushState = function(state: any) {
         if (typeof history.onpushstate == "function") {
             history.onpushstate({ state });
         }

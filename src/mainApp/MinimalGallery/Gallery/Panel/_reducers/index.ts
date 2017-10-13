@@ -7,11 +7,13 @@ export interface PanelState {
     item: __Component.Pojo;
     hovering: boolean;
     getPanelType: (itemType: string) => string;
+    itemType: string;
 }
 
 const applicationBaseResult = (state: __esriApplicationBase.ApplicationConfig = {}) => state;
 const i18n = (state: __Component.Pojo = {}) => state;
 const item = (state: __Component.Pojo = {}) => state;
+const itemType = (state: string = "file") => state;
 
 const getPanelType = (
     state: (itemType: string) => string = (itemType) => {
@@ -41,5 +43,6 @@ export const reducers = combineReducers({
     i18n,
     item,
     hovering,
-    getPanelType
+    getPanelType,
+    itemType
 });

@@ -4,6 +4,7 @@ import Panel, { PanelState, reducers } from "./Panel";
 import { SHOW_IN_VIEWER, SHOW_FULLSCREEN } from "./Panel/_actions";
 import { push } from "../_actions";
 import { MinimalGalleryState } from "..";
+import supportedItemTypes from "../_utilities/supportedItemTypes";
 
 const { addListener } = middlewares;
 
@@ -77,7 +78,8 @@ export default class Gallery extends Component<MinimalGalleryState, ComponentSta
                         initialState: {
                             applicationBaseResult: this.props.base.applicationBaseResult,
                             i18n: this.props.base.i18n,
-                            item
+                            item,
+                            itemType: supportedItemTypes[item.type]
                         },
                         middlewares: [addListener(this.handleChildUpdate)]
                     }}

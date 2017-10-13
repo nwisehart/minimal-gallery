@@ -53,27 +53,67 @@ export default class Panel extends Component<PanelState, ComponentState> {
             summaryElement = <p class="item-description-text">{cardSnippet}</p>;
         }
 
-        const maxLink = (
-            <a
-                class="open-out-icon btn btn-transparent toolbar-tooltip"
-                aria-label={i18n.ui[`${this.state.panelType}ExtTip`]}
-                style={`color: ${config.buttonBgColor}`}
-                key={`${this.props.item.title}-open-out-icon`}
-                onclick={this.handleMaxClick}
-            >
-                <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    width="32"
-                    height="32"
-                    viewBox="0 0 32 32"
-                    class="svg-icon"
+        let itemPageLink;
+        if (config.showItemPageLink) {
+            itemPageLink = (
+                <a
+                    class="open-out-icon btn btn-transparent toolbar-tooltip"
+                    aria-label={tooltipSnippet ? tooltipSnippet : i18n.ui.itemExtTip}
+                    href={`${this.props.applicationBaseResult.portal.url}/home/item.html?id=${this.props.item.id}`}
+                    style={`color: ${config.buttonBgColor}`}
+                    key={`${this.props.item.title}-info-icon`}
                 >
-                    <path d="M2 4v24h28V4H2zm26 22H4V10h24v16z"/>
-                </svg>
-            </a>
-        );
+                    <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        width="32"
+                        height="32"
+                        viewBox="0 0 32 32"
+                        class="svg-icon"
+                    >
+                        <path
+                            d="M31.297 16.047c0 8.428-6.826 15.25-15.25 15.25S.797 24.475.797 16.047c0-8.424 6.826-15.25 15.25-15.25s15.25 6.826 15.25 15.25zM18 24V12h-4v12h-2v2h8v-2h-2zm0-18h-4v4h4V6z"
+                        />
+                    </svg>
+                </a>
+            );
+        }
 
-        const mainTip = i18n.ui.galleryTip;
+        let maxLink;
+        if (this.props.itemType !== "file" && !config.alwaysOpenFullscreen) {
+            maxLink = (
+                <a
+                    class="open-out-icon btn btn-transparent toolbar-tooltip"
+                    aria-label={i18n.ui[`${this.state.panelType}ExtTip`]}
+                    style={`color: ${config.buttonBgColor}`}
+                    key={`${this.props.item.title}-open-out-icon`}
+                    onclick={this.handleMaxClick}
+                >
+                    <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        width="32"
+                        height="32"
+                        viewBox="0 0 32 32"
+                        class="svg-icon"
+                    >
+                        <path d="M2 4v24h28V4H2zm26 22H4V10h24v16z"/>
+                    </svg>
+                </a>
+            );
+        }
+
+        const mainTip = this.props.itemType === "file" ? i18n.ui.itemExtTip :
+            (config.alwaysOpenFullscreen ? i18n.ui[`${this.state.panelType}ExtTip`] : i18n.ui.galleryTip);
+
+        let title;
+        if (config.showItemTitle) {
+            title = (
+                <a title={mainTip} style={`color: ${config.linkColor}`} class="break-word">
+                    <h5 tabindex="0" class="clickable">
+                        {this.props.item.title}
+                    </h5>
+                </a>
+            );
+        }
 
         return (
             <div
@@ -101,33 +141,11 @@ export default class Panel extends Component<PanelState, ComponentState> {
                     <Caption key="card-caption" />
                 </figure>
                 <div class="card-content" style={`color: ${config.fontColor}`}>
-                    <a title={mainTip} style={`color: ${config.linkColor}`} class="break-word">
-                        <h5 tabindex="0" class="clickable">
-                            {this.props.item.title}
-                        </h5>
-                    </a>
+                    {title}
                     {summaryElement}
                     {author}
                     <div class="open-out-container">
-                        <a
-                            class="open-out-icon btn btn-transparent toolbar-tooltip"
-                            aria-label={tooltipSnippet ? tooltipSnippet : i18n.ui.itemExtTip}
-                            href={`${this.props.applicationBaseResult.portal.url}/home/item.html?id=${this.props.item.id}`}
-                            style={`color: ${config.buttonBgColor}`}
-                            key={`${this.props.item.title}-info-icon`}
-                        >
-                            <svg
-                                xmlns="http://www.w3.org/2000/svg"
-                                width="32"
-                                height="32"
-                                viewBox="0 0 32 32"
-                                class="svg-icon"
-                            >
-                                <path
-                                    d="M31.297 16.047c0 8.428-6.826 15.25-15.25 15.25S.797 24.475.797 16.047c0-8.424 6.826-15.25 15.25-15.25s15.25 6.826 15.25 15.25zM18 24V12h-4v12h-2v2h8v-2h-2zm0-18h-4v4h4V6z"
-                                />
-                            </svg>
-                        </a>
+                        {itemPageLink}
                         {maxLink}
                     </div>
                 </div>
@@ -144,10 +162,37 @@ export default class Panel extends Component<PanelState, ComponentState> {
     }
 
     private handleItemClick() {
-        this.dispatch(showInViewer());
+        if (this.props.itemType === "file") {
+            window.open(
+                `${this.props.applicationBaseResult.portal.url}/home/item.html?id=${this.props.item.id}`,
+                "_blank"
+            );
+        } else {
+            if (this.props.applicationBaseResult.config.alwaysOpenFullscreen) {
+                this.handleMaxClick();
+            } else {
+                this.dispatch(showInViewer());
+            }
+        }
     }
 
     private handleMaxClick() {
-        this.dispatch(showFullscreen());
+
+        if (this.props.applicationBaseResult.config.openFullscreenSeparateTab) {
+            if (this.props.itemType === "webapp") {
+                window.open(this.props.item.url, "_blank");
+            } else {
+                window.open(
+                    `${window.location.origin}${window.location.pathname}?viewer=${this.props.item.id}&fullscreen=true`,
+                    "_blank"
+                );
+            }
+        } else {
+            if (this.props.itemType === "webapp") {
+                window.location.href = this.props.item.url;
+            } else {
+                this.dispatch(showFullscreen());
+            }
+        }
     }
 }
