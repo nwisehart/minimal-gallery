@@ -68,7 +68,15 @@ export default class Panel extends Component<PanelState, ComponentState> {
                         width="32"
                         height="32"
                         viewBox="0 0 32 32"
-                        class="svg-icon"
+                        style={`
+                            fill: #0079c1;
+                            pointer-events: none;
+                            display: inline-block;
+                            width: 1em;
+                            height: 1em;
+                            vertical-align: -0.15em;
+                            padding-right: .15em;
+                        `}
                     >
                         <path
                             d="M31.297 16.047c0 8.428-6.826 15.25-15.25 15.25S.797 24.475.797 16.047c0-8.424 6.826-15.25 15.25-15.25s15.25 6.826 15.25 15.25zM18 24V12h-4v12h-2v2h8v-2h-2zm0-18h-4v4h4V6z"
@@ -93,7 +101,15 @@ export default class Panel extends Component<PanelState, ComponentState> {
                         width="32"
                         height="32"
                         viewBox="0 0 32 32"
-                        class="svg-icon"
+                        style={`
+                            fill: #0079c1;
+                            pointer-events: none;
+                            display: inline-block;
+                            width: 1em;
+                            height: 1em;
+                            vertical-align: -0.15em;
+                            padding-right: .15em;
+                        `}
                     >
                         <path d="M2 4v24h28V4H2zm26 22H4V10h24v16z"/>
                     </svg>

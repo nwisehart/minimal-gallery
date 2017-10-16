@@ -1,16 +1,15 @@
 export const PUSH = "ROUTER/PUSH";
 export const LOCATION_CHANGE = "ROUTER/LOCATION_CHANGE";
+export const HASH_CHANGE = "ROUTER/HASH_CHANGE";
 
 import { MinimalGalleryState } from "..";
 
-export const push = (href: string) => ({
+export const push = (hash: string) => ({
     type: PUSH,
-    payload: href,
+    payload: hash,
 });
 
-export const locationChange = (location: { pathname: string; search: string; hash: string }) => ({
-    type: LOCATION_CHANGE,
-    payload: {
-        ...location
-    }
+export const hashChange = (hash: string) => ({
+    type: HASH_CHANGE,
+    payload: hash
 });

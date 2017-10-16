@@ -103,9 +103,9 @@ export default class Viewer extends Component<MinimalGalleryState, ComponentStat
     }
 
     private closeViewer() {
-        const { search, hash } = this.props.router;
-        const searchParams = ioQuery.queryToObject(search.slice(1));
-        delete searchParams.viewer;
-        this.dispatch(push(`?${ioQuery.objectToQuery(searchParams)}${hash}`));
+        const { hash } = this.props.router;
+        const hashParams = ioQuery.queryToObject(hash);
+        delete hashParams.viewer;
+        this.dispatch(push(ioQuery.objectToQuery(hashParams)));
     }
 }

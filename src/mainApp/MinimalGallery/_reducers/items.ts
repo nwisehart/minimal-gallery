@@ -1,5 +1,5 @@
 import * as ioQuery from "dojo/io-query";
-import { UPDATE_ITEMS, FILTER_ITEMS, LOCATION_CHANGE } from "../_actions";
+import { UPDATE_ITEMS, FILTER_ITEMS, HASH_CHANGE } from "../_actions";
 
 export interface ItemsState {
     allItems: __Component.Pojo[];
@@ -22,21 +22,20 @@ export default (state: ItemsState = initialState, action: { type: string, payloa
                 ...state,
                 allItems: action.payload
             };
-        case LOCATION_CHANGE:
-            const { pathname, search, hash } = action.payload;
-            const searchParams = ioQuery.queryToObject(search.slice(1));
-            if (searchParams.viewer) {
-                const viewerItem = state.allItems.filter((item) => item.id === searchParams.viewer)[0];
+        case HASH_CHANGE:
+            const hashParams = ioQuery.queryToObject(action.payload);
+            if (hashParams.viewer) {
+                const viewerItem = state.allItems.filter((item) => item.id === hashParams.viewer)[0];
                 return {
                     ...state,
                     viewerItem: viewerItem ? viewerItem : {},
-                    filteredItems: filterItems(state.allItems, searchParams.q ? searchParams.q : ""),
+                    filteredItems: filterItems(state.allItems, hashParams.query ? hashParams.query : ""),
                     displayKey: Math.random().toString(36).substring(7)
                 };
             }
             return {
                 ...state,
-                filteredItems: filterItems(state.allItems, searchParams.q ? searchParams.q : ""),
+                filteredItems: filterItems(state.allItems, hashParams.query ? hashParams.query : ""),
                 displayKey: Math.random().toString(36).substring(7)
             };
         default:

@@ -1,14 +1,14 @@
 import * as ioQuery from "dojo/io-query";
-import { LOCATION_CHANGE } from "../_actions";
+import { HASH_CHANGE } from "../_actions";
 
 export type PageState = number;
 
 export default (state: PageState = 1, action: __Component.Action): PageState => {
     switch (action.type) {
-        case LOCATION_CHANGE:
-            const { hash } = action.payload;
-            if (hash.length > 0) {
-                return parseInt(hash.slice(1));
+        case HASH_CHANGE:
+            const hashParams = ioQuery.queryToObject(action.payload);
+            if (hashParams.page) {
+                return parseInt(hashParams.page, 10);
             }
             return 1;
         default:

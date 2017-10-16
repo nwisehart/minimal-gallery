@@ -4,7 +4,7 @@ export const LOAD_APP_PROGRESS = "LOAD_APP_PROGRESS";
 export const LOAD_APP_SUCCESS = "LOAD_APP_FINISH";
 
 import * as all from "dojo/promise/all";
-import { updateItems, push } from ".";
+import { updateItems, push, hashChange } from ".";
 import { MinimalGalleryState } from "..";
 import supportedItemTypes from "../_utilities/supportedItemTypes";
 
@@ -39,10 +39,10 @@ const queryGroupItems = (applicationBaseResult: __esriApplicationBase.Applicatio
                 const promises = response.results.map((item: any) => item.load());
                 all(promises).then(
                     (items: __Component.Pojo[]) => {
-                        const { search, hash } = state.router;
+                        const { hash } = state.router;
 
                         dispatch(updateItems(items.filter((item: __Component.Pojo) => supportedItemTypes[item.type])));
-                        dispatch(push(`${search}${hash}`));
+                        dispatch(hashChange(window.location.hash.slice(1)));
                         dispatch(loadAppSuccess());
                     },
                     (err: any) => dispatch(loadAppFail(err))

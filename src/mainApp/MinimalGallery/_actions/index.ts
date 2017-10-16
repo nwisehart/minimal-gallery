@@ -15,7 +15,7 @@ export {
 
 export {
     PUSH,
-    LOCATION_CHANGE,
+    HASH_CHANGE,
     push,
-    locationChange
+    hashChange
 } from "./router";

@@ -1,3 +1,4 @@
+import * as ioQuery from "dojo/io-query";
 import Component from "../../Component";
 import { MinimalGalleryState } from ".";
 import { push } from "./_actions";
@@ -98,10 +99,15 @@ export default class Pager extends Component<MinimalGalleryState> {
     }
 
     private handlePage(page: number) {
+        const { hash } = this.props.router;
+        const hashParams = ioQuery.queryToObject(hash);
         if (page > 1) {
-            this.dispatch(push(`${this.props.router.search}#${page}`));
+            hashParams.page = page;
         } else {
-            this.dispatch(push(`${this.props.router.search}`));
+            if (hashParams.page) {
+                delete hashParams.page;
+            }
         }
+        this.dispatch(push(ioQuery.objectToQuery(hashParams)));
     }
 }

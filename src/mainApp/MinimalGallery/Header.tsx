@@ -111,7 +111,7 @@ export default class Header extends Component<MinimalGalleryState, ComponentStat
 
     private handleSearch(e: any) {
         e.preventDefault();
-        const query = this.state.searchTerm.length > 0 ? `?q=${this.state.searchTerm}` : "?";
+        const query = this.state.searchTerm.length > 0 ? `query=${this.state.searchTerm}` : "";
         this.dispatch(push(`${query}`));
     }
 

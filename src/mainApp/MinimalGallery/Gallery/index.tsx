@@ -101,18 +101,18 @@ export default class Gallery extends Component<MinimalGalleryState, ComponentSta
     }
 
     private showInViewer(itemId: string) {
-        const { search, hash } = this.props.router;
-        const searchParams = ioQuery.queryToObject(search.slice(1));
-        searchParams.viewer = itemId;
-        this.dispatch(push(`?${ioQuery.objectToQuery(searchParams)}${hash}`));
+        const { hash } = this.props.router;
+        const hashParams = ioQuery.queryToObject(hash);
+        hashParams.viewer = itemId;
+        this.dispatch(push(ioQuery.objectToQuery(hashParams)));
     }
 
     private showFullscreen(itemId: string) {
-        const { search, hash } = this.props.router;
-        const searchParams = ioQuery.queryToObject(search.slice(1));
-        searchParams.viewer = itemId;
-        searchParams.fullscreen = true;
-        this.dispatch(push(`?${ioQuery.objectToQuery(searchParams)}${hash}`));
+        const { hash } = this.props.router;
+        const hashParams = ioQuery.queryToObject(hash);
+        hashParams.viewer = itemId;
+        hashParams.fullscreen = true;
+        this.dispatch(push(ioQuery.objectToQuery(hashParams)));
     }
 }
 
