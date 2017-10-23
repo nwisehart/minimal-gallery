@@ -62,6 +62,7 @@ export default class Panel extends Component<PanelState, ComponentState> {
                     href={`${this.props.applicationBaseResult.portal.url}/home/item.html?id=${this.props.item.id}`}
                     style={`color: ${config.buttonBgColor}`}
                     key={`${this.props.item.title}-info-icon`}
+                    tabindex="0"
                 >
                     <svg
                         xmlns="http://www.w3.org/2000/svg"
@@ -95,6 +96,7 @@ export default class Panel extends Component<PanelState, ComponentState> {
                     style={`color: ${config.buttonBgColor}`}
                     key={`${this.props.item.title}-open-out-icon`}
                     onclick={this.handleMaxClick}
+                    tabindex="0"
                 >
                     <svg
                         xmlns="http://www.w3.org/2000/svg"
