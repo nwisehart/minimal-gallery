@@ -21,6 +21,7 @@ export default class Panel extends Component<PanelState, ComponentState> {
         this.handleMouseOver = this.handleMouseOver.bind(this);
         this.handleMouseOut = this.handleMouseOut.bind(this);
         this.handleItemClick = this.handleItemClick.bind(this);
+        this.handleMaxKeyPress = this.handleMaxKeyPress.bind(this);
         this.handleMaxClick = this.handleMaxClick.bind(this);
     }
 
@@ -96,6 +97,7 @@ export default class Panel extends Component<PanelState, ComponentState> {
                     style={`color: ${config.buttonBgColor}`}
                     key={`${this.props.item.title}-open-out-icon`}
                     onclick={this.handleMaxClick}
+                    onkeypress={this.handleMaxKeyPress}
                     tabindex="0"
                 >
                     <svg
@@ -194,8 +196,13 @@ export default class Panel extends Component<PanelState, ComponentState> {
         }
     }
 
-    private handleMaxClick() {
+    private handleMaxKeyPress(e: KeyboardEvent) {
+        if (e.key === "Enter") {
+            this.handleMaxClick();
+        }
+    }
 
+    private handleMaxClick() {
         if (this.props.applicationBaseResult.config.openFullscreenSeparateTab) {
             if (this.props.itemType === "webapp") {
                 window.open(this.props.item.url, "_blank");
