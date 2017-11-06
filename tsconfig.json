@@ -10,7 +10,8 @@
     "experimentalDecorators": true,
     "jsx": "react",
     "jsxFactory": "tsx",
-    "suppressImplicitAnyIndexErrors": true
+    "suppressImplicitAnyIndexErrors": true,
+    "types": ["arcgis-js-api"]
   },
   "include": [
     "./src/**/*",

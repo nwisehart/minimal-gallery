@@ -1,4 +1,3 @@
-
 var file_path = window.location.pathname;
 var dist_path = file_path.slice(0, file_path.lastIndexOf("/"));
 var application_path = dist_path.slice(0, dist_path.lastIndexOf("/"));
