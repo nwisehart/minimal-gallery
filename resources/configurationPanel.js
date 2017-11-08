@@ -83,13 +83,6 @@
 					"tooltip": "The color for links on the page."
 				},
 				{
-					"label": "Button Text Color",
-					"fieldName": "buttonTextColor",
-					"type": "color",
-					"sharedThemeProperty": "button.text",
-					"tooltip": "The color for text appearing on buttons in the gallery."
-				},
-				{
 					"type": "conditional",
 					"condition": false,
 					"fieldName": "headerImage",
