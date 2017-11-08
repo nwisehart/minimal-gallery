@@ -49,6 +49,7 @@ function filterItems(items: __Component.Pojo[], filter: string) {
         item.type.toLowerCase().indexOf(filter) !== -1 ||
         item.owner.toLowerCase().indexOf(filter) !== -1 ||
         (item.tags && item.tags.map((tag: string) => tag.toLowerCase()).indexOf(filter) !== -1) ||
-        (item.description && item.description.indexOf(filter) !== -1)
+        (item.description && item.description.indexOf(filter) !== -1) ||
+        (item.snippet && item.snippet.indexOf(filter) !== -1)
     ));
 }
