@@ -84,5 +84,6 @@ export default {
     ...fileTypes,
     "Web Map": "webmap",
     "Web Mapping Application": "webapp",
-    "Web Scene": "webscene"
+    "Web Scene": "webscene",
+    "Dashboard": "webapp"
 };

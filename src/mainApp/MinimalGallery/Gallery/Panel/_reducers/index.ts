@@ -16,13 +16,14 @@ const item = (state: __Component.Pojo = {}) => state;
 const itemType = (state: string = "file") => state;
 
 const getPanelType = (
-    state: (itemType: string) => string = (itemType) => {
+    state: (itemType: string) => string = (type: string) => {
         const recognizedTypes = {
             "Web Mapping Application": "app",
             "Web Map": "map",
-            "Web Scene": "scene"
+            "Web Scene": "scene",
+            "Dashboard": "app"
         };
-        if (recognizedTypes[itemType]) { return recognizedTypes[itemType]; }
+        if (recognizedTypes[type]) { return recognizedTypes[type]; }
         return "file";
     }
 ) => state;

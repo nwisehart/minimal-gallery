@@ -70,21 +70,26 @@ export default class Gallery extends Component<MinimalGalleryState, ComponentSta
         }, {});
 
         return displayItems.map(
-            (item) => (
-                <Panel
-                    key={item.id}
-                    store={{
-                        reducers,
-                        initialState: {
-                            applicationBaseResult: this.props.base.applicationBaseResult,
-                            i18n: this.props.base.i18n,
-                            item,
-                            itemType: supportedItemTypes[item.type]
-                        },
-                        middlewares: [addListener(this.handleChildUpdate)]
-                    }}
-                />
-            )
+            (item) => {
+                if (item.type === "Dashboard") {
+                    item.url = `${item.portal.url}/apps/opsdashboard/index.html#/${item.id}`;
+                }
+                return (
+                    <Panel
+                        key={item.id}
+                        store={{
+                            reducers,
+                            initialState: {
+                                applicationBaseResult: this.props.base.applicationBaseResult,
+                                i18n: this.props.base.i18n,
+                                item,
+                                itemType: supportedItemTypes[item.type]
+                            },
+                            middlewares: [addListener(this.handleChildUpdate)]
+                        }}
+                    />
+                );
+            }
         );
     }
 
