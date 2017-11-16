@@ -1,5 +1,5 @@
 import { combineReducers } from "../../../../../Component";
-import { SHOW_IN_VIEWER, MOUSE_OVER, MOUSE_OUT } from "../_actions";
+import { SHOW_IN_VIEWER, MOUSE_OVER, MOUSE_OUT, VIEWER_CHANGE } from "../_actions";
 
 export interface PanelState {
     applicationBaseResult: __esriApplicationBase.ApplicationConfig;
@@ -8,6 +8,7 @@ export interface PanelState {
     hovering: boolean;
     getPanelType: (itemType: string) => string;
     itemType: string;
+    activeViewer?: string;
 }
 
 const applicationBaseResult = (state: __esriApplicationBase.ApplicationConfig = {}) => state;
@@ -39,11 +40,21 @@ const hovering = (state: boolean = false, action: { type: string, payload: any }
     }
 };
 
+const activeViewer = (state: string, action: { type: string, payload: any }) => {
+    switch (action.type) {
+        case VIEWER_CHANGE:
+            return action.payload;
+        default:
+            return state;
+    }
+};
+
 export const reducers = combineReducers({
     applicationBaseResult,
     i18n,
     item,
     hovering,
     getPanelType,
-    itemType
+    itemType,
+    activeViewer
 });

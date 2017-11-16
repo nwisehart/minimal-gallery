@@ -12,6 +12,7 @@ interface ComponentState {
         "animate-fade-in": boolean;
         "animate-fade-out": boolean;
     };
+    scrollY: number;
 }
 
 export default class Viewer extends Component<MinimalGalleryState, ComponentState> {
@@ -22,9 +23,11 @@ export default class Viewer extends Component<MinimalGalleryState, ComponentStat
             containerClasses: {
                 "animate-fade-in": true,
                 "animate-fade-out": false
-            }
+            },
+            scrollY: 0
         };
 
+        this.handleExitKeyPress = this.handleExitKeyPress.bind(this);
         this.handleExitClick = this.handleExitClick.bind(this);
         this.closeViewer = this.closeViewer.bind(this);
     }
@@ -60,14 +63,16 @@ export default class Viewer extends Component<MinimalGalleryState, ComponentStat
                     id="view-container"
                     key="view-container"
                     classes={this.state.containerClasses}
-                    style={`background-color: ${convertHex(config.bgColor, 85)}`}
+                    style={`background-color: ${convertHex(config.bgColor, 85)};`}
                 >
                     <div id="map-container" class="map-container" key={`map-container-${item.id}`}>
                         {view}
                         <button
                             class="btn btn-clear view-exit-button clickable"
                             onclick={this.handleExitClick}
+                            onkeypress={this.handleExitKeyPress}
                             title={i18n.ui.close}
+                            afterCreate={this.focus}
                         >
                             <span class="icon-ui-close view-exit-icon" />
                         </button>
@@ -79,8 +84,23 @@ export default class Viewer extends Component<MinimalGalleryState, ComponentStat
     }
 
     public componentWillReceiveProps(nextProps: MinimalGalleryState) {
-        if (!nextProps.viewer.visible) {
+        if (!this.props.viewer.visible && nextProps.viewer.visible) {
+            this.setState({ scrollY: window.scrollY });
+        }
+        if (this.props.viewer.visible && !nextProps.viewer.visible) {
             this.childComponents = {};
+        }
+    }
+
+    private focus(el: HTMLElement) {
+        setTimeout(() => {
+            el.focus();
+        }, 10);
+    }
+
+    private handleExitKeyPress(e: KeyboardEvent) {
+        if (e.key === "Enter") {
+            this.handleExitClick();
         }
     }
 

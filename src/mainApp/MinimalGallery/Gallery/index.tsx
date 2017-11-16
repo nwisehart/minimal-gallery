@@ -1,7 +1,7 @@
 import * as ioQuery from "dojo/io-query";
 import Component, { middlewares } from "../../../Component";
 import Panel, { PanelState, reducers } from "./Panel";
-import { SHOW_IN_VIEWER, SHOW_FULLSCREEN } from "./Panel/_actions";
+import { SHOW_IN_VIEWER, SHOW_FULLSCREEN, VIEWER_CHANGE } from "./Panel/_actions";
 import { push } from "../_actions";
 import { MinimalGalleryState } from "..";
 import supportedItemTypes from "../_utilities/supportedItemTypes";
@@ -55,6 +55,21 @@ export default class Gallery extends Component<MinimalGalleryState, ComponentSta
                 itemPages: splitToPages(nextProps.items.filteredItems, itemsPerPage)
             });
         }
+
+        if (nextProps.router.hash !== this.props.router.hash) {
+            const currentViewer = ioQuery.queryToObject(this.props.router.hash).viewer;
+            const nextViewer = ioQuery.queryToObject(nextProps.router.hash).viewer;
+            if (currentViewer !== nextViewer) {
+                for (let child in this.childComponents) {
+                    if (this.childComponents.hasOwnProperty(child)) {
+                        this.childComponents[child].store.dispatch({
+                            type: VIEWER_CHANGE,
+                            payload: nextViewer
+                        });
+                    }
+                }
+            }
+        }
     }
 
     private mapItemsToChildren() {
@@ -85,7 +100,7 @@ export default class Gallery extends Component<MinimalGalleryState, ComponentSta
                                 item,
                                 itemType: supportedItemTypes[item.type]
                             },
-                            middlewares: [addListener(this.handleChildUpdate)]
+                            middlewares: [ addListener(this.handleChildUpdate) ]
                         }}
                     />
                 );

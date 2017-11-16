@@ -8,6 +8,7 @@ export { PanelState, reducers } from "./_reducers";
 
 interface ComponentState {
     panelType: string;
+    itemLink?: HTMLElement;
 }
 
 export default class Panel extends Component<PanelState, ComponentState> {
@@ -15,14 +16,16 @@ export default class Panel extends Component<PanelState, ComponentState> {
         super(store);
 
         this.state = {
-            panelType: this.props.getPanelType(this.props.item.type)
-        }
+            panelType: this.props.getPanelType(this.props.item.type),
+        };
 
         this.handleMouseOver = this.handleMouseOver.bind(this);
         this.handleMouseOut = this.handleMouseOut.bind(this);
+        this.handleItemKeyPress = this.handleItemKeyPress.bind(this);
         this.handleItemClick = this.handleItemClick.bind(this);
         this.handleMaxKeyPress = this.handleMaxKeyPress.bind(this);
         this.handleMaxClick = this.handleMaxClick.bind(this);
+        this.registerItemLink = this.registerItemLink.bind(this);
     }
 
     public render() {
@@ -142,7 +145,14 @@ export default class Panel extends Component<PanelState, ComponentState> {
                 key={`${this.props.item.id}-div`}
             >
                 <figure class="card-image-wrap">
-                    <a title={mainTip} role="link" tabindex="0">
+                    <a
+                        title={mainTip}
+                        role="link"
+                        tabindex="0"
+                        onclick={this.handleItemClick}
+                        onkeypress={this.handleItemKeyPress}
+                        afterCreate={this.registerItemLink}
+                    >
                         <img
                             key={`${this.props.item.id}-thumbnail`}
                             class="card-image clickable thumbnail-min"
@@ -150,7 +160,6 @@ export default class Panel extends Component<PanelState, ComponentState> {
                             alt={this.props.item.title}
                             onmouseover={this.handleMouseOver}
                             onmouseout={this.handleMouseOut}
-                            onclick={this.handleItemClick}
                             style={`
                                 background-image: url(${this.props.item.thumbnailUrl});
                                 background-repeat: no-repeat;
@@ -173,12 +182,33 @@ export default class Panel extends Component<PanelState, ComponentState> {
         );
     }
 
+    public componentWillReceiveProps(nextProps: PanelState) {
+        if (
+            !nextProps.activeViewer &&
+            this.props.activeViewer &&
+            this.state.itemLink &&
+            this.props.activeViewer === this.props.item.id
+        ) {
+            this.state.itemLink.focus();
+        }
+    }
+
+    private registerItemLink(itemLink: HTMLElement) {
+        this.setState({ itemLink });
+    }
+
     private handleMouseOver() {
         this.dispatch(mouseOver());
     }
 
     private handleMouseOut() {
         this.dispatch(mouseOut());
+    }
+
+    private handleItemKeyPress(e: KeyboardEvent) {
+        if (e.key === "Enter") {
+            this.handleItemClick();
+        }
     }
 
     private handleItemClick() {
