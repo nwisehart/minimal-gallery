@@ -11,6 +11,7 @@
     "jsx": "react",
     "jsxFactory": "tsx",
     "suppressImplicitAnyIndexErrors": true,
+    "noImplicitUseStrict": true,
     "types": ["arcgis-js-api"]
   },
   "include": [

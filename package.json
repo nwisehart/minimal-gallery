@@ -4,7 +4,6 @@
   "description": "Minimal Gallery ArcGIS Online Template Application",
   "main": "entrypoint.js",
   "scripts": {
-    "start": "node server.js",
     "build": "webpack -p",
     "watch": "webpack --watch --progress --colors",
     "test": "nyc mocha"
