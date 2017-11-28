@@ -76,7 +76,7 @@ export default class Header extends Component<MinimalGalleryState, ComponentStat
                 <div class="grid-container">
                     <div class="column-24">
                         <div class="tablet-hide">
-                            <a href={config.headerTextURL}>
+                            <a href={appendProtocol(config.headerTextURL)}>
                                 {headImage}
                                 <a class="top-nav-title" style={`color: ${config.headerTextColor}`}>
                                     {config.headerText}
@@ -88,7 +88,7 @@ export default class Header extends Component<MinimalGalleryState, ComponentStat
 
                         <div class="tablet-show top-nav-flex">
                             <header class="top-nav-flex-title">
-                                <a href={config.headerTextURL}>
+                                <a href={appendProtocol(config.headerTextURL)}>
                                     <a class="top-nav-title" style={`color: ${config.headerTextColor}`}>
                                         {config.headerText}
                                     </a>
