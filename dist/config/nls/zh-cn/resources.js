@@ -1,38 +1,38 @@
 define({
   "ui": {
-    "close": "试_Close___验",
-    "mapExtTip": "试_Open Fullscreen Map_______验",
-    "sceneExtTip": "试_Open Fullscreen Scene_______验",
-    "appExtTip": "试_Open Fullscreen Application_________验",
-    "fileExtTip": "试_Download File_____验",
-    "itemExtTip": "试_Open ArcGIS Online Item Page_________验",
-    "galleryTip": "试_Open in Gallery______验"
+    "close": "关闭",
+    "mapExtTip": "打开全屏地图",
+    "sceneExtTip": "打开全屏场景",
+    "appExtTip": "打开全屏应用程序",
+    "fileExtTip": "下载文件",
+    "itemExtTip": "打开 ArcGIS Online 项目页面",
+    "galleryTip": "在库中打开"
   },
   "appLoading": {
-    "init": "试_Initializing application_________验..",
-    "login": "试_Checking user login_______验..",
-    "portalapp": "试_Querying portal & application__________验..",
-    "groupdata": "试_Querying group data_______验..",
-    "groupprocess": "试_Processing group response_________验..",
-    "groupitems": "试_Loading items______验..",
-    "failed": "试_Failed to load the application__________验."
+    "init": "正在初始化应用程序..",
+    "login": "正在检查用户登录..",
+    "portalapp": "正在查询门户和应用程序..",
+    "groupdata": "正在查询组数据..",
+    "groupprocess": "正在处理组响应..",
+    "groupitems": "正在加载项目..",
+    "failed": "无法加载应用程序。"
   },
   "viewLoading": {
-    "scripts": "试_Fetching scripts______验..",
-    "map": "试_Preparing the map_______验..",
-    "basemap": "试_Loading the basemap_______验..",
-    "layers": "试_Processing layers_______验..",
-    "view": "试_Initializing the view________验..",
-    "widgets": "试_Adding Widgets______验..",
-    "failed": "试_The item failed to load________验.",
-    "sorry": "试_Sorry, something went wrong loading the requested item__________________验.",
-    "iframe": "试_Sorry, your browser does not support iframes_______________验."
+    "scripts": "正在获取脚本..",
+    "map": "正在准备地图..",
+    "basemap": "正在加载底图..",
+    "layers": "正在处理图层..",
+    "view": "正在初始化视图..",
+    "widgets": "正在添加微件..",
+    "failed": "项目加载失败。",
+    "sorry": "抱歉，加载请求的项目时出现问题。",
+    "iframe": "抱歉，您的浏览器不支持 iframe。"
   },
   "header": {
-    "agol": "试_View on ArcGIS Online_______验",
-    "search": "试_Search___验"
+    "agol": "在 ArcGIS Online 上查看",
+    "search": "搜索"
   },
   "pager": {
-    "noResults": "试_Your search did not return any results_____________验."
+    "noResults": "搜索未返回任何结果。"
   }
 });

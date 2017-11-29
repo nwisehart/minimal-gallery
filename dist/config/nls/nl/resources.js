@@ -1,38 +1,38 @@
 define({
   "ui": {
-    "close": "Ĳ_Close___ä",
-    "mapExtTip": "Ĳ_Open Fullscreen Map_______ä",
-    "sceneExtTip": "Ĳ_Open Fullscreen Scene_______ä",
-    "appExtTip": "Ĳ_Open Fullscreen Application_________ä",
-    "fileExtTip": "Ĳ_Download File_____ä",
-    "itemExtTip": "Ĳ_Open ArcGIS Online Item Page_________ä",
-    "galleryTip": "Ĳ_Open in Gallery______ä"
+    "close": "Sluiten",
+    "mapExtTip": "Kaart in volledig scherm openen",
+    "sceneExtTip": "Scene in volledig scherm openen",
+    "appExtTip": "Toepassing in volledig scherm openen",
+    "fileExtTip": "Bestand downloaden",
+    "itemExtTip": "ArcGIS Online Item pagina openen",
+    "galleryTip": "Openen in Gallery"
   },
   "appLoading": {
-    "init": "Ĳ_Initializing application_________ä..",
-    "login": "Ĳ_Checking user login_______ä..",
-    "portalapp": "Ĳ_Querying portal & application__________ä..",
-    "groupdata": "Ĳ_Querying group data_______ä..",
-    "groupprocess": "Ĳ_Processing group response_________ä..",
-    "groupitems": "Ĳ_Loading items______ä..",
-    "failed": "Ĳ_Failed to load the application__________ä."
+    "init": "Toepassing wordt gestart..",
+    "login": "Gebruiker login wordt gecontroleerd..",
+    "portalapp": "Portaal & toepassing worden opgevraagd..",
+    "groupdata": "Groepsgegevens worden opgevraagd..",
+    "groupprocess": "Groepsreactie wordt verwerkt..",
+    "groupitems": "Items laden..",
+    "failed": "Laden van de toepassing is mislukt."
   },
   "viewLoading": {
-    "scripts": "Ĳ_Fetching scripts______ä..",
-    "map": "Ĳ_Preparing the map_______ä..",
-    "basemap": "Ĳ_Loading the basemap_______ä..",
-    "layers": "Ĳ_Processing layers_______ä..",
-    "view": "Ĳ_Initializing the view________ä..",
-    "widgets": "Ĳ_Adding Widgets______ä..",
-    "failed": "Ĳ_The item failed to load________ä.",
-    "sorry": "Ĳ_Sorry, something went wrong loading the requested item__________________ä.",
-    "iframe": "Ĳ_Sorry, your browser does not support iframes_______________ä."
+    "scripts": "Scripts worden geladen..",
+    "map": "De kaart wordt voorbereid..",
+    "basemap": "De basiskaart wordt geladen..",
+    "layers": "Lagen worden verwerkt..",
+    "view": "De weergave wordt geïnitialiseerd..",
+    "widgets": "Widgets worden toegevoegd..",
+    "failed": "Het item kan niet worden geladen.",
+    "sorry": "Sorry, bij het laden van het opgevraagde item is er iets fout gegaan.",
+    "iframe": "Sorry, uw browser ondersteund geen Iframes."
   },
   "header": {
-    "agol": "Ĳ_View on ArcGIS Online_______ä",
-    "search": "Ĳ_Search___ä"
+    "agol": "Weergeven op ArcGIS Online",
+    "search": "Zoeken"
   },
   "pager": {
-    "noResults": "Ĳ_Your search did not return any results_____________ä."
+    "noResults": "Uw zoekactie heeft geen resultaten geretourneerd."
   }
 });

@@ -1,38 +1,38 @@
 define({
   "ui": {
-    "close": "ķ_Close___ū",
-    "mapExtTip": "ķ_Open Fullscreen Map_______ū",
-    "sceneExtTip": "ķ_Open Fullscreen Scene_______ū",
-    "appExtTip": "ķ_Open Fullscreen Application_________ū",
-    "fileExtTip": "ķ_Download File_____ū",
-    "itemExtTip": "ķ_Open ArcGIS Online Item Page_________ū",
-    "galleryTip": "ķ_Open in Gallery______ū"
+    "close": "Aizvērt",
+    "mapExtTip": "Atvērt pilnekrāna karti",
+    "sceneExtTip": "Atvērt pilnekrāna scēnu",
+    "appExtTip": "Atvērt pilnekrāna lietotni",
+    "fileExtTip": "Lejupielādēt failu",
+    "itemExtTip": "Atvērt ArcGIS Online vienību lapu",
+    "galleryTip": "Atvērt galerijā"
   },
   "appLoading": {
-    "init": "ķ_Initializing application_________ū..",
-    "login": "ķ_Checking user login_______ū..",
-    "portalapp": "ķ_Querying portal & application__________ū..",
-    "groupdata": "ķ_Querying group data_______ū..",
-    "groupprocess": "ķ_Processing group response_________ū..",
-    "groupitems": "ķ_Loading items______ū..",
-    "failed": "ķ_Failed to load the application__________ū."
+    "init": "Tiek inicializēta lietotne…",
+    "login": "Tiek pārbaudīts lietotāja pieteikumvārds…",
+    "portalapp": "Notiek vaicājuma apstrāde portālā un lietotnē…",
+    "groupdata": "Notiek vaicājuma apstrāde grupas datos…",
+    "groupprocess": "Tiek apstrādāta grupas atbilde…",
+    "groupitems": "Notiek vienību ielādēšana…",
+    "failed": "Neizdevās ielādēt lietotni."
   },
   "viewLoading": {
-    "scripts": "ķ_Fetching scripts______ū..",
-    "map": "ķ_Preparing the map_______ū..",
-    "basemap": "ķ_Loading the basemap_______ū..",
-    "layers": "ķ_Processing layers_______ū..",
-    "view": "ķ_Initializing the view________ū..",
-    "widgets": "ķ_Adding Widgets______ū..",
-    "failed": "ķ_The item failed to load________ū.",
-    "sorry": "ķ_Sorry, something went wrong loading the requested item__________________ū.",
-    "iframe": "ķ_Sorry, your browser does not support iframes_______________ū."
+    "scripts": "Tiek ienesti skripti…",
+    "map": "Tiek sagatavota karte…",
+    "basemap": "Tiek ielādēta pamatkarte…",
+    "layers": "Tiek apstrādāti slāņi…",
+    "view": "Tiek inicializēts skats…",
+    "widgets": "Tiek pievienoti logrīki…",
+    "failed": "Vienību neizdevās ielādēt.",
+    "sorry": "Diemžēl radās kļūda, ielādējot pieprasīto vienību.",
+    "iframe": "Diemžēl jūsu pārlūks neatbalsta iFrames."
   },
   "header": {
-    "agol": "ķ_View on ArcGIS Online_______ū",
-    "search": "ķ_Search___ū"
+    "agol": "Skatīt vietnē ArcGIS Online",
+    "search": "Meklēt"
   },
   "pager": {
-    "noResults": "ķ_Your search did not return any results_____________ū."
+    "noResults": "Jūsu meklēšana nedeva nekādus rezultātus."
   }
 });

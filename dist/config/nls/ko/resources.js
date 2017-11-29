@@ -1,38 +1,38 @@
 define({
   "ui": {
-    "close": "한_Close___빠",
-    "mapExtTip": "한_Open Fullscreen Map_______빠",
-    "sceneExtTip": "한_Open Fullscreen Scene_______빠",
-    "appExtTip": "한_Open Fullscreen Application_________빠",
-    "fileExtTip": "한_Download File_____빠",
-    "itemExtTip": "한_Open ArcGIS Online Item Page_________빠",
-    "galleryTip": "한_Open in Gallery______빠"
+    "close": "닫기",
+    "mapExtTip": "전체 화면 맵 열기",
+    "sceneExtTip": "전체 화면 씬 열기",
+    "appExtTip": "전체 화면 응용프로그램 열기",
+    "fileExtTip": "파일 다운로드",
+    "itemExtTip": "ArcGIS Online 항목 페이지 열기",
+    "galleryTip": "갤러리에서 열기"
   },
   "appLoading": {
-    "init": "한_Initializing application_________빠..",
-    "login": "한_Checking user login_______빠..",
-    "portalapp": "한_Querying portal & application__________빠..",
-    "groupdata": "한_Querying group data_______빠..",
-    "groupprocess": "한_Processing group response_________빠..",
-    "groupitems": "한_Loading items______빠..",
-    "failed": "한_Failed to load the application__________빠."
+    "init": "응용프로그램 초기화 중...",
+    "login": "사용자 로그인 확인 중...",
+    "portalapp": "포털 및 응용프로그램 쿼리 중...",
+    "groupdata": "그룹 데이터 쿼리 중...",
+    "groupprocess": "그룹 응답 처리 중...",
+    "groupitems": "항목을 불러오는 중...",
+    "failed": "응용프로그램을 불러오는 데 실패했습니다."
   },
   "viewLoading": {
-    "scripts": "한_Fetching scripts______빠..",
-    "map": "한_Preparing the map_______빠..",
-    "basemap": "한_Loading the basemap_______빠..",
-    "layers": "한_Processing layers_______빠..",
-    "view": "한_Initializing the view________빠..",
-    "widgets": "한_Adding Widgets______빠..",
-    "failed": "한_The item failed to load________빠.",
-    "sorry": "한_Sorry, something went wrong loading the requested item__________________빠.",
-    "iframe": "한_Sorry, your browser does not support iframes_______________빠."
+    "scripts": "스크립트를 가져오는 중...",
+    "map": "맵 준비 중...",
+    "basemap": "베이스맵을 불러오는 중...",
+    "layers": "레이어 처리 중...",
+    "view": "뷰 초기화 중...",
+    "widgets": "위젯 추가 중...",
+    "failed": "항목을 불러오는 데 실패했습니다.",
+    "sorry": "죄송합니다. 요청한 항목을 불러오는 중 오류가 발생했습니다.",
+    "iframe": "죄송합니다. 브라우저에서 iframe을 지원하지 않습니다."
   },
   "header": {
-    "agol": "한_View on ArcGIS Online_______빠",
-    "search": "한_Search___빠"
+    "agol": "ArcGIS Online에서 보기",
+    "search": "검색"
   },
   "pager": {
-    "noResults": "한_Your search did not return any results_____________빠."
+    "noResults": "검색이 결과를 반환하지 않았습니다."
   }
 });

@@ -1,38 +1,38 @@
 define({
   "ui": {
-    "close": "Ă_Close___ș",
-    "mapExtTip": "Ă_Open Fullscreen Map_______ș",
-    "sceneExtTip": "Ă_Open Fullscreen Scene_______ș",
-    "appExtTip": "Ă_Open Fullscreen Application_________ș",
-    "fileExtTip": "Ă_Download File_____ș",
-    "itemExtTip": "Ă_Open ArcGIS Online Item Page_________ș",
-    "galleryTip": "Ă_Open in Gallery______ș"
+    "close": "Închidere",
+    "mapExtTip": "Deschidere hartă pe ecran complet",
+    "sceneExtTip": "Deschidere scenă pe ecran complet",
+    "appExtTip": "Deschidere aplicaţie pe ecran complet",
+    "fileExtTip": "Descărcare fişier",
+    "itemExtTip": "Deschidere pagină obiect ArcGIS Online",
+    "galleryTip": "Deschide în Galerie"
   },
   "appLoading": {
-    "init": "Ă_Initializing application_________ș..",
-    "login": "Ă_Checking user login_______ș..",
-    "portalapp": "Ă_Querying portal & application__________ș..",
-    "groupdata": "Ă_Querying group data_______ș..",
-    "groupprocess": "Ă_Processing group response_________ș..",
-    "groupitems": "Ă_Loading items______ș..",
-    "failed": "Ă_Failed to load the application__________ș."
+    "init": "Iniţializare aplicaţie..",
+    "login": "Verificare nume de utilizator..",
+    "portalapp": "Trimitere solicitare pentru portal & aplicaţie..",
+    "groupdata": "Trimitere solicitare pentru datele de grup..",
+    "groupprocess": "Procesare răspuns grup..",
+    "groupitems": "Se încarcă elemente...",
+    "failed": "Aplicaţia nu a putut fi încărcată."
   },
   "viewLoading": {
-    "scripts": "Ă_Fetching scripts______ș..",
-    "map": "Ă_Preparing the map_______ș..",
-    "basemap": "Ă_Loading the basemap_______ș..",
-    "layers": "Ă_Processing layers_______ș..",
-    "view": "Ă_Initializing the view________ș..",
-    "widgets": "Ă_Adding Widgets______ș..",
-    "failed": "Ă_The item failed to load________ș.",
-    "sorry": "Ă_Sorry, something went wrong loading the requested item__________________ș.",
-    "iframe": "Ă_Sorry, your browser does not support iframes_______________ș."
+    "scripts": "Colectare scripturi..",
+    "map": "Pregătire hartă..",
+    "basemap": "Încărcare hartă de bază..",
+    "layers": "Procesare straturi tematice..",
+    "view": "Iniţializare ecran..",
+    "widgets": "Adăugare Widgets..",
+    "failed": "Elementul nu a putut fi încărcat.",
+    "sorry": "Ne pare rău, dar ceva nu a mers bine în timpul încărcării elementului solicitat.",
+    "iframe": "Ne pare rău, dar browserul dvs. nu suportă iframe-uri."
   },
   "header": {
-    "agol": "Ă_View on ArcGIS Online_______ș",
-    "search": "Ă_Search___ș"
+    "agol": "Vizualizare în ArcGIS Online",
+    "search": "Căutare"
   },
   "pager": {
-    "noResults": "Ă_Your search did not return any results_____________ș."
+    "noResults": "Căutarea dvs. nu a returnat niciun rezultat."
   }
 });

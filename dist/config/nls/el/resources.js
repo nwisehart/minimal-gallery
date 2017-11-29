@@ -1,38 +1,38 @@
 define({
   "ui": {
-    "close": "π_Close___Ω",
-    "mapExtTip": "π_Open Fullscreen Map_______Ω",
-    "sceneExtTip": "π_Open Fullscreen Scene_______Ω",
-    "appExtTip": "π_Open Fullscreen Application_________Ω",
-    "fileExtTip": "π_Download File_____Ω",
-    "itemExtTip": "π_Open ArcGIS Online Item Page_________Ω",
-    "galleryTip": "π_Open in Gallery______Ω"
+    "close": "Κλείσιμο",
+    "mapExtTip": "Άνοιγμα χάρτη πλήρους οθόνης",
+    "sceneExtTip": "Άνοιγμα προβολής πλήρους οθόνης",
+    "appExtTip": "Άνοιγμα εφαρμογής πλήρους οθόνης",
+    "fileExtTip": "Λήψη αρχείου",
+    "itemExtTip": "Άνοιγμα σελίδας αντικειμένου ArcGIS Online",
+    "galleryTip": "Άνοιγμα στη συλλογή"
   },
   "appLoading": {
-    "init": "π_Initializing application_________Ω..",
-    "login": "π_Checking user login_______Ω..",
-    "portalapp": "π_Querying portal & application__________Ω..",
-    "groupdata": "π_Querying group data_______Ω..",
-    "groupprocess": "π_Processing group response_________Ω..",
-    "groupitems": "π_Loading items______Ω..",
-    "failed": "π_Failed to load the application__________Ω."
+    "init": "Προετοιμασία εφαρμογής..",
+    "login": "Έλεγχος στοιχείων σύνδεσης χρήστη..",
+    "portalapp": "Υποβολή ερωτήματος για portal & εφαρμογή..",
+    "groupdata": "Υποβολή ερωτήματος για δεδομένα ομάδας..",
+    "groupprocess": "Γίνεται επεξεργασία απόκρισης ομάδας..",
+    "groupitems": "Φόρτωση αντικειμένων..",
+    "failed": "Αποτυχία φόρτωσης της εφαρμογής."
   },
   "viewLoading": {
-    "scripts": "π_Fetching scripts______Ω..",
-    "map": "π_Preparing the map_______Ω..",
-    "basemap": "π_Loading the basemap_______Ω..",
-    "layers": "π_Processing layers_______Ω..",
-    "view": "π_Initializing the view________Ω..",
-    "widgets": "π_Adding Widgets______Ω..",
-    "failed": "π_The item failed to load________Ω.",
-    "sorry": "π_Sorry, something went wrong loading the requested item__________________Ω.",
-    "iframe": "π_Sorry, your browser does not support iframes_______________Ω."
+    "scripts": "Λήψη σεναρίων..",
+    "map": "Προετοιμασία του χάρτη..",
+    "basemap": "Φόρτωση των υποβάθρων..",
+    "layers": "Επεξεργασία θεματικών επιπέδων..",
+    "view": "Προετοιμασία της προβολής..",
+    "widgets": "Προσθήκη Widget..",
+    "failed": "Αποτυχία φόρτωσης του αντικειμένου.",
+    "sorry": "Συγγνώμη, κατά τη φόρτωση του ζητούμενου αντικειμένου παρουσιάστηκε κάποιο πρόβλημα.",
+    "iframe": "Συγγνώμη, το πρόγραμμα περιήγησης που χρησιμοποιείτε δεν υποστηρίζει iframe."
   },
   "header": {
-    "agol": "π_View on ArcGIS Online_______Ω",
-    "search": "π_Search___Ω"
+    "agol": "Προβολή στο ArcGIS Online",
+    "search": "Αναζήτηση"
   },
   "pager": {
-    "noResults": "π_Your search did not return any results_____________Ω."
+    "noResults": "Η αναζήτηση δεν επέστρεψε κανένα αποτέλεσμα."
   }
 });

@@ -1,38 +1,38 @@
 define({
   "ui": {
-    "close": "é_Close___È",
-    "mapExtTip": "é_Open Fullscreen Map_______È",
-    "sceneExtTip": "é_Open Fullscreen Scene_______È",
-    "appExtTip": "é_Open Fullscreen Application_________È",
-    "fileExtTip": "é_Download File_____È",
-    "itemExtTip": "é_Open ArcGIS Online Item Page_________È",
-    "galleryTip": "é_Open in Gallery______È"
+    "close": "Chiudi",
+    "mapExtTip": "Aprire la Mappa a schermo intero",
+    "sceneExtTip": "Aprire la Scena a schermo intero",
+    "appExtTip": "Aprire l'Applicazione a schermo intero",
+    "fileExtTip": "Scaricare file",
+    "itemExtTip": "Aprire la pagina dell’elemento di ArcGIS Online",
+    "galleryTip": "Aprire nella Gallery"
   },
   "appLoading": {
-    "init": "é_Initializing application_________È..",
-    "login": "é_Checking user login_______È..",
-    "portalapp": "é_Querying portal & application__________È..",
-    "groupdata": "é_Querying group data_______È..",
-    "groupprocess": "é_Processing group response_________È..",
-    "groupitems": "é_Loading items______È..",
-    "failed": "é_Failed to load the application__________È."
+    "init": "Inizializzazione dell'applicazione..",
+    "login": "Controllo degli accessi utente..",
+    "portalapp": "Interrogazioni portale e applicazione..",
+    "groupdata": "Interrogazioni dei dati del gruppo..",
+    "groupprocess": "Elaborazione delle risposte del gruppo..",
+    "groupitems": "Caricamento degli elementi..",
+    "failed": "Impossibile caricare l’applicazione."
   },
   "viewLoading": {
-    "scripts": "é_Fetching scripts______È..",
-    "map": "é_Preparing the map_______È..",
-    "basemap": "é_Loading the basemap_______È..",
-    "layers": "é_Processing layers_______È..",
-    "view": "é_Initializing the view________È..",
-    "widgets": "é_Adding Widgets______È..",
-    "failed": "é_The item failed to load________È.",
-    "sorry": "é_Sorry, something went wrong loading the requested item__________________È.",
-    "iframe": "é_Sorry, your browser does not support iframes_______________È."
+    "scripts": "Recupero degli script..",
+    "map": "Preparazione della mappa..",
+    "basemap": "Caricamento della basemap..",
+    "layers": "Elaborazione dei layer..",
+    "view": "Inizializzazione della vista..",
+    "widgets": "Aggiunta dei widget",
+    "failed": "Impossibile caricare l’elemento.",
+    "sorry": "Purtroppo si è verificato un errore durante il caricamento dell’elemento richiesto.",
+    "iframe": "Purtroppo il browser in uso non supporta iframe."
   },
   "header": {
-    "agol": "é_View on ArcGIS Online_______È",
-    "search": "é_Search___È"
+    "agol": "Visualizzare in ArcGIS Online",
+    "search": "Cercare"
   },
   "pager": {
-    "noResults": "é_Your search did not return any results_____________È."
+    "noResults": "La ricerca non ha restituito alcun risultato."
   }
 });

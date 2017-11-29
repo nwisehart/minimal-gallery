@@ -1,38 +1,38 @@
 define({
   "ui": {
-    "close": "å_Close___ø",
-    "mapExtTip": "å_Open Fullscreen Map_______ø",
-    "sceneExtTip": "å_Open Fullscreen Scene_______ø",
-    "appExtTip": "å_Open Fullscreen Application_________ø",
-    "fileExtTip": "å_Download File_____ø",
-    "itemExtTip": "å_Open ArcGIS Online Item Page_________ø",
-    "galleryTip": "å_Open in Gallery______ø"
+    "close": "Lukk",
+    "mapExtTip": "Åpne kart i fullskjermvisning",
+    "sceneExtTip": "Åpne scene i fullskjermvisning",
+    "appExtTip": "Åpne applikasjon i fullskjermvisning",
+    "fileExtTip": "Last ned fil",
+    "itemExtTip": "Åpne ArcGIS Online-elementside",
+    "galleryTip": "Åpne i galleri"
   },
   "appLoading": {
-    "init": "å_Initializing application_________ø..",
-    "login": "å_Checking user login_______ø..",
-    "portalapp": "å_Querying portal & application__________ø..",
-    "groupdata": "å_Querying group data_______ø..",
-    "groupprocess": "å_Processing group response_________ø..",
-    "groupitems": "å_Loading items______ø..",
-    "failed": "å_Failed to load the application__________ø."
+    "init": "Initialiserer applikasjon...",
+    "login": "Kontrollerer brukerpålogging...",
+    "portalapp": "Kjører spørring i portal og applikasjon...",
+    "groupdata": "Kjører spørring i gruppedata...",
+    "groupprocess": "Behandler gruppesvar...",
+    "groupitems": "Laster inn elementer...",
+    "failed": "Kan ikke laste applikasjonen."
   },
   "viewLoading": {
-    "scripts": "å_Fetching scripts______ø..",
-    "map": "å_Preparing the map_______ø..",
-    "basemap": "å_Loading the basemap_______ø..",
-    "layers": "å_Processing layers_______ø..",
-    "view": "å_Initializing the view________ø..",
-    "widgets": "å_Adding Widgets______ø..",
-    "failed": "å_The item failed to load________ø.",
-    "sorry": "å_Sorry, something went wrong loading the requested item__________________ø.",
-    "iframe": "å_Sorry, your browser does not support iframes_______________ø."
+    "scripts": "Henter skript...",
+    "map": "Forbereder kartet...",
+    "basemap": "Laster inn bakgrunnskartet...",
+    "layers": "Behandler lag...",
+    "view": "Initialiserer visningen...",
+    "widgets": "Legger til widgeter...",
+    "failed": "Elementet ble ikke lastet inn.",
+    "sorry": "Beklager, men det oppstod en feil under lasting av forespurt element.",
+    "iframe": "Beklager, men nettleseren din støtter ikke iframes."
   },
   "header": {
-    "agol": "å_View on ArcGIS Online_______ø",
-    "search": "å_Search___ø"
+    "agol": "Vis på ArcGIS Online",
+    "search": "Søk"
   },
   "pager": {
-    "noResults": "å_Your search did not return any results_____________ø."
+    "noResults": "Søket ga ingen resultater."
   }
 });

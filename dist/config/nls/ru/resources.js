@@ -1,38 +1,38 @@
 define({
   "ui": {
-    "close": "Ж_Close___Я",
-    "mapExtTip": "Ж_Open Fullscreen Map_______Я",
-    "sceneExtTip": "Ж_Open Fullscreen Scene_______Я",
-    "appExtTip": "Ж_Open Fullscreen Application_________Я",
-    "fileExtTip": "Ж_Download File_____Я",
-    "itemExtTip": "Ж_Open ArcGIS Online Item Page_________Я",
-    "galleryTip": "Ж_Open in Gallery______Я"
+    "close": "Закрыть",
+    "mapExtTip": "Открыть полноэкранную карту",
+    "sceneExtTip": "Открыть полноэкранную сцену",
+    "appExtTip": "Открыть полноэкранное приложение",
+    "fileExtTip": "Загрузить файл",
+    "itemExtTip": "Открыть страницу элемента в ArcGIS Online",
+    "galleryTip": "Открыть в галерее"
   },
   "appLoading": {
-    "init": "Ж_Initializing application_________Я..",
-    "login": "Ж_Checking user login_______Я..",
-    "portalapp": "Ж_Querying portal & application__________Я..",
-    "groupdata": "Ж_Querying group data_______Я..",
-    "groupprocess": "Ж_Processing group response_________Я..",
-    "groupitems": "Ж_Loading items______Я..",
-    "failed": "Ж_Failed to load the application__________Я."
+    "init": "Инициализация приложения...",
+    "login": "Проверка входа пользователя..",
+    "portalapp": "Запрос портала&приложения..",
+    "groupdata": "Запрос групповых данных..",
+    "groupprocess": "Обработка ответа группы..",
+    "groupitems": "Загрузка элементов..",
+    "failed": "Не удалось загрузить приложение."
   },
   "viewLoading": {
-    "scripts": "Ж_Fetching scripts______Я..",
-    "map": "Ж_Preparing the map_______Я..",
-    "basemap": "Ж_Loading the basemap_______Я..",
-    "layers": "Ж_Processing layers_______Я..",
-    "view": "Ж_Initializing the view________Я..",
-    "widgets": "Ж_Adding Widgets______Я..",
-    "failed": "Ж_The item failed to load________Я.",
-    "sorry": "Ж_Sorry, something went wrong loading the requested item__________________Я.",
-    "iframe": "Ж_Sorry, your browser does not support iframes_______________Я."
+    "scripts": "Вызов скриптов..",
+    "map": "Подготовка карты..",
+    "basemap": "Загрузка базовой карты..",
+    "layers": "Обработка слоев..",
+    "view": "Активация вида..",
+    "widgets": "Добавление виджетов..",
+    "failed": "Не удалось загрузить элемент.",
+    "sorry": "При загрузке запрашиваемого элемента что-то пошло не так.",
+    "iframe": "Ваш браузер не поддерживает iframе."
   },
   "header": {
-    "agol": "Ж_View on ArcGIS Online_______Я",
-    "search": "Ж_Search___Я"
+    "agol": "Просмотреть в ArcGIS Online",
+    "search": "Поиск"
   },
   "pager": {
-    "noResults": "Ж_Your search did not return any results_____________Я."
+    "noResults": "В результате поиска ничего не найдено."
   }
 });

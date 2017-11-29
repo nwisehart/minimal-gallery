@@ -1,38 +1,38 @@
 define({
   "ui": {
-    "close": "須_Close___鷗",
-    "mapExtTip": "須_Open Fullscreen Map_______鷗",
-    "sceneExtTip": "須_Open Fullscreen Scene_______鷗",
-    "appExtTip": "須_Open Fullscreen Application_________鷗",
-    "fileExtTip": "須_Download File_____鷗",
-    "itemExtTip": "須_Open ArcGIS Online Item Page_________鷗",
-    "galleryTip": "須_Open in Gallery______鷗"
+    "close": "クローズ",
+    "mapExtTip": "全画面マップを開く",
+    "sceneExtTip": "全画面シーンを開く",
+    "appExtTip": "全画面アプリケーションを開く",
+    "fileExtTip": "ファイルのダウンロード",
+    "itemExtTip": "ArcGIS Online のアイテム ページを開く",
+    "galleryTip": "ギャラリーで開く"
   },
   "appLoading": {
-    "init": "須_Initializing application_________鷗..",
-    "login": "須_Checking user login_______鷗..",
-    "portalapp": "須_Querying portal & application__________鷗..",
-    "groupdata": "須_Querying group data_______鷗..",
-    "groupprocess": "須_Processing group response_________鷗..",
-    "groupitems": "須_Loading items______鷗..",
-    "failed": "須_Failed to load the application__________鷗."
+    "init": "アプリケーションを初期化しています..",
+    "login": "ユーザー ログインを確認しています..",
+    "portalapp": "ポータルおよびアプリケーションをクエリしています..",
+    "groupdata": "グループ データをクエリしています..",
+    "groupprocess": "グループの応答を処理しています..",
+    "groupitems": "アイテムを読み込んでいます..",
+    "failed": "アプリケーションを読み込めませんでした。"
   },
   "viewLoading": {
-    "scripts": "須_Fetching scripts______鷗..",
-    "map": "須_Preparing the map_______鷗..",
-    "basemap": "須_Loading the basemap_______鷗..",
-    "layers": "須_Processing layers_______鷗..",
-    "view": "須_Initializing the view________鷗..",
-    "widgets": "須_Adding Widgets______鷗..",
-    "failed": "須_The item failed to load________鷗.",
-    "sorry": "須_Sorry, something went wrong loading the requested item__________________鷗.",
-    "iframe": "須_Sorry, your browser does not support iframes_______________鷗."
+    "scripts": "スクリプトを取得しています..",
+    "map": "マップを準備しています..",
+    "basemap": "ベースマップを読み込んでいます..",
+    "layers": "レイヤーを処理しています..",
+    "view": "ビューを初期化しています..",
+    "widgets": "ウィジェットを追加しています..",
+    "failed": "アイテムを読み込めませんでした。",
+    "sorry": "要求されたアイテムの読み込み中に問題が発生しました。",
+    "iframe": "お使いのブラウザーは iframe (インラインフレーム) に対応していません。"
   },
   "header": {
-    "agol": "須_View on ArcGIS Online_______鷗",
-    "search": "須_Search___鷗"
+    "agol": "ArcGIS Online での表示",
+    "search": "検索"
   },
   "pager": {
-    "noResults": "須_Your search did not return any results_____________鷗."
+    "noResults": "検索結果はありませんでした。"
   }
 });

@@ -1,38 +1,38 @@
 define({
   "ui": {
-    "close": "ng_Close___ny",
-    "mapExtTip": "ng_Open Fullscreen Map_______ny",
-    "sceneExtTip": "ng_Open Fullscreen Scene_______ny",
-    "appExtTip": "ng_Open Fullscreen Application_________ny",
-    "fileExtTip": "ng_Download File_____ny",
-    "itemExtTip": "ng_Open ArcGIS Online Item Page_________ny",
-    "galleryTip": "ng_Open in Gallery______ny"
+    "close": "Tutup",
+    "mapExtTip": "Buka Peta Layar Penuh",
+    "sceneExtTip": "Buka Scene Layar Penuh",
+    "appExtTip": "Buka Aplikasi Layar Penuh",
+    "fileExtTip": "Unduh File",
+    "itemExtTip": "Buka Halaman Item ArcGIS Online",
+    "galleryTip": "Buka di Galeri"
   },
   "appLoading": {
-    "init": "ng_Initializing application_________ny..",
-    "login": "ng_Checking user login_______ny..",
-    "portalapp": "ng_Querying portal & application__________ny..",
-    "groupdata": "ng_Querying group data_______ny..",
-    "groupprocess": "ng_Processing group response_________ny..",
-    "groupitems": "ng_Loading items______ny..",
-    "failed": "ng_Failed to load the application__________ny."
+    "init": "Menginisialisasi aplikasi..",
+    "login": "Memeriksa login pengguna..",
+    "portalapp": "Mengirim kueri untuk portal & aplikasi..",
+    "groupdata": "Mengirim kueri untuk data grup..",
+    "groupprocess": "Memproses jawaban grup..",
+    "groupitems": "Memuat item..",
+    "failed": "Gagal memuat aplikasi."
   },
   "viewLoading": {
-    "scripts": "ng_Fetching scripts______ny..",
-    "map": "ng_Preparing the map_______ny..",
-    "basemap": "ng_Loading the basemap_______ny..",
-    "layers": "ng_Processing layers_______ny..",
-    "view": "ng_Initializing the view________ny..",
-    "widgets": "ng_Adding Widgets______ny..",
-    "failed": "ng_The item failed to load________ny.",
-    "sorry": "ng_Sorry, something went wrong loading the requested item__________________ny.",
-    "iframe": "ng_Sorry, your browser does not support iframes_______________ny."
+    "scripts": "Mengambil skrip..",
+    "map": "Menyiapkan peta..",
+    "basemap": "Memuat peta dasar..",
+    "layers": "Memproses layer..",
+    "view": "Menginisialisasi tampilan..",
+    "widgets": "Menambahkan Widget..",
+    "failed": "Item gagal dimuat.",
+    "sorry": "Maaf, ada kesalahan saat memuat item yang diminta.",
+    "iframe": "Maaf, browser Anda tidak mendukung iframe."
   },
   "header": {
-    "agol": "ng_View on ArcGIS Online_______ny",
-    "search": "ng_Search___ny"
+    "agol": "Tampilkan di ArcGIS Online",
+    "search": "Cari"
   },
   "pager": {
-    "noResults": "ng_Your search did not return any results_____________ny."
+    "noResults": "Pencarian Anda tidak menunjukkan hasil."
   }
 });

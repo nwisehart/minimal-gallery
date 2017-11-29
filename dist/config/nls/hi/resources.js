@@ -1,38 +1,38 @@
 define({
   "ui": {
-    "close": "आ_Close___ज",
-    "mapExtTip": "आ_Open Fullscreen Map_______ज",
-    "sceneExtTip": "आ_Open Fullscreen Scene_______ज",
-    "appExtTip": "आ_Open Fullscreen Application_________ज",
-    "fileExtTip": "आ_Download File_____ज",
-    "itemExtTip": "आ_Open ArcGIS Online Item Page_________ज",
-    "galleryTip": "आ_Open in Gallery______ज"
+    "close": "बंद करें",
+    "mapExtTip": "पूर्ण स्क्रीन वाला मानचित्र खोलें",
+    "sceneExtTip": "पूर्ण स्क्रीन वाला दृश्य खोलें",
+    "appExtTip": "पूर्ण स्क्रीन वाला एप्लिकेशन खोलें",
+    "fileExtTip": "फ़ाइल डाउनलोड करें",
+    "itemExtTip": "ArcGIS Online आइटम पेज खोलें",
+    "galleryTip": "गैलरी में खोलें"
   },
   "appLoading": {
-    "init": "आ_Initializing application_________ज..",
-    "login": "आ_Checking user login_______ज..",
-    "portalapp": "आ_Querying portal & application__________ज..",
-    "groupdata": "आ_Querying group data_______ज..",
-    "groupprocess": "आ_Processing group response_________ज..",
-    "groupitems": "आ_Loading items______ज..",
-    "failed": "आ_Failed to load the application__________ज."
+    "init": "एप्लिकेशन शुरू हो रहा है..",
+    "login": "उपयोगकर्ता लॉगिन जांच रहा है..",
+    "portalapp": "पोर्टल और एप्लिकेशन की जाँच-पड़ताल हो रही है..",
+    "groupdata": "समूह डेटा की जाँच-पड़ताल हो रही है..",
+    "groupprocess": "समूह की प्रतिक्रिया तैयार हो रही है..",
+    "groupitems": "आइटम लोड हो रहे हैं..",
+    "failed": "एप्लिकेशन लोड करना विफल हुआ।"
   },
   "viewLoading": {
-    "scripts": "आ_Fetching scripts______ज..",
-    "map": "आ_Preparing the map_______ज..",
-    "basemap": "आ_Loading the basemap_______ज..",
-    "layers": "आ_Processing layers_______ज..",
-    "view": "आ_Initializing the view________ज..",
-    "widgets": "आ_Adding Widgets______ज..",
-    "failed": "आ_The item failed to load________ज.",
-    "sorry": "आ_Sorry, something went wrong loading the requested item__________________ज.",
-    "iframe": "आ_Sorry, your browser does not support iframes_______________ज."
+    "scripts": "स्क्रिप्ट प्राप्त की जा रही हैं..",
+    "map": "मानचित्र तैयार हो रहा है..",
+    "basemap": "आधार मानचित्र लोड हो रहा है..",
+    "layers": "लेयर तैयार हो रही हैं..",
+    "view": "दृश्य शुरू हो रहे हैं..",
+    "widgets": "विजेट्स जोड़ रहे हैं..",
+    "failed": "आइटम अपडेट करने में विफल रहा।",
+    "sorry": "माफ करें, अनुरोधित आइटम लोड करते समय कुछ गलत हो गया।",
+    "iframe": "माफ करें, आपका ब्राउजर iframes के योग्य नहीं है।"
   },
   "header": {
-    "agol": "आ_View on ArcGIS Online_______ज",
-    "search": "आ_Search___ज"
+    "agol": "ArcGIS Online पर देखें",
+    "search": "खोजें"
   },
   "pager": {
-    "noResults": "आ_Your search did not return any results_____________ज."
+    "noResults": "आपकी खोज से कोई परिणाम नहीं मिला."
   }
 });

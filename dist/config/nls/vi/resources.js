@@ -1,38 +1,38 @@
 define({
   "ui": {
-    "close": "Đ_Close___ớ",
-    "mapExtTip": "Đ_Open Fullscreen Map_______ớ",
-    "sceneExtTip": "Đ_Open Fullscreen Scene_______ớ",
-    "appExtTip": "Đ_Open Fullscreen Application_________ớ",
-    "fileExtTip": "Đ_Download File_____ớ",
-    "itemExtTip": "Đ_Open ArcGIS Online Item Page_________ớ",
-    "galleryTip": "Đ_Open in Gallery______ớ"
+    "close": "Đóng",
+    "mapExtTip": "Mở bản đồ toàn màn hình",
+    "sceneExtTip": "Mở scene toàn màn hình",
+    "appExtTip": "Mở ứng dụng toàn màn hình",
+    "fileExtTip": "Tải xuống tệp",
+    "itemExtTip": "Mở trang mục ArcGIS Online",
+    "galleryTip": "Mở trong thư viện"
   },
   "appLoading": {
-    "init": "Đ_Initializing application_________ớ..",
-    "login": "Đ_Checking user login_______ớ..",
-    "portalapp": "Đ_Querying portal & application__________ớ..",
-    "groupdata": "Đ_Querying group data_______ớ..",
-    "groupprocess": "Đ_Processing group response_________ớ..",
-    "groupitems": "Đ_Loading items______ớ..",
-    "failed": "Đ_Failed to load the application__________ớ."
+    "init": "Đang khởi chạy ứng dụng..",
+    "login": "Đang kiểm tra đăng nhập người dùng..",
+    "portalapp": "Đang truy vấn cổng thông tin & ứng dụng..",
+    "groupdata": "Đang truy vấn dữ liệu nhóm..",
+    "groupprocess": "Đang xử lý phản hồi nhóm..",
+    "groupitems": "Đang tải mục...",
+    "failed": "Không thể tải ứng dụng."
   },
   "viewLoading": {
-    "scripts": "Đ_Fetching scripts______ớ..",
-    "map": "Đ_Preparing the map_______ớ..",
-    "basemap": "Đ_Loading the basemap_______ớ..",
-    "layers": "Đ_Processing layers_______ớ..",
-    "view": "Đ_Initializing the view________ớ..",
-    "widgets": "Đ_Adding Widgets______ớ..",
-    "failed": "Đ_The item failed to load________ớ.",
-    "sorry": "Đ_Sorry, something went wrong loading the requested item__________________ớ.",
-    "iframe": "Đ_Sorry, your browser does not support iframes_______________ớ."
+    "scripts": "Đang tìm nạp script..",
+    "map": "Đang chuẩn bị bản đồ..",
+    "basemap": "Đang tải bản đồ nền..",
+    "layers": "Đang xử lý các lớp..",
+    "view": "Đang khởi tạo chế độ xem..",
+    "widgets": "Đang thêm Tiện ích..",
+    "failed": "Tải mục thất bại.",
+    "sorry": "Rất tiếc, có lỗi khi tải mục yêu cầu.",
+    "iframe": "Rất tiếc, trình duyệt của bạn không hỗ trợ iframes."
   },
   "header": {
-    "agol": "Đ_View on ArcGIS Online_______ớ",
-    "search": "Đ_Search___ớ"
+    "agol": "Xem trên ArcGIS Online",
+    "search": "Tìm kiếm"
   },
   "pager": {
-    "noResults": "Đ_Your search did not return any results_____________ớ."
+    "noResults": "Tìm kiếm của bạn không trả về kết quả nào."
   }
 });

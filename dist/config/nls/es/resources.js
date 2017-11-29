@@ -1,38 +1,38 @@
 define({
   "ui": {
-    "close": "á_Close___Ó",
-    "mapExtTip": "á_Open Fullscreen Map_______Ó",
-    "sceneExtTip": "á_Open Fullscreen Scene_______Ó",
-    "appExtTip": "á_Open Fullscreen Application_________Ó",
-    "fileExtTip": "á_Download File_____Ó",
-    "itemExtTip": "á_Open ArcGIS Online Item Page_________Ó",
-    "galleryTip": "á_Open in Gallery______Ó"
+    "close": "Cerrar",
+    "mapExtTip": "Abrir mapa en pantalla completa",
+    "sceneExtTip": "Abrir escena en pantalla completa",
+    "appExtTip": "Abrir aplicación en pantalla completa",
+    "fileExtTip": "Descargar archivo",
+    "itemExtTip": "Abrir la página del elemento de ArcGIS Online",
+    "galleryTip": "Abrir en la galería"
   },
   "appLoading": {
-    "init": "á_Initializing application_________Ó..",
-    "login": "á_Checking user login_______Ó..",
-    "portalapp": "á_Querying portal & application__________Ó..",
-    "groupdata": "á_Querying group data_______Ó..",
-    "groupprocess": "á_Processing group response_________Ó..",
-    "groupitems": "á_Loading items______Ó..",
-    "failed": "á_Failed to load the application__________Ó."
+    "init": "Inicializando aplicación...",
+    "login": "Comprobando las credenciales del usuario...",
+    "portalapp": "Consultando el portal y la aplicación...",
+    "groupdata": "Consultando datos del grupo...",
+    "groupprocess": "Procesando la respuesta del grupo...",
+    "groupitems": "Cargando elementos...",
+    "failed": "Error al cargar la aplicación."
   },
   "viewLoading": {
-    "scripts": "á_Fetching scripts______Ó..",
-    "map": "á_Preparing the map_______Ó..",
-    "basemap": "á_Loading the basemap_______Ó..",
-    "layers": "á_Processing layers_______Ó..",
-    "view": "á_Initializing the view________Ó..",
-    "widgets": "á_Adding Widgets______Ó..",
-    "failed": "á_The item failed to load________Ó.",
-    "sorry": "á_Sorry, something went wrong loading the requested item__________________Ó.",
-    "iframe": "á_Sorry, your browser does not support iframes_______________Ó."
+    "scripts": "Recuperando scripts...",
+    "map": "Preparando el mapa...",
+    "basemap": "Cargando el mapa base...",
+    "layers": "Procesando capas...",
+    "view": "Inicializando la vista...",
+    "widgets": "Agregando widgets...",
+    "failed": "Error al cargar el elemento.",
+    "sorry": "Lo sentimos. Se ha producido un error al cargar el elemento solicitado.",
+    "iframe": "Lo sentimos. Su navegador no admite iframes."
   },
   "header": {
-    "agol": "á_View on ArcGIS Online_______Ó",
-    "search": "á_Search___Ó"
+    "agol": "Ver en ArcGIS Online",
+    "search": "Buscar"
   },
   "pager": {
-    "noResults": "á_Your search did not return any results_____________Ó."
+    "noResults": "La búsqueda no ha producido resultados."
   }
 });

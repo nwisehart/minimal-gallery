@@ -1,38 +1,38 @@
 define({
   "ui": {
-    "close": "ı_Close___İ",
-    "mapExtTip": "ı_Open Fullscreen Map_______İ",
-    "sceneExtTip": "ı_Open Fullscreen Scene_______İ",
-    "appExtTip": "ı_Open Fullscreen Application_________İ",
-    "fileExtTip": "ı_Download File_____İ",
-    "itemExtTip": "ı_Open ArcGIS Online Item Page_________İ",
-    "galleryTip": "ı_Open in Gallery______İ"
+    "close": "Kapat",
+    "mapExtTip": "Tam Ekran Haritayı Aç",
+    "sceneExtTip": "Tam Ekran Sahneyi Aç",
+    "appExtTip": "Tam Ekran Uygulamayı Aç",
+    "fileExtTip": "Dosya İndir",
+    "itemExtTip": "ArcGIS Online Öğe Sayfasını Aç",
+    "galleryTip": "Galeride Aç"
   },
   "appLoading": {
-    "init": "ı_Initializing application_________İ..",
-    "login": "ı_Checking user login_______İ..",
-    "portalapp": "ı_Querying portal & application__________İ..",
-    "groupdata": "ı_Querying group data_______İ..",
-    "groupprocess": "ı_Processing group response_________İ..",
-    "groupitems": "ı_Loading items______İ..",
-    "failed": "ı_Failed to load the application__________İ."
+    "init": "Uygulama başlatılıyor..",
+    "login": "Kullanıcı oturumu denetleniyor..",
+    "portalapp": "Portal ve uygulama sorgulanıyor..",
+    "groupdata": "Grup verileri sorgulanıyor..",
+    "groupprocess": "Grup yanıtı işleniyor..",
+    "groupitems": "Öğeler yükleniyor..",
+    "failed": "Uygulama yüklenemedi."
   },
   "viewLoading": {
-    "scripts": "ı_Fetching scripts______İ..",
-    "map": "ı_Preparing the map_______İ..",
-    "basemap": "ı_Loading the basemap_______İ..",
-    "layers": "ı_Processing layers_______İ..",
-    "view": "ı_Initializing the view________İ..",
-    "widgets": "ı_Adding Widgets______İ..",
-    "failed": "ı_The item failed to load________İ.",
-    "sorry": "ı_Sorry, something went wrong loading the requested item__________________İ.",
-    "iframe": "ı_Sorry, your browser does not support iframes_______________İ."
+    "scripts": "Komutlar gönderiliyor..",
+    "map": "Harita hazırlanıyor..",
+    "basemap": "Altlık harita yükleniyor..",
+    "layers": "Katmanlar işleniyor..",
+    "view": "Görünüm başlatılıyor..",
+    "widgets": "Araçlar ekleniyor..",
+    "failed": "Öğe yüklenemedi.",
+    "sorry": "Üzgünüz, istenen öğe yüklenirken bir şey ters gitti.",
+    "iframe": "Üzgünüz, tarayıcınız iframes'i desteklemiyor."
   },
   "header": {
-    "agol": "ı_View on ArcGIS Online_______İ",
-    "search": "ı_Search___İ"
+    "agol": "ArcGIS Online üzerinde görüntüle",
+    "search": "Arama"
   },
   "pager": {
-    "noResults": "ı_Your search did not return any results_____________İ."
+    "noResults": "Aramanız hiçbir sonuç döndürmedi."
   }
 });

@@ -1,38 +1,38 @@
 define({
   "ui": {
-    "close": "Š_Close___č",
-    "mapExtTip": "Š_Open Fullscreen Map_______č",
-    "sceneExtTip": "Š_Open Fullscreen Scene_______č",
-    "appExtTip": "Š_Open Fullscreen Application_________č",
-    "fileExtTip": "Š_Download File_____č",
-    "itemExtTip": "Š_Open ArcGIS Online Item Page_________č",
-    "galleryTip": "Š_Open in Gallery______č"
+    "close": "Zapri",
+    "mapExtTip": "Odpri celozaslonsko karto",
+    "sceneExtTip": "Odpri celozaslonski 3D-prizor",
+    "appExtTip": "Odpri celozaslonsko aplikacijo",
+    "fileExtTip": "Prenesi datoteko",
+    "itemExtTip": "Odpri stran elementa ArcGIS Online",
+    "galleryTip": "Odpri v galeriji"
   },
   "appLoading": {
-    "init": "Š_Initializing application_________č..",
-    "login": "Š_Checking user login_______č..",
-    "portalapp": "Š_Querying portal & application__________č..",
-    "groupdata": "Š_Querying group data_______č..",
-    "groupprocess": "Š_Processing group response_________č..",
-    "groupitems": "Š_Loading items______č..",
-    "failed": "Š_Failed to load the application__________č."
+    "init": "Inicializacija aplikacije...",
+    "login": "Preverjanje prijave uporabnika...",
+    "portalapp": "Poizvedovanje po portalu in aplikaciji…",
+    "groupdata": "Poizvedovanje po podatkih skupine…",
+    "groupprocess": "Obdelovanje odziva skupine...",
+    "groupitems": "Nalaganje elementov...",
+    "failed": "Aplikacije ni bilo mogoče naložiti."
   },
   "viewLoading": {
-    "scripts": "Š_Fetching scripts______č..",
-    "map": "Š_Preparing the map_______č..",
-    "basemap": "Š_Loading the basemap_______č..",
-    "layers": "Š_Processing layers_______č..",
-    "view": "Š_Initializing the view________č..",
-    "widgets": "Š_Adding Widgets______č..",
-    "failed": "Š_The item failed to load________č.",
-    "sorry": "Š_Sorry, something went wrong loading the requested item__________________č.",
-    "iframe": "Š_Sorry, your browser does not support iframes_______________č."
+    "scripts": "Pridobivanje skript...",
+    "map": "Priprava karte...",
+    "basemap": "Nalaganje temeljne karte...",
+    "layers": "Obdelovanje slojev...",
+    "view": "Inicializacija pogleda...",
+    "widgets": "Dodajanje pripomočkov...",
+    "failed": "Elementa ni bilo mogoče naložiti.",
+    "sorry": "Oprostite, med nalaganjem zahtevanega elementa je prišlo do težav.",
+    "iframe": "Oprostite, vaš brskalnik ne podpira iframes."
   },
   "header": {
-    "agol": "Š_View on ArcGIS Online_______č",
-    "search": "Š_Search___č"
+    "agol": "Oglejte si na ArcGIS Online",
+    "search": "Išči"
   },
   "pager": {
-    "noResults": "Š_Your search did not return any results_____________č."
+    "noResults": "Vaše iskanje ni vrnilo nobenih rezultatov."
   }
 });
