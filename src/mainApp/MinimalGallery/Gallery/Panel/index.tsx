@@ -130,7 +130,13 @@ export default class Panel extends Component<PanelState, ComponentState> {
         let title;
         if (config.showItemTitle) {
             title = (
-                <a title={mainTip} style={`color: ${config.linkColor}`} class="break-word">
+                <a
+                    title={mainTip}
+                    style={`color: ${config.linkColor}`}
+                    class="break-word"
+                    onclick={this.handleItemClick}
+                    onkeypress={this.handleItemKeyPress}
+                >
                     <h5 tabindex="0" class="clickable">
                         {this.props.item.title}
                     </h5>
