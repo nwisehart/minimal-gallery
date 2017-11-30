@@ -109,8 +109,10 @@ export default class Header extends Component<MinimalGalleryState, ComponentStat
         }
     }
 
-    private handleSearch(e: any) {
-        e.preventDefault();
+    private handleSearch(e?: Event) {
+        if (e) {
+            e.preventDefault();
+        }
         const query = this.state.searchTerm.length > 0 ? `query=${this.state.searchTerm}` : "";
         this.dispatch(push(`${query}`));
     }
@@ -119,6 +121,9 @@ export default class Header extends Component<MinimalGalleryState, ComponentStat
         this.setState({
             searchTerm: e.target.value
         });
+        if (e.target.value === "") {
+            this.handleSearch();
+        }
     }
 }
 
