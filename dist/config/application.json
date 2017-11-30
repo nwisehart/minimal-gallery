@@ -40,7 +40,7 @@
   "homeWidget": "top-left",
   "legendWidget": "bottom-right",
   "locateWidget": "top-left",
-  "searchWidget": "bottom-left",
+  "searchWidget": "top-right",
   "appid": "",
   "group": "a09a1595fd944f17a47a244e67d804f9",
   "title": "",

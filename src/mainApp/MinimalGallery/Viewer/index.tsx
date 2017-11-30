@@ -67,16 +67,16 @@ export default class Viewer extends Component<MinimalGalleryState, ComponentStat
                 >
                     <div id="map-container" class="map-container" key={`map-container-${item.id}`}>
                         {view}
-                        <button
-                            class="btn btn-clear view-exit-button clickable"
-                            onclick={this.handleExitClick}
-                            onkeypress={this.handleExitKeyPress}
-                            title={i18n.ui.close}
-                            afterCreate={this.focus}
-                        >
-                            <span class="icon-ui-close view-exit-icon" />
-                        </button>
                     </div>
+                    <button
+                        class="btn btn-clear view-exit-button clickable"
+                        onclick={this.handleExitClick}
+                        onkeypress={this.handleExitKeyPress}
+                        title={i18n.ui.close}
+                        afterCreate={this.focus}
+                    >
+                        <span class="icon-ui-close view-exit-icon" />
+                    </button>
                 </div>
             );
         }
