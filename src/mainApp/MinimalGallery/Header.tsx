@@ -66,6 +66,7 @@ export default class Header extends Component<MinimalGalleryState, ComponentStat
                 href={appendProtocol(config.agolLinkLocation.replace("${GROUP_ID}", config.group))}
                 style={`color: ${config.headerTextColor}`}
                 title={config.agolLinkText}
+                target="_blank"
             >
                 {config.agolLinkText}
             </a>
@@ -76,7 +77,7 @@ export default class Header extends Component<MinimalGalleryState, ComponentStat
                 <div class="grid-container">
                     <div class="column-24">
                         <div class="tablet-hide">
-                            <a href={appendProtocol(config.headerTextURL)}>
+                            <a href={appendProtocol(config.headerTextURL)} target="_blank">
                                 {headImage}
                                 <a class="top-nav-title" style={`color: ${config.headerTextColor}`}>
                                     {config.headerText}

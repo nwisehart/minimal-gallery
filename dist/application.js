@@ -874,12 +874,12 @@ var Header = /** @class */ (function (_super) {
                 tsx("input", { title: config.searchPlaceholder, type: "search", placeholder: config.searchPlaceholder, name: "q", value: this.state.searchTerm, style: "margin-top: -1px;", oninput: this.handleSearchChange }),
                 tsx("button", { type: "submit", class: "hide" }, config.searchPlaceholder)))) : null;
         var headImage = config.headerImage ? (tsx("img", { src: config.headerImageLocation, class: "header-image", alt: config.headerText })) : null;
-        var agolLink = config.showAgolLink ? (tsx("a", { class: "top-nav-link", href: appendProtocol(config.agolLinkLocation.replace("${GROUP_ID}", config.group)), style: "color: " + config.headerTextColor, title: config.agolLinkText }, config.agolLinkText)) : null;
+        var agolLink = config.showAgolLink ? (tsx("a", { class: "top-nav-link", href: appendProtocol(config.agolLinkLocation.replace("${GROUP_ID}", config.group)), style: "color: " + config.headerTextColor, title: config.agolLinkText, target: "_blank" }, config.agolLinkText)) : null;
         return (tsx("header", { class: "top-nav fade-in", style: "background-color: " + config.headColor },
             tsx("div", { class: "grid-container" },
                 tsx("div", { class: "column-24" },
                     tsx("div", { class: "tablet-hide" },
-                        tsx("a", { href: appendProtocol(config.headerTextURL) },
+                        tsx("a", { href: appendProtocol(config.headerTextURL), target: "_blank" },
                             headImage,
                             tsx("a", { class: "top-nav-title", style: "color: " + config.headerTextColor }, config.headerText)),
                         headSearch,
