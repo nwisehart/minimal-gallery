@@ -12,7 +12,7 @@ export interface BaseState {
 export default (state: MinimalGalleryState["base"], action: { type: string, payload: any }): MinimalGalleryState["base"] => {
     switch (action.type) {
         case SAVE_APP_BASE_RESULT:
-            const perPage = action.payload.config.itemsPerPage;
+            const perPage = parseInt(action.payload.config.itemsPerPage, 10);
             return {
                 ...state,
                 loadMessage: "groupItems",
@@ -20,7 +20,7 @@ export default (state: MinimalGalleryState["base"], action: { type: string, payl
                     ...action.payload,
                     config: {
                         ...action.payload.config,
-                        itemsPerPage: typeof perPage === "number" && perPage > 0 ? perPage : 20
+                        itemsPerPage: !isNaN(perPage) && perPage > 0 ? perPage : 20
                     }
                 }
             };
