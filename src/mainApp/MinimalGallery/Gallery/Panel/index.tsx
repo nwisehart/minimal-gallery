@@ -244,7 +244,7 @@ export default class Panel extends Component<PanelState, ComponentState> {
                 window.open(this.props.item.url, "_blank");
             } else {
                 window.open(
-                    `${window.location.origin}${window.location.pathname}?viewer=${this.props.item.id}&fullscreen=true`,
+                    `${window.location.origin}${window.location.pathname}${window.location.search}#viewer=${this.props.item.id}&fullscreen=true`,
                     "_blank"
                 );
             }
