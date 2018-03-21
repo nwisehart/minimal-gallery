@@ -44,7 +44,11 @@ export default class MinimalGallery extends Component<MinimalGalleryState, Compo
         } else if (status === "success") {
             return (
                 <div>
-                    <Header key="minimal-gallery-header" />
+                    {
+                        this.props.base.applicationBaseResult.config.showHeader ?
+                            <Header key="minimal-gallery-header" /> :
+                            null
+                    }
                     <Gallery key="minimal-gallery" />
                     <Viewer key="minimal-gallery-viewer" />
                     <Pager key="minimal-gallery-pager" />

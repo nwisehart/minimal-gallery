@@ -78,6 +78,8 @@ const fileTypes = {
     "iWork Keynote": "file",
     "iWork Numbers": "file",
     "iWork Pages": "file",
+    "Form": "file",
+    "Workforce Project": "file"
 };
 
 export default {
