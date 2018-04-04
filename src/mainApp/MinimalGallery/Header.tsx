@@ -23,7 +23,11 @@ export default class Header extends Component<MinimalGalleryState, ComponentStat
         const config = this.props.base.applicationBaseResult.config;
 
         const headSearch = config.headerSearch ? (
-            <nav class="class-top-nav-list right" role="navigation" title="usernav">
+            <nav
+                class="class-top-nav-list right"
+                role="navigation"
+                title="usernav"
+            >
                 <form class="inline-block padding-leader-half" role="search" onsubmit={this.handleSearch}>
                     <input
                         title={config.searchPlaceholder}

@@ -34,7 +34,10 @@ export default class Gallery extends Component<MinimalGalleryState, ComponentSta
         }
 
         return (
-            <div class="grid-container leader-1">
+            <div
+                class="grid-container leader-1"
+                style={`background-color: ${this.props.base.applicationBaseResult.config.bgColor};`}
+            >
                 <div class="column-24">
                     <div class="block-group block-group-5-up tablet-block-group-3-up phone-block-group-1-up">
                         {this.mapItemsToChildren()}
