@@ -334,16 +334,6 @@
 			}],
 			"tooltip": "Controls the placement of a Search Widget on gallery-embedded or fullscreen maps and scenes."
 		}, {
-			"label": "Default search address",
-			"fieldName": "locatorDefaultAddress",
-			"type": "string",
-			"tooltip": "Default address for the map search in the Simple Viewer"
-		}, {
-			"label": "Zoom level for selected search results",
-			"fieldName": "zoomLevel",
-			"type": "number",
-			"tooltip": "Map zoom level for viewing selected features"
-		}, {
 			"label": "Basemap group",
 			"fieldName": "basemapGroupTitle",
 			"type": "string",
