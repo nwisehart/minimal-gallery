@@ -1,3 +1,45 @@
+.boilerplate-view {
+    padding: 0;
+    margin: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.boilerplate-loading-indicator {
+    display: none;
+    height: 100%;
+    width: 100%;
+    z-index: 500;
+    position: absolute;
+    top: 0;
+    left: 0;
+    overflow: hidden;
+    background-color: #fff;
+}
+
+.boilerplate--loading .boilerplate-loading-indicator {
+    display: block;
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-image: url(assets/loader-ie9.gif);
+}
+
+.boilerplate--error .boilerplate-loading-indicator {
+    display: block;
+}
+
+.boilerplate-loading-message {
+    background-position: top center;
+    background-repeat: no-repeat;
+    padding-top: 60px;
+    width: 100%;
+    position: absolute;
+    z-index: 2;
+    top: 40%;
+    left: 0;
+    text-align: center;
+}
+
 #view-container {
     z-index: 1000000;
     top: 0px;
@@ -5,11 +47,11 @@
     position: fixed;
     width: 100%;
     height: 100%;
-    background-color: rgba(255,255,255,0.85);
+    background-color: rgba(255, 255, 255, 0.85);
 }
 
 .map-container {
-    background-color: rgba(255,255,255,1);
+    background-color: rgba(255, 255, 255, 1);
     position: absolute;
     top: 50%;
     left: 50%;
@@ -147,13 +189,13 @@
     right: 50%;
     margin-right: -5px;
     border: 5px solid transparent;
-    border-top-color: rgba(0,0,0,0.80);
+    border-top-color: rgba(0, 0, 0, 0.80);
     content: "";
     position: absolute;
     z-index: 1000001;
     width: 0;
     height: 0;
-    color: rgba(0,0,0,0.75);
+    color: rgba(0, 0, 0, 0.75);
     pointer-events: none;
     max-width: 250px;
 }
@@ -169,7 +211,7 @@
     font-size: 0.875rem;
     text-align: center;
     pointer-events: none;
-    background: rgba(0,0,0,0.80);
+    background: rgba(0, 0, 0, 0.80);
     top: auto;
     bottom: 100%;
     right: 20%;
@@ -200,15 +242,17 @@
 }
 
 @media screen and (max-width: 1200px) and (min-width: 860px) {
-    .block-group-5-up > .block {
-    -ms-flex-preferred-size: calc(25% - 1.5rem);
-    flex-basis: calc(25% - 1.5rem);
-    width: calc(25% - 1.5rem); }
+    .block-group-5-up>.block {
+        -ms-flex-preferred-size: calc(25% - 1.5rem);
+        flex-basis: calc(25% - 1.5rem);
+        width: calc(25% - 1.5rem);
+    }
 }
 
 @media screen and (max-width: 640px) and (min-width: 480px) {
-    .block-group-5-up > .block {
-    -ms-flex-preferred-size: calc(50% - 1.5rem);
-    flex-basis: calc(50% - 1.5rem);
-    width: calc(50% - 1.5rem); }
+    .block-group-5-up>.block {
+        -ms-flex-preferred-size: calc(50% - 1.5rem);
+        flex-basis: calc(50% - 1.5rem);
+        width: calc(50% - 1.5rem);
+    }
 }

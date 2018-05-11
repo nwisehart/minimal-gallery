@@ -75,7 +75,9 @@ export default class Viewer extends Component<MinimalGalleryState, ComponentStat
                         title={i18n.ui.close}
                         afterCreate={this.focus}
                     >
-                        <span class="icon-ui-close view-exit-icon" />
+                        <span class="view-exit-icon">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32" class="svg-icon"><path d="M18.404 16l9.9 9.9-2.404 2.404-9.9-9.9-9.9 9.9L3.696 25.9l9.9-9.9-9.9-9.898L6.1 3.698l9.9 9.899 9.9-9.9 2.404 2.406-9.9 9.898z" /></svg>
+                        </span>
                     </button>
                 </div>
             );

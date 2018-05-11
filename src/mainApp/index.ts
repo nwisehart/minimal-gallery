@@ -1,4 +1,4 @@
-import * as ApplicationBase from "esriApplicationBase/ApplicationBase";
+import * as ApplicationBase from "../applicationBase/ApplicationBase";
 import * as requireUtils from "esri/core/requireUtils";
 
 import MainApp from "./Widget";
