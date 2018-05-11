@@ -5,10 +5,6 @@ dojoConfig = {
   async: true,
   packages: [
     {
-      name: "applicationBase",
-      location: dist_path + "/applicationBase"
-    },
-    {
       name: "config",
       location: dist_path + "/config"
     }
