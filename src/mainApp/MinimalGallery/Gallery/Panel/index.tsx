@@ -124,8 +124,17 @@ export default class Panel extends Component<PanelState, ComponentState> {
             );
         }
 
-        const mainTip = this.props.itemType === "file" ? i18n.ui.itemExtTip :
+        let mainTip = this.props.itemType === "file" ? i18n.ui.itemExtTip :
             (config.alwaysOpenFullscreen ? i18n.ui[`${this.state.panelType}ExtTip`] : i18n.ui.galleryTip);
+
+        if (this.props.item.type === "PDF") {
+            mainTip = i18n.ui.pdfTip;
+        } else if (
+            this.props.item.type === "Document Link" && 
+            this.props.applicationBaseResult.config.openDocumentLinksDirectly
+        ) {
+            mainTip = i18n.ui.documentTip;
+        }
 
         let title;
         if (config.showItemTitle) {
@@ -218,7 +227,16 @@ export default class Panel extends Component<PanelState, ComponentState> {
     }
 
     private handleItemClick() {
-        if (this.props.itemType === "file") {
+        if (
+            this.props.item.type === "Document Link" && 
+            this.props.applicationBaseResult.config.openDocumentLinksDirectly
+        ) {
+            window.open(this.props.item.url);
+        } else if (this.props.item.type === "PDF") {
+            window.open(
+                `${this.props.item.itemUrl}/data`
+            );
+        } else if (this.props.itemType === "file") {
             window.open(
                 `${this.props.applicationBaseResult.portal.url}/home/item.html?id=${this.props.item.id}`,
                 "_blank"
