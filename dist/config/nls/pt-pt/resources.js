@@ -6,7 +6,9 @@ define({
     "appExtTip": "Abrir Aplicação em Ecrã Inteiro",
     "fileExtTip": "Descarregar Ficheiro",
     "itemExtTip": "Abrir Página do Item do ArcGIS Online",
-    "galleryTip": "Abrir na Galeria"
+    "galleryTip": "Abrir na Galeria",
+    "pdfTip": "ã_Open PDF___Ç",
+    "documentTip": "ã_Open Document_____Ç"
   },
   "appLoading": {
     "init": "A inicializar aplicação...",

@@ -6,7 +6,9 @@ define({
     "appExtTip": "Buka Aplikasi Layar Penuh",
     "fileExtTip": "Unduh File",
     "itemExtTip": "Buka Halaman Item ArcGIS Online",
-    "galleryTip": "Buka di Galeri"
+    "galleryTip": "Buka di Galeri",
+    "pdfTip": "ng_Open PDF___ny",
+    "documentTip": "ng_Open Document_____ny"
   },
   "appLoading": {
     "init": "Menginisialisasi aplikasi..",

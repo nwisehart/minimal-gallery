@@ -6,7 +6,9 @@ define({
     "appExtTip": "פתח יישום במסך מלא",
     "fileExtTip": "הורד קובץ",
     "itemExtTip": "פתח דף פריט של ArcGIS Online",
-    "galleryTip": "פתח בגלריה"
+    "galleryTip": "פתח בגלריה",
+    "pdfTip": "כן_Open PDF___ש",
+    "documentTip": "כן_Open Document_____ש"
   },
   "appLoading": {
     "init": "מפעיל יישום..",

@@ -6,7 +6,9 @@ define({
     "appExtTip": "Obre l'aplicació de pantalla completa",
     "fileExtTip": "Baixa el fitxer",
     "itemExtTip": "Obre la pàgina de l'element de l'ArcGIS Online",
-    "galleryTip": "Obre-ho a la galeria"
+    "galleryTip": "Obre-ho a la galeria",
+    "pdfTip": "ó_Open PDF___à",
+    "documentTip": "ó_Open Document_____à"
   },
   "appLoading": {
     "init": "S'està inicialitzant l'aplicació...",

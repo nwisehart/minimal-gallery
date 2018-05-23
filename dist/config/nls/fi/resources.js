@@ -6,7 +6,9 @@ define({
     "appExtTip": "Avaa koko näytön kokoinen sovellus",
     "fileExtTip": "Lataa tiedosto",
     "itemExtTip": "Avaa ArcGIS Online -kohdesivu",
-    "galleryTip": "Avaa galleriassa"
+    "galleryTip": "Avaa galleriassa",
+    "pdfTip": "Å_Open PDF___ö",
+    "documentTip": "Å_Open Document_____ö"
   },
   "appLoading": {
     "init": "Sovellusta alustetaan...",

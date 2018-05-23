@@ -6,7 +6,9 @@ define({
     "appExtTip": "Otvori aplikaciju preko čitavog zaslona",
     "fileExtTip": "Preuzmi datoteku",
     "itemExtTip": "Otvori stranicu sa stavkama za ArcGIS Online",
-    "galleryTip": "Otvori u Galeriji"
+    "galleryTip": "Otvori u Galeriji",
+    "pdfTip": "Č_Open PDF___ž",
+    "documentTip": "Č_Open Document_____ž"
   },
   "appLoading": {
     "init": "Pokretanje aplikacije...",

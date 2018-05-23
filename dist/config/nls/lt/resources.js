@@ -6,7 +6,9 @@ define({
     "appExtTip": "Atverti aplikaciją per visą ekraną",
     "fileExtTip": "Atsisiųsti failą",
     "itemExtTip": "Atverti ArcGIS Online elemento puslapį",
-    "galleryTip": "Atverti galerijoje"
+    "galleryTip": "Atverti galerijoje",
+    "pdfTip": "Į_Open PDF___š",
+    "documentTip": "Į_Open Document_____š"
   },
   "appLoading": {
     "init": "Paleidžiama aplikacija..",

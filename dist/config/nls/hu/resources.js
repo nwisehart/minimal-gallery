@@ -6,7 +6,9 @@ define({
     "appExtTip": "Teljes képernyős alkalmazás megnyitása",
     "fileExtTip": "Fájl letöltése",
     "itemExtTip": "ArcGIS Online elemoldal megnyitása",
-    "galleryTip": "Megnyitás a Galériában"
+    "galleryTip": "Megnyitás a Galériában",
+    "pdfTip": "í_Open PDF___ő",
+    "documentTip": "í_Open Document_____ő"
   },
   "appLoading": {
     "init": "Alkalmazás inicializálása...",

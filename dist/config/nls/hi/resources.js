@@ -6,7 +6,9 @@ define({
     "appExtTip": "पूर्ण स्क्रीन वाला एप्लिकेशन खोलें",
     "fileExtTip": "फ़ाइल डाउनलोड करें",
     "itemExtTip": "ArcGIS Online आइटम पेज खोलें",
-    "galleryTip": "गैलरी में खोलें"
+    "galleryTip": "गैलरी में खोलें",
+    "pdfTip": "आ_Open PDF___ज",
+    "documentTip": "आ_Open Document_____ज"
   },
   "appLoading": {
     "init": "एप्लिकेशन शुरू हो रहा है..",

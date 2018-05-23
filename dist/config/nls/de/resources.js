@@ -6,7 +6,9 @@ define({
     "appExtTip": "Vollbildanwendung öffnen",
     "fileExtTip": "Datei herunterladen",
     "itemExtTip": "ArcGIS Online-Elementseite öffnen",
-    "galleryTip": "In Galerie öffnen"
+    "galleryTip": "In Galerie öffnen",
+    "pdfTip": "ä_Open PDF___Ü",
+    "documentTip": "ä_Open Document_____Ü"
   },
   "appLoading": {
     "init": "Anwendung wird initialisiert..",

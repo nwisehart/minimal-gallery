@@ -6,7 +6,9 @@ define({
     "appExtTip": "Открыть полноэкранное приложение",
     "fileExtTip": "Загрузить файл",
     "itemExtTip": "Открыть страницу элемента в ArcGIS Online",
-    "galleryTip": "Открыть в галерее"
+    "galleryTip": "Открыть в галерее",
+    "pdfTip": "Ж_Open PDF___Я",
+    "documentTip": "Ж_Open Document_____Я"
   },
   "appLoading": {
     "init": "Инициализация приложения...",

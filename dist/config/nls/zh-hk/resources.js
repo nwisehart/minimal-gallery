@@ -6,7 +6,9 @@ define({
     "appExtTip": "開啟全螢幕應用程式",
     "fileExtTip": "下載檔案",
     "itemExtTip": "開啟 ArcGIS Online 項目頁面",
-    "galleryTip": "在圖庫中開啟"
+    "galleryTip": "在圖庫中開啟",
+    "pdfTip": "試_Open PDF___驗",
+    "documentTip": "試_Open Document_____驗"
   },
   "appLoading": {
     "init": "正在初始化應用程式..",

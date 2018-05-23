@@ -6,7 +6,9 @@ define({
     "appExtTip": "Mở ứng dụng toàn màn hình",
     "fileExtTip": "Tải xuống tệp",
     "itemExtTip": "Mở trang mục ArcGIS Online",
-    "galleryTip": "Mở trong thư viện"
+    "galleryTip": "Mở trong thư viện",
+    "pdfTip": "Đ_Open PDF___ớ",
+    "documentTip": "Đ_Open Document_____ớ"
   },
   "appLoading": {
     "init": "Đang khởi chạy ứng dụng..",

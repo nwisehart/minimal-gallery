@@ -6,7 +6,9 @@ define({
     "appExtTip": "فتح تطبيق ملء الشاشة",
     "fileExtTip": "تنزيل ملف",
     "itemExtTip": "فتح صفحة عنصر ArcGIS Online",
-    "galleryTip": "فتح في المعرض"
+    "galleryTip": "فتح في المعرض",
+    "pdfTip": "بيت_Open PDF___لاحقة",
+    "documentTip": "بيت_Open Document_____لاحقة"
   },
   "appLoading": {
     "init": "جارِ تهيئة التطبيق...",

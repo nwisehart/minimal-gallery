@@ -6,7 +6,9 @@ define({
     "appExtTip": "Ava rakendus täisekraanvaates",
     "fileExtTip": "Laadi fail alla",
     "itemExtTip": "Ava ArcGIS Online’i üksuse leht",
-    "galleryTip": "Ava galeriis"
+    "galleryTip": "Ava galeriis",
+    "pdfTip": "Š_Open PDF___ä",
+    "documentTip": "Š_Open Document_____ä"
   },
   "appLoading": {
     "init": "Rakenduse käivitamine..",

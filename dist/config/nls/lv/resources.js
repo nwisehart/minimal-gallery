@@ -6,7 +6,9 @@ define({
     "appExtTip": "Atvērt pilnekrāna lietotni",
     "fileExtTip": "Lejupielādēt failu",
     "itemExtTip": "Atvērt ArcGIS Online vienību lapu",
-    "galleryTip": "Atvērt galerijā"
+    "galleryTip": "Atvērt galerijā",
+    "pdfTip": "ķ_Open PDF___ū",
+    "documentTip": "ķ_Open Document_____ū"
   },
   "appLoading": {
     "init": "Tiek inicializēta lietotne…",

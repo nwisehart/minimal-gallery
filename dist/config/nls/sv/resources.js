@@ -6,7 +6,9 @@ define({
     "appExtTip": "Öppna applikation i helskärm",
     "fileExtTip": "Hämta fil",
     "itemExtTip": "Öppna objektsida för ArcGIS Online",
-    "galleryTip": "Öppna i galleri"
+    "galleryTip": "Öppna i galleri",
+    "pdfTip": "Å_Open PDF___ö",
+    "documentTip": "Å_Open Document_____ö"
   },
   "appLoading": {
     "init": "Startar applikation…",

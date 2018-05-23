@@ -6,7 +6,9 @@ define({
     "appExtTip": "Otevřít aplikaci na celé obrazovce",
     "fileExtTip": "Stáhnout soubor",
     "itemExtTip": "Otevřít stránku položek ArcGIS Online",
-    "galleryTip": "Otevřít v galerii"
+    "galleryTip": "Otevřít v galerii",
+    "pdfTip": "Ř_Open PDF___ů",
+    "documentTip": "Ř_Open Document_____ů"
   },
   "appLoading": {
     "init": "Probíhá spuštění aplikace..",
