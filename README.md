@@ -6,6 +6,8 @@ This is a group gallery built with the Esri [ArcGIS API for JavaScript v4.4](htt
 
 `dist/config/application.json` contains settings that may be altered to change the appearance and behavior of the application. The configurable options included with this application (in addition to the existing boilerplate options) are as follows:
 
+- `"openDocumentLinksDirectly"`: Boolean value controlling how "Document Link" items are opened. If true, a "Document Link" will open its underlying link when clicking on the thumbnail or title rather than the ArcGIS Online item page.
+- `"itemTypes"`: Array of sharing [API item types](https://developers.arcgis.com/rest/users-groups-and-items/items-and-item-types.htm) to allow in the gallery (e.g. [ "Web Map", "Web Mapping Application" ])
 - `"bgColor"`: The background color of the gallery
 - `"cardColor"`: The background color of the cards shown in the gallery for each item
 - `"appCaptionColor"`: The color of the card caption for the 'Web Mapping Application' item type
