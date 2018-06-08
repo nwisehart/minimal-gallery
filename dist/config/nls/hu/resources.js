@@ -7,8 +7,8 @@ define({
     "fileExtTip": "Fájl letöltése",
     "itemExtTip": "ArcGIS Online elemoldal megnyitása",
     "galleryTip": "Megnyitás a Galériában",
-    "pdfTip": "í_Open PDF___ő",
-    "documentTip": "í_Open Document_____ő"
+    "pdfTip": "PDF megnyitása",
+    "documentTip": "Dokumentum megnyitása"
   },
   "appLoading": {
     "init": "Alkalmazás inicializálása...",

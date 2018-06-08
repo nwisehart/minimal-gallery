@@ -7,8 +7,8 @@ define({
     "fileExtTip": "Baixa el fitxer",
     "itemExtTip": "Obre la pàgina de l'element de l'ArcGIS Online",
     "galleryTip": "Obre-ho a la galeria",
-    "pdfTip": "ó_Open PDF___à",
-    "documentTip": "ó_Open Document_____à"
+    "pdfTip": "Obre el PDF",
+    "documentTip": "Obre el document"
   },
   "appLoading": {
     "init": "S'està inicialitzant l'aplicació...",
