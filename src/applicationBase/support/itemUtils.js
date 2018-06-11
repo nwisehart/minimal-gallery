@@ -62,7 +62,7 @@ define(["require", "exports", "esri/core/requireUtils", "esri/core/promiseUtils"
     }
     exports.createView = createView;
     function createMapFromItem(options) {
-        var item = options.item, appProxies = options.appProxies;
+        var item = options.item, applicationProxies = options.applicationProxies;
         var isWebMap = item.type === "Web Map";
         var isWebScene = item.type === "Web Scene";
         if (!isWebMap && !isWebScene) {
@@ -72,25 +72,25 @@ define(["require", "exports", "esri/core/requireUtils", "esri/core/promiseUtils"
     }
     exports.createMapFromItem = createMapFromItem;
     function createWebMapFromItem(options) {
-        var item = options.item, appProxies = options.appProxies;
+        var item = options.item, applicationProxies = options.applicationProxies;
         return requireUtils.when(require, "esri/WebMap").then(function (WebMap) {
             var wm = new WebMap({
                 portalItem: item
             });
             return wm.load().then(function () {
-                return _updateProxiedLayers(wm, appProxies);
+                return _updateProxiedLayers(wm, applicationProxies);
             });
         });
     }
     exports.createWebMapFromItem = createWebMapFromItem;
     function createWebSceneFromItem(options) {
-        var item = options.item, appProxies = options.appProxies;
+        var item = options.item, applicationProxies = options.applicationProxies;
         return requireUtils.when(require, "esri/WebScene").then(function (WebScene) {
             var ws = new WebScene({
                 portalItem: item
             });
             return ws.load().then(function () {
-                return _updateProxiedLayers(ws, appProxies);
+                return _updateProxiedLayers(ws, applicationProxies);
             });
         });
     }
@@ -133,11 +133,11 @@ define(["require", "exports", "esri/core/requireUtils", "esri/core/promiseUtils"
     //  Private Methods
     //
     //--------------------------------------------------------------------------
-    function _updateProxiedLayers(webItem, appProxies) {
-        if (!appProxies) {
+    function _updateProxiedLayers(webItem, applicationProxies) {
+        if (!applicationProxies) {
             return webItem;
         }
-        appProxies.forEach(function (proxy) {
+        applicationProxies.forEach(function (proxy) {
             webItem.layers.forEach(function (layer) {
                 if (layer.url === proxy.sourceUrl) {
                     layer.url = proxy.proxyUrl;
