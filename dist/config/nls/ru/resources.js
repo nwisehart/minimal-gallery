@@ -7,8 +7,8 @@ define({
     "fileExtTip": "Загрузить файл",
     "itemExtTip": "Открыть страницу элемента в ArcGIS Online",
     "galleryTip": "Открыть в галерее",
-    "pdfTip": "Ж_Open PDF___Я",
-    "documentTip": "Ж_Open Document_____Я"
+    "pdfTip": "Открыть PDF",
+    "documentTip": "Открыть документ"
   },
   "appLoading": {
     "init": "Инициализация приложения...",

@@ -7,8 +7,8 @@ define({
     "fileExtTip": "Preuzmi datoteku",
     "itemExtTip": "Otvori stranicu sa stavkama za ArcGIS Online",
     "galleryTip": "Otvori u Galeriji",
-    "pdfTip": "Č_Open PDF___ž",
-    "documentTip": "Č_Open Document_____ž"
+    "pdfTip": "Otvori PDF",
+    "documentTip": "Otvori dokument"
   },
   "appLoading": {
     "init": "Pokretanje aplikacije...",

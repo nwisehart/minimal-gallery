@@ -7,8 +7,8 @@ define({
     "fileExtTip": "Stáhnout soubor",
     "itemExtTip": "Otevřít stránku položek ArcGIS Online",
     "galleryTip": "Otevřít v galerii",
-    "pdfTip": "Ř_Open PDF___ů",
-    "documentTip": "Ř_Open Document_____ů"
+    "pdfTip": "Otevřít PDF",
+    "documentTip": "Otevřený dokument"
   },
   "appLoading": {
     "init": "Probíhá spuštění aplikace..",

@@ -7,8 +7,8 @@ define({
     "fileExtTip": "Datei herunterladen",
     "itemExtTip": "ArcGIS Online-Elementseite öffnen",
     "galleryTip": "In Galerie öffnen",
-    "pdfTip": "ä_Open PDF___Ü",
-    "documentTip": "ä_Open Document_____Ü"
+    "pdfTip": "PDF öffnen",
+    "documentTip": "Dokument öffnen"
   },
   "appLoading": {
     "init": "Anwendung wird initialisiert..",

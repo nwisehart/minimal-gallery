@@ -7,8 +7,8 @@ define({
     "fileExtTip": "ดาวน์โหลดไฟล์",
     "itemExtTip": "เปิดหน้ารายการ Open ArcGIS Online",
     "galleryTip": "เปิดในแกลเลอรี",
-    "pdfTip": "ก้_Open PDF___ษฺ",
-    "documentTip": "ก้_Open Document_____ษฺ"
+    "pdfTip": "เปิด PDF",
+    "documentTip": "เปิดเอกสาร"
   },
   "appLoading": {
     "init": "กำลังเริ่มใช้งานแอปพลิเคชัน..",

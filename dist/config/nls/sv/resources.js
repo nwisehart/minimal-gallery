@@ -7,8 +7,8 @@ define({
     "fileExtTip": "Hämta fil",
     "itemExtTip": "Öppna objektsida för ArcGIS Online",
     "galleryTip": "Öppna i galleri",
-    "pdfTip": "Å_Open PDF___ö",
-    "documentTip": "Å_Open Document_____ö"
+    "pdfTip": "Öppna PDF",
+    "documentTip": "Öppna dokument"
   },
   "appLoading": {
     "init": "Startar applikation…",

@@ -7,8 +7,8 @@ define({
     "fileExtTip": "下载文件",
     "itemExtTip": "打开 ArcGIS Online 项目页面",
     "galleryTip": "在库中打开",
-    "pdfTip": "试_Open PDF___验",
-    "documentTip": "试_Open Document_____验"
+    "pdfTip": "打开 PDF",
+    "documentTip": "打开文档"
   },
   "appLoading": {
     "init": "正在初始化应用程序..",

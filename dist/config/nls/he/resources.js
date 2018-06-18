@@ -7,8 +7,8 @@ define({
     "fileExtTip": "הורד קובץ",
     "itemExtTip": "פתח דף פריט של ArcGIS Online",
     "galleryTip": "פתח בגלריה",
-    "pdfTip": "כן_Open PDF___ש",
-    "documentTip": "כן_Open Document_____ש"
+    "pdfTip": "פתח PDF",
+    "documentTip": "פתח מסמך"
   },
   "appLoading": {
     "init": "מפעיל יישום..",

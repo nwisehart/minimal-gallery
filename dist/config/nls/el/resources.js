@@ -7,8 +7,8 @@ define({
     "fileExtTip": "Λήψη αρχείου",
     "itemExtTip": "Άνοιγμα σελίδας αντικειμένου ArcGIS Online",
     "galleryTip": "Άνοιγμα στη συλλογή",
-    "pdfTip": "π_Open PDF___Ω",
-    "documentTip": "π_Open Document_____Ω"
+    "pdfTip": "Άνοιγμα PDF",
+    "documentTip": "Άνοιγμα εγγράφου"
   },
   "appLoading": {
     "init": "Προετοιμασία εφαρμογής..",

@@ -7,8 +7,8 @@ define({
     "fileExtTip": "Dosya İndir",
     "itemExtTip": "ArcGIS Online Öğe Sayfasını Aç",
     "galleryTip": "Galeride Aç",
-    "pdfTip": "ı_Open PDF___İ",
-    "documentTip": "ı_Open Document_____İ"
+    "pdfTip": "PDF’i aç",
+    "documentTip": "Belgeyi Aç"
   },
   "appLoading": {
     "init": "Uygulama başlatılıyor..",

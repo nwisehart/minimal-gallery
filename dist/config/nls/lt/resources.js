@@ -7,8 +7,8 @@ define({
     "fileExtTip": "Atsisiųsti failą",
     "itemExtTip": "Atverti ArcGIS Online elemento puslapį",
     "galleryTip": "Atverti galerijoje",
-    "pdfTip": "Į_Open PDF___š",
-    "documentTip": "Į_Open Document_____š"
+    "pdfTip": "Atverti PDF",
+    "documentTip": "Atverti dokumentą"
   },
   "appLoading": {
     "init": "Paleidžiama aplikacija..",

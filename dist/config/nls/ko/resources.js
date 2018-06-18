@@ -7,8 +7,8 @@ define({
     "fileExtTip": "파일 다운로드",
     "itemExtTip": "ArcGIS Online 항목 페이지 열기",
     "galleryTip": "갤러리에서 열기",
-    "pdfTip": "한_Open PDF___빠",
-    "documentTip": "한_Open Document_____빠"
+    "pdfTip": "PDF 열기",
+    "documentTip": "문서 열기"
   },
   "appLoading": {
     "init": "응용프로그램 초기화 중...",

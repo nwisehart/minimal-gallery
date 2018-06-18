@@ -7,8 +7,8 @@ define({
     "fileExtTip": "Laadi fail alla",
     "itemExtTip": "Ava ArcGIS Online’i üksuse leht",
     "galleryTip": "Ava galeriis",
-    "pdfTip": "Š_Open PDF___ä",
-    "documentTip": "Š_Open Document_____ä"
+    "pdfTip": "Ava PDF",
+    "documentTip": "Ava dokument"
   },
   "appLoading": {
     "init": "Rakenduse käivitamine..",

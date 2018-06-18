@@ -7,8 +7,8 @@ define({
     "fileExtTip": "Descărcare fişier",
     "itemExtTip": "Deschidere pagină obiect ArcGIS Online",
     "galleryTip": "Deschide în Galerie",
-    "pdfTip": "Ă_Open PDF___ș",
-    "documentTip": "Ă_Open Document_____ș"
+    "pdfTip": "Deschidere PDF",
+    "documentTip": "Deschidere document"
   },
   "appLoading": {
     "init": "Iniţializare aplicaţie..",

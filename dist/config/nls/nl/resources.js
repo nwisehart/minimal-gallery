@@ -7,8 +7,8 @@ define({
     "fileExtTip": "Bestand downloaden",
     "itemExtTip": "ArcGIS Online Item pagina openen",
     "galleryTip": "Openen in Gallery",
-    "pdfTip": "Ĳ_Open PDF___ä",
-    "documentTip": "Ĳ_Open Document_____ä"
+    "pdfTip": "Open PDF",
+    "documentTip": "Open document"
   },
   "appLoading": {
     "init": "Toepassing wordt gestart..",

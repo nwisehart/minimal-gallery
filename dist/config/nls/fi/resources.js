@@ -7,8 +7,8 @@ define({
     "fileExtTip": "Lataa tiedosto",
     "itemExtTip": "Avaa ArcGIS Online -kohdesivu",
     "galleryTip": "Avaa galleriassa",
-    "pdfTip": "Å_Open PDF___ö",
-    "documentTip": "Å_Open Document_____ö"
+    "pdfTip": "Avaa PDF-tiedosto",
+    "documentTip": "Avaa tiedosto"
   },
   "appLoading": {
     "init": "Sovellusta alustetaan...",

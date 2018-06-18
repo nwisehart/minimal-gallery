@@ -7,8 +7,8 @@ define({
     "fileExtTip": "ファイルのダウンロード",
     "itemExtTip": "ArcGIS Online のアイテム ページを開く",
     "galleryTip": "ギャラリーで開く",
-    "pdfTip": "須_Open PDF___鷗",
-    "documentTip": "須_Open Document_____鷗"
+    "pdfTip": "PDF を開く",
+    "documentTip": "ドキュメントを開く"
   },
   "appLoading": {
     "init": "アプリケーションを初期化しています..",

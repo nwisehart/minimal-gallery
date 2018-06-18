@@ -7,8 +7,8 @@ define({
     "fileExtTip": "फ़ाइल डाउनलोड करें",
     "itemExtTip": "ArcGIS Online आइटम पेज खोलें",
     "galleryTip": "गैलरी में खोलें",
-    "pdfTip": "आ_Open PDF___ज",
-    "documentTip": "आ_Open Document_____ज"
+    "pdfTip": "PDF खोलें",
+    "documentTip": "दस्तावेज़ खोलें"
   },
   "appLoading": {
     "init": "एप्लिकेशन शुरू हो रहा है..",
