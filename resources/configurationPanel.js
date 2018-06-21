@@ -101,13 +101,12 @@
 			"fieldName": "sceneCaptionColor",
 			"type": "color",
 			"tooltip": "The color of the card caption for the 'Web Scene' item type."
-		}, 
-		{
+		}, {
 			"label": "Caption color for other item types",
 			"fieldName": "fileCaptionColor",
 			"type": "color",
 			"tooltip": "The color of the card caption for any item type that is not Map, Scene, or App."
-		},{
+		}, {
 			"label": "Caption text color",
 			"fieldName": "captionTextColor",
 			"type": "color",
@@ -158,18 +157,22 @@
 				"type": "boolean",
 				"tooltip": "If true, opening maps, apps and scenes from the gallery fullscreen will always create a new tab"
 			}]
-		}, 
-		{
-				"type": "boolean",
-				"fieldName": "showItemTitle",
-				"label": "Show the item title",
-				"tooltip": "Controls whether or not the item title will be displayed on each card"
-			}, {
-				"type": "boolean",
-				"fieldName": "showItemPageLink",
-				"label": "Show item info button on card",
-				"tooltip": "Controls whether or not the card has an info button which links to item page "
-			},{
+		}, {
+			"type": "boolean",
+			"fieldName": "openDocumentLinksDirectly",
+			"label": "Open document link item type in browser",
+			"tooltip": "Controls whether or not document cards will open the ArcGIS item page for document link types (default) or open the document link directly."
+		}, {
+			"type": "boolean",
+			"fieldName": "showItemTitle",
+			"label": "Show the item title",
+			"tooltip": "Controls whether or not the item title will be displayed on each card"
+		}, {
+			"type": "boolean",
+			"fieldName": "showItemPageLink",
+			"label": "Show item info button on card",
+			"tooltip": "Controls whether or not the card has an info button which links to item page "
+		}, {
 			"label": "Show owner of each item",
 			"fieldName": "showAuthor",
 			"type": "boolean",
@@ -245,6 +248,36 @@
 				"value": "asc"
 			}],
 			"tooltip": "Sorting order of gallery contents"
+		}, {
+			"type": "string",
+			"fieldName": "itemTypes",
+			"tooltip": "Only display items of this type",
+			"label": "Only display items of this type *",
+			"options": [{
+				"label": "All",
+				"value": ""
+			}, {
+				"label": "Apps",
+				"value": "Web Mapping Application, Mobile Application, Code Attachment, Operations Dashboard Add In, Operation View,Operations Dashboard Extension, Native Application, Native Application Template, Native Application Installer, Workforce Project, Form, Insights Workbook, Insights Model, Insights Page, Dashboard, Hub Initiative, Hub Site Application, Hub Page, AppBuilder Widget Package"
+			}, {
+				"label": "Data Files",
+				"value": "Symbol Set, Color Set, Shapefile, File Geodatabase, CSV, CAD Drawing, Service Definition, Document Link, Microsoft Word, Microsoft Powerpoint, Microsoft Excel, PDF, Image, Visio Document, iWork Keynote, iWork Pages, iWork Numbers, Report Template, Statistical Data Collection, SQLite Geodatabase, Content Category Set"
+			}, {
+				"label": "Desktop Content",
+				"value": "Map Document, Map Package, Mobile Basemap Package, Mobile Map Package, Tile Package, Vector Tile Package, Project Package, Task File, ArcPad Package, Explorer Map, Globe Document, Scene Document, Published Map, Map Template, Windows Mobile Package, Pro Map, Layout, Project Template, Layer, Layer, Layer Package,Explorer Layer, Scene Package,Image Collection, Desktop Style, Geoprocessing Package, Geoprocessing Package (Pro version), Geoprocessing Sample, Locator Package, Rule Package, Raster function template, ArcGIS Pro Configuration, Workflow Manager Package, Desktop Application, Desktop Application Template, Code Sample, Desktop Add In, Explorer Add In, ArcGIS Pro Add In"
+			}, {
+				"label": "Layers",
+				"value": "Feature Service, Map Service, Image Service, KML, KML Collection, WMS, WFS, WMTS, Feature Collection, Feature Collection Template, Geodata Service, Globe Service, Vector Tile Service, Scene Service, Relational Database Connection"
+			}, {
+				"label": "Maps",
+				"value": "Web Map, Web Scene, CityEngine Web Scene, 360 VR Experience, Pro Map, Map Area"
+			}, {
+				"label": "Tools",
+				"value": "Geometry Service, Geocoding Service, Network Analysis Service, Geoprocessing Service, Workflow Manager Service"
+			}]
+		}, {
+			"type": "paragraph",
+			"value": "* Groups can contain items that are not always informative to your audience, for example you may want to just show apps without presenting the layers and web maps they are built on.  This gallery can be configured to show items of a certain classification and hide others.  For more information on the types see this help topic on <a href='https://developers.arcgis.com/rest/users-groups-and-items/items-and-item-types.htm' target='_blank'>Items and item types</a>. "
 		}, {
 			"type": "subcategory",
 			"label": "Map viewer settings"
@@ -393,6 +426,7 @@
 		"homeWidget": "top-left",
 		"legendWidget": "bottom-right",
 		"locateWidget": "top-left",
-		"searchWidget": "bottom-left"
+		"searchWidget": "bottom-left",
+		"openDocumentLinksDirectly": false
 	}
 }
