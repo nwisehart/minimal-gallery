@@ -122,6 +122,16 @@
     left: 7.25px;
 }
 
+.view-exit-icon > svg {
+    fill: currentColor;
+    pointer-events: none;
+    display: inline-block;
+    width: 1em;
+    height: 1em;
+    vertical-align: middle;
+    padding-right: .15em;
+}
+
 .open-out-container {
     position: absolute;
     text-align: right;
@@ -181,6 +191,7 @@
     max-width: calc(100% - 5rem);
     overflow: hidden;
     text-overflow: ellipsis;
+    white-space: nowrap;
 }
 
 .toolbar-tooltip:hover:before {
