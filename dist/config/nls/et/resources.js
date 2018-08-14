@@ -1,6 +1,6 @@
 define({
   "ui": {
-    "close": "Sule",
+    "close": "Sulge",
     "mapExtTip": "Ava kaart täisekraanvaates",
     "sceneExtTip": "Ava stseen täisekraanvaates",
     "appExtTip": "Ava rakendus täisekraanvaates",
