@@ -23,7 +23,6 @@ export default class Panel extends Component<PanelState, ComponentState> {
         this.handleMouseOut = this.handleMouseOut.bind(this);
         this.handleItemKeyPress = this.handleItemKeyPress.bind(this);
         this.handleItemClick = this.handleItemClick.bind(this);
-        this.handleMaxKeyPress = this.handleMaxKeyPress.bind(this);
         this.handleMaxClick = this.handleMaxClick.bind(this);
         this.registerItemLink = this.registerItemLink.bind(this);
     }
@@ -67,6 +66,7 @@ export default class Panel extends Component<PanelState, ComponentState> {
                     style={`color: ${config.buttonBgColor}`}
                     key={`${this.props.item.title}-info-icon`}
                     tabindex="0"
+                    target={this.props.applicationBaseResult.config.openItemDetailsSeparateTab ? "_blank" : ""}
                 >
                     <svg
                         xmlns="http://www.w3.org/2000/svg"
@@ -99,8 +99,13 @@ export default class Panel extends Component<PanelState, ComponentState> {
                     aria-label={i18n.ui[`${this.state.panelType}ExtTip`]}
                     style={`color: ${config.buttonBgColor}`}
                     key={`${this.props.item.title}-open-out-icon`}
-                    onclick={this.handleMaxClick}
-                    onkeypress={this.handleMaxKeyPress}
+                    href={
+                        this.props.itemType === "webapp" ?
+                            this.props.item.url :
+                            `${window.location.origin}${window.location.pathname}${window.location.search}#viewer=${this.props.item.id}&fullscreen=true`
+
+                    }
+                    target={this.props.applicationBaseResult.config.openFullscreenSeparateTab ? "_blank" : ""}
                     tabindex="0"
                 >
                     <svg
@@ -247,12 +252,6 @@ export default class Panel extends Component<PanelState, ComponentState> {
             } else {
                 this.dispatch(showInViewer());
             }
-        }
-    }
-
-    private handleMaxKeyPress(e: KeyboardEvent) {
-        if (e.key === "Enter") {
-            this.handleMaxClick();
         }
     }
 
