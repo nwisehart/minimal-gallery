@@ -18,7 +18,7 @@ export const loadApplicationBase = () => (dispatch: any, getState: () => Minimal
     );
 };
 
-const queryGroupItems = (applicationBaseResult: __esriApplicationBase.ApplicationConfig) =>
+export const queryGroupItems = (applicationBaseResult: __esriApplicationBase.ApplicationConfig) =>
     (dispatch: any, getState: () => MinimalGalleryState) => {
 
         // Boilerplate loaded properly so save it
@@ -47,7 +47,7 @@ const queryGroupItems = (applicationBaseResult: __esriApplicationBase.Applicatio
 
 const fetchAllGroupItems = (applicationBase: MinimalGalleryState["base"]["applicationBase"], config: any) => {
     const dfd = new Deferred;
-
+    
     applicationBase.queryGroupItems(
         config.group,
         {

@@ -32,7 +32,8 @@ define({
   },
   "header": {
     "agol": "ArcGIS Online에서 보기",
-    "search": "검색"
+    "search": "검색",
+    "signIn": "로그인"
   },
   "pager": {
     "noResults": "검색이 결과를 반환하지 않았습니다."

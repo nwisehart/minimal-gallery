@@ -42,6 +42,7 @@ This is a group gallery built with the Esri [ArcGIS API for JavaScript v4.4](htt
 - `"showItemPageLink"`: Boolean value controlling whether or not the item page link will be displayed
 - `"openFullscreenSeparateTab"`: If true, opening maps, apps and scenes from the gallery fullscreen will always create a new tab
 - `"openItemDetailsSeparateTab"`: If true, opening an item's details will default to a new tab
+- `"showSignInBtn"`: If true, will show a sign in button in the top right of the gallery
 - `"alwaysOpenFullscreen"`: If true, maps, apps and scenes will always be opened fullscreen instead of in the gallery
 - `"summaryTruncLength"`: Specifies the number of characters to allow an item summary in the gallery card to extend before truncating it with an ellipsis
 - `"showSummaryTooltip"`: Boolean value controlling whether or not the 'Open ArcGIS Online Item Page' icon in the bottom right of the card will have a tooltip showing the summary for the item.

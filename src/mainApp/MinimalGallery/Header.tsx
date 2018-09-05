@@ -1,6 +1,7 @@
 import Component from "../../Component";
 import { MinimalGalleryState } from ".";
-import { push } from "./_actions";
+import { push, loadApplicationBase } from "./_actions";
+import { queryGroupItems } from "./_actions/base";
 
 interface ComponentState {
     searchTerm: string;
@@ -16,6 +17,7 @@ export default class Header extends Component<MinimalGalleryState, ComponentStat
 
         this.handleSearch = this.handleSearch.bind(this);
         this.handleSearchChange = this.handleSearchChange.bind(this);
+        this.handleSignIn = this.handleSignIn.bind(this);
     }
 
     public render() {
@@ -76,6 +78,38 @@ export default class Header extends Component<MinimalGalleryState, ComponentStat
             </a>
         ) : null;
 
+        let signInLink = null;
+        if (
+            !this.props.base.applicationBase.portal["credential"] &&
+            this.props.base.applicationBaseResult.config.showSignInBtn
+        ) {
+            signInLink = (
+                <button
+                    class="top-nav-btn"
+                    onclick={this.handleSignIn}
+                >
+                    <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        width="32"
+                        height="32"
+                        viewBox="0 0 32 32"
+                        style={`
+                            fill: currentColor;
+                            pointer-events: none;
+                            display: inline-block;
+                            width: 1em;
+                            height: 1em;
+                            vertical-align: -0.15em;
+                            padding-right: .5em;
+                        `}
+                    >
+                        <path d="M16.005 15.871a5.872 5.872 0 0 0 0-11.742 5.87 5.87 0 1 0 0 11.742zm11.567 7.188C27.27 19.036 20.023 18 16 18c-4.012 0-11.271 1.039-11.573 5.059C4.203 26.11 4.068 28.18 4.02 30h23.96c-.047-1.82-.184-3.891-.407-6.941z" />
+                    </svg>
+                    {this.props.base.i18n.header.signIn}
+                </button>
+            );
+        }
+
         return (
             <header class="top-nav fade-in" style={`background-color: ${config.headColor}`}>
                 <div class="grid-container">
@@ -88,6 +122,7 @@ export default class Header extends Component<MinimalGalleryState, ComponentStat
                                 </a>
                             </a>
                             {headSearch}
+                            {signInLink}
                             {agolLink}
                         </div>
 
@@ -129,6 +164,16 @@ export default class Header extends Component<MinimalGalleryState, ComponentStat
         if (e.target.value === "") {
             this.handleSearch();
         }
+    }
+
+    private handleSignIn() {
+        window["require"](["esri/portal/Portal"], (Portal: __esri.PortalConstructor) => {
+            const portal = new Portal();
+            portal.authMode = "immediate";
+            portal.load().then(() => {
+                this.dispatch(queryGroupItems(this.props.base.applicationBaseResult));
+            });
+        });
     }
 }
 

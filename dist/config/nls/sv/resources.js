@@ -32,7 +32,8 @@ define({
   },
   "header": {
     "agol": "Visa på ArcGIS Online",
-    "search": "Sök"
+    "search": "Sök",
+    "signIn": "Nästan klar"
   },
   "pager": {
     "noResults": "Sökningen gav inga resultat."

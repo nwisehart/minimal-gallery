@@ -1,5 +1,5 @@
 import { combineReducers } from "../../../../../Component";
-import { SHOW_IN_VIEWER, MOUSE_OVER, MOUSE_OUT, VIEWER_CHANGE } from "../_actions";
+import { MOUSE_OVER, MOUSE_OUT, VIEWER_CHANGE } from "../_actions";
 
 export interface PanelState {
     applicationBaseResult: __esriApplicationBase.ApplicationConfig;
@@ -8,6 +8,7 @@ export interface PanelState {
     hovering: boolean;
     getPanelType: (itemType: string) => string;
     itemType: string;
+    portal: __esri.Portal;
     activeViewer?: string;
 }
 
@@ -15,6 +16,7 @@ const applicationBaseResult = (state: __esriApplicationBase.ApplicationConfig = 
 const i18n = (state: __Component.Pojo = {}) => state;
 const item = (state: __Component.Pojo = {}) => state;
 const itemType = (state: string = "file") => state;
+const portal = (state: __Component.Pojo = {}) => state;
 
 const getPanelType = (
     state: (itemType: string) => string = (type: string) => {
@@ -56,5 +58,6 @@ export const reducers = combineReducers({
     hovering,
     getPanelType,
     itemType,
-    activeViewer
+    activeViewer,
+    portal
 });

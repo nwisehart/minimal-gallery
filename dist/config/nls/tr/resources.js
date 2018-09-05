@@ -32,7 +32,8 @@ define({
   },
   "header": {
     "agol": "ArcGIS Online üzerinde görüntüle",
-    "search": "Arama"
+    "search": "Arama",
+    "signIn": "Oturum aç"
   },
   "pager": {
     "noResults": "Aramanız hiçbir sonuç döndürmedi."

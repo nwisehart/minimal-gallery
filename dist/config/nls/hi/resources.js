@@ -32,7 +32,8 @@ define({
   },
   "header": {
     "agol": "ArcGIS Online पर देखें",
-    "search": "खोजें"
+    "search": "खोजें",
+    "signIn": "साइन इन करें"
   },
   "pager": {
     "noResults": "आपकी खोज से कोई परिणाम नहीं मिला."

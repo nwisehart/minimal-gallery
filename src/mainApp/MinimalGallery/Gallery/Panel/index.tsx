@@ -161,7 +161,7 @@ export default class Panel extends Component<PanelState, ComponentState> {
         return (
             <div
                 class="card block trailer-1 animate-fade-in card-fade"
-                style={`background-color: ${config.cardColor}; z-index: ${1000}`}
+                style={`background-color: ${config.cardColor}; z-index: 1`}
                 key={`${this.props.item.id}-div`}
             >
                 <figure class="card-image-wrap">
@@ -239,7 +239,10 @@ export default class Panel extends Component<PanelState, ComponentState> {
             window.open(this.props.item.url);
         } else if (this.props.item.type === "PDF") {
             window.open(
-                `${this.props.item.itemUrl}/data`
+                `${this.props.item.itemUrl}/data${
+                    this.props.portal["credential"] ?
+                        `?token=${this.props.portal["credential"].token}` : ""
+                }`
             );
         } else if (this.props.itemType === "file") {
             window.open(

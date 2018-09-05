@@ -47,10 +47,6 @@ export default class Gallery extends Component<MinimalGalleryState, ComponentSta
         );
     }
 
-    public shouldComponentUpdate(nextProps: MinimalGalleryState) {
-        return nextProps.items.displayKey !== this.props.items.displayKey;
-    }
-
     public componentWillReceiveProps(nextProps: MinimalGalleryState) {
         if (nextProps.items.displayKey !== this.props.items.displayKey) {
             const itemsPerPage = this.props.base.applicationBaseResult.config.itemsPerPage;
@@ -101,7 +97,8 @@ export default class Gallery extends Component<MinimalGalleryState, ComponentSta
                                 applicationBaseResult: this.props.base.applicationBaseResult,
                                 i18n: this.props.base.i18n,
                                 item,
-                                itemType: supportedItemTypes[item.type]
+                                itemType: supportedItemTypes[item.type],
+                                portal: this.props.base.applicationBase.portal
                             },
                             middlewares: [ addListener(this.handleChildUpdate) ]
                         }}

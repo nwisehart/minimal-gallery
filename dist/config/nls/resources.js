@@ -33,7 +33,8 @@ define({
       },
       header: {
         "agol": "View on ArcGIS Online",
-        "search": "Search"
+        "search": "Search",
+        "signIn": "Sign in"
       },
       pager: {
         "noResults": "Your search did not return any results."
