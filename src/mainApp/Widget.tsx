@@ -36,7 +36,7 @@ export default class MainApp extends declared(Widget) {
                         loadMessage: "init"
                     }
                 },
-                middlewares: [ thunk, router, debug ]
+                middlewares: [ thunk, router ]
             })
         );
 
