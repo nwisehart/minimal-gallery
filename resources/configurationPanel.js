@@ -18,7 +18,7 @@
 			}, {
 				"type": "string",
 				"fieldName": "headerTextURL",
-				"label": "Header title Url",
+				"label": "Header title URL",
 				"tooltip": "A location for the gallery title to link to"
 			}]
 		}]
@@ -410,7 +410,7 @@
 		"itemTypeBelowThumbnail": true,
 		"headerText": "Group Gallery",
 		"headerTextColor": "#000000",
-		"headerTextURL": "http://www.esri.com/",
+		"headerTextURL": "https://www.arcgis.com/",
 		"headerImage": true,
 		"headerImageLocation": "http://www.arcgis.com/sharing/rest/community/groups/db0e225e408c4ecea055088cd4d09b84/info/Screenshot_2015-10-28_09.36.16.png",
 		"headerSearch": true,
