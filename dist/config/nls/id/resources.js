@@ -33,7 +33,7 @@ define({
   "header": {
     "agol": "Tampilkan di ArcGIS Online",
     "search": "Cari",
-    "signIn": "Masuk"
+    "signIn": "ng_Sign in___ny"
   },
   "pager": {
     "noResults": "Pencarian Anda tidak menunjukkan hasil."

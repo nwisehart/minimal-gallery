@@ -33,7 +33,7 @@ define({
   "header": {
     "agol": "Prikaži na ArcGIS Online",
     "search": "Pretraži",
-    "signIn": "Prijavite se"
+    "signIn": "Č_Sign in___ž"
   },
   "pager": {
     "noResults": "Pretraga nije dala nijedan rezultat."

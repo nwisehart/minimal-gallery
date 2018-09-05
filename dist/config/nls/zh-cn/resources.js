@@ -33,7 +33,7 @@ define({
   "header": {
     "agol": "在 ArcGIS Online 上查看",
     "search": "搜索",
-    "signIn": "登录"
+    "signIn": "试_Sign in___验"
   },
   "pager": {
     "noResults": "搜索未返回任何结果。"

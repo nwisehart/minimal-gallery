@@ -33,7 +33,7 @@ define({
   "header": {
     "agol": "Προβολή στο ArcGIS Online",
     "search": "Αναζήτηση",
-    "signIn": "Εισέλθετε"
+    "signIn": "π_Sign in___Ω"
   },
   "pager": {
     "noResults": "Η αναζήτηση δεν επέστρεψε κανένα αποτέλεσμα."

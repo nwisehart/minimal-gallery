@@ -33,7 +33,7 @@ define({
   "header": {
     "agol": "Megtekintés az ArcGIS Online webhelyen",
     "search": "Keresés",
-    "signIn": "Bejelentkezés"
+    "signIn": "í_Sign in___ő"
   },
   "pager": {
     "noResults": "A keresés nem adott vissza eredményt."

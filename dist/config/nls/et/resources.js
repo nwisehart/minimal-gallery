@@ -33,7 +33,7 @@ define({
   "header": {
     "agol": "Vaata ArcGIS Online keskkonnas",
     "search": "Otsi",
-    "signIn": "Logi sisse"
+    "signIn": "Š_Sign in___ä"
   },
   "pager": {
     "noResults": "Otsing ei andnud tulemusi."
