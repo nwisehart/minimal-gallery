@@ -33,7 +33,7 @@ define({
   "header": {
     "agol": "Skatīt vietnē ArcGIS Online",
     "search": "Meklēt",
-    "signIn": "ķ_Sign in___ū"
+    "signIn": "ķ_Sign in_______________ū"
   },
   "pager": {
     "noResults": "Jūsu meklēšana nedeva nekādus rezultātus."

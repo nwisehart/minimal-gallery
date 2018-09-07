@@ -33,7 +33,7 @@ define({
   "header": {
     "agol": "ArcGIS Online पर देखें",
     "search": "खोजें",
-    "signIn": "आ_Sign in___ज"
+    "signIn": "आ_Sign in_______________ज"
   },
   "pager": {
     "noResults": "आपकी खोज से कोई परिणाम नहीं मिला."

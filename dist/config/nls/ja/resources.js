@@ -33,7 +33,7 @@ define({
   "header": {
     "agol": "ArcGIS Online での表示",
     "search": "検索",
-    "signIn": "須_Sign in___鷗"
+    "signIn": "須_Sign in_______________鷗"
   },
   "pager": {
     "noResults": "検索結果はありませんでした。"
