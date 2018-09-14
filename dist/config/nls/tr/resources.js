@@ -33,7 +33,7 @@ define({
   "header": {
     "agol": "ArcGIS Online üzerinde görüntüle",
     "search": "Arama",
-    "signIn": "ı_Sign in_______________İ"
+    "signIn": "Oturum aç"
   },
   "pager": {
     "noResults": "Aramanız hiçbir sonuç döndürmedi."

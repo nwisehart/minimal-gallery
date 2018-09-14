@@ -33,7 +33,7 @@ define({
   "header": {
     "agol": "Xem trên ArcGIS Online",
     "search": "Tìm kiếm",
-    "signIn": "Đ_Sign in_______________ớ"
+    "signIn": "Đăng nhập"
   },
   "pager": {
     "noResults": "Tìm kiếm của bạn không trả về kết quả nào."

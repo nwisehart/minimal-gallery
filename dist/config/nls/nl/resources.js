@@ -33,7 +33,7 @@ define({
   "header": {
     "agol": "Weergeven op ArcGIS Online",
     "search": "Zoeken",
-    "signIn": "Ĳ_Sign in_______________ä"
+    "signIn": "Aanmelden"
   },
   "pager": {
     "noResults": "Uw zoekactie heeft geen resultaten geretourneerd."
