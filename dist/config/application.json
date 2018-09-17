@@ -35,7 +35,7 @@
   "showItemPageLink": true,
   "openFullscreenSeparateTab": false,
   "openItemDetailsSeparateTab": false,
-  "showSignInBtn": true,
+  "showSignInBtn": false,
   "alwaysOpenFullscreen": false,
   "summaryTruncLength": 100,
   "showSummaryTooltip": false,
