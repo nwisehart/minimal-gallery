@@ -17,7 +17,8 @@ define({
     "groupdata": "جارِ الاستعلام عن بيانات المجموعة..",
     "groupprocess": "جارِ معالجة استجابة المجموعة..",
     "groupitems": "جارِ تحميل العناصر..",
-    "failed": "فشل تحميل التطبيق."
+    "failed": "فشل تحميل التطبيق.",
+    "noauth": "بيت_Your account is not licensed to use Configurable Apps that are not public. Please ask your organization administrator to assign you a user type that includes Essential Apps or an add-on Essential Apps license__________________________________________________________________________________________________________لاحقة."
   },
   "viewLoading": {
     "scripts": "جارِ إحضار البرامج النصية..",

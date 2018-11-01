@@ -17,7 +17,8 @@ define({
     "groupdata": "그룹 데이터 쿼리 중...",
     "groupprocess": "그룹 응답 처리 중...",
     "groupitems": "항목을 불러오는 중...",
-    "failed": "응용프로그램을 불러오는 데 실패했습니다."
+    "failed": "응용프로그램을 불러오는 데 실패했습니다.",
+    "noauth": "한_Your account is not licensed to use Configurable Apps that are not public. Please ask your organization administrator to assign you a user type that includes Essential Apps or an add-on Essential Apps license__________________________________________________________________________________________________________빠."
   },
   "viewLoading": {
     "scripts": "스크립트를 가져오는 중...",

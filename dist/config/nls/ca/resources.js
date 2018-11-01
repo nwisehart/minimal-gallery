@@ -17,7 +17,8 @@ define({
     "groupdata": "S'estan consultant les dades del grup...",
     "groupprocess": "S'està processant la resposta del grup...",
     "groupitems": "S'estan carregant els elements...",
-    "failed": "No s'ha pogut carregar l'aplicació."
+    "failed": "No s'ha pogut carregar l'aplicació.",
+    "noauth": "ó_Your account is not licensed to use Configurable Apps that are not public. Please ask your organization administrator to assign you a user type that includes Essential Apps or an add-on Essential Apps license__________________________________________________________________________________________________________à."
   },
   "viewLoading": {
     "scripts": "S'estan recuperant els scripts...",

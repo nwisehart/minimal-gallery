@@ -17,7 +17,8 @@ define({
     "groupdata": "Interrogation du groupe de données...",
     "groupprocess": "Traitement de la réponse du groupe...",
     "groupitems": "Chargement des éléments...",
-    "failed": "Echec du chargement de l’application."
+    "failed": "Echec du chargement de l’application.",
+    "noauth": "æ_Your account is not licensed to use Configurable Apps that are not public. Please ask your organization administrator to assign you a user type that includes Essential Apps or an add-on Essential Apps license__________________________________________________________________________________________________________Â."
   },
   "viewLoading": {
     "scripts": "Extraction des scripts...",

@@ -17,7 +17,8 @@ define({
     "groupdata": "Csoportadatok lekérdezése...",
     "groupprocess": "Csoportválasz feldolgozása...",
     "groupitems": "Elemek betöltése...",
-    "failed": "Nem sikerült betölteni az alkalmazást."
+    "failed": "Nem sikerült betölteni az alkalmazást.",
+    "noauth": "í_Your account is not licensed to use Configurable Apps that are not public. Please ask your organization administrator to assign you a user type that includes Essential Apps or an add-on Essential Apps license__________________________________________________________________________________________________________ő."
   },
   "viewLoading": {
     "scripts": "Parancsfájlok lekérése...",

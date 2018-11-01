@@ -17,7 +17,8 @@ define({
     "groupdata": "בודק נתוני קבוצות..",
     "groupprocess": "מעבד תגובת קבוצה..",
     "groupitems": "טוען פריטים..",
-    "failed": "טעינת היישום נכשלה."
+    "failed": "טעינת היישום נכשלה.",
+    "noauth": "כן_Your account is not licensed to use Configurable Apps that are not public. Please ask your organization administrator to assign you a user type that includes Essential Apps or an add-on Essential Apps license__________________________________________________________________________________________________________ש."
   },
   "viewLoading": {
     "scripts": "שולף קובצי script..",

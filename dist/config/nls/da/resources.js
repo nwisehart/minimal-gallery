@@ -17,7 +17,8 @@ define({
     "groupdata": "Sender forespørgsel til gruppedata...",
     "groupprocess": "Behandler gruppesvar...",
     "groupitems": "Indlæser elementer...",
-    "failed": "Kunne ikke indlæse applikationen."
+    "failed": "Kunne ikke indlæse applikationen.",
+    "noauth": "ø_Your account is not licensed to use Configurable Apps that are not public. Please ask your organization administrator to assign you a user type that includes Essential Apps or an add-on Essential Apps license__________________________________________________________________________________________________________å."
   },
   "viewLoading": {
     "scripts": "Henter scripts...",

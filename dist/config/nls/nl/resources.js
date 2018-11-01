@@ -17,7 +17,8 @@ define({
     "groupdata": "Groepsgegevens worden opgevraagd..",
     "groupprocess": "Groepsreactie wordt verwerkt..",
     "groupitems": "Items laden..",
-    "failed": "Laden van de toepassing is mislukt."
+    "failed": "Laden van de toepassing is mislukt.",
+    "noauth": "Ĳ_Your account is not licensed to use Configurable Apps that are not public. Please ask your organization administrator to assign you a user type that includes Essential Apps or an add-on Essential Apps license__________________________________________________________________________________________________________ä."
   },
   "viewLoading": {
     "scripts": "Scripts worden geladen..",

@@ -17,7 +17,8 @@ define({
     "groupdata": "Запрос групповых данных..",
     "groupprocess": "Обработка ответа группы..",
     "groupitems": "Загрузка элементов..",
-    "failed": "Не удалось загрузить приложение."
+    "failed": "Не удалось загрузить приложение.",
+    "noauth": "Ж_Your account is not licensed to use Configurable Apps that are not public. Please ask your organization administrator to assign you a user type that includes Essential Apps or an add-on Essential Apps license__________________________________________________________________________________________________________Я."
   },
   "viewLoading": {
     "scripts": "Вызов скриптов..",

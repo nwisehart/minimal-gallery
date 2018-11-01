@@ -17,7 +17,8 @@ define({
     "groupdata": "Wykonywanie zapytania dotyczącego danych grupy...",
     "groupprocess": "Przetwarzanie odpowiedzi dotyczącej grupy...",
     "groupitems": "Wczytywanie elementów...",
-    "failed": "Nie powiodło się wczytanie aplikacji."
+    "failed": "Nie powiodło się wczytanie aplikacji.",
+    "noauth": "ł_Your account is not licensed to use Configurable Apps that are not public. Please ask your organization administrator to assign you a user type that includes Essential Apps or an add-on Essential Apps license__________________________________________________________________________________________________________ą."
   },
   "viewLoading": {
     "scripts": "Pobieranie skryptów...",

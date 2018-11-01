@@ -17,7 +17,8 @@ define({
     "groupdata": "Teikiama užklausa dėl grupės duomenų..",
     "groupprocess": "Apdorojamas grupės atsakymas..",
     "groupitems": "Įkeliami elementai...",
-    "failed": "Nepavyko įkelti aplikacijos."
+    "failed": "Nepavyko įkelti aplikacijos.",
+    "noauth": "Į_Your account is not licensed to use Configurable Apps that are not public. Please ask your organization administrator to assign you a user type that includes Essential Apps or an add-on Essential Apps license__________________________________________________________________________________________________________š."
   },
   "viewLoading": {
     "scripts": "Gaunami scenarijai..",

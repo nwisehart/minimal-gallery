@@ -17,7 +17,8 @@ define({
     "groupdata": "Đang truy vấn dữ liệu nhóm..",
     "groupprocess": "Đang xử lý phản hồi nhóm..",
     "groupitems": "Đang tải mục...",
-    "failed": "Không thể tải ứng dụng."
+    "failed": "Không thể tải ứng dụng.",
+    "noauth": "Đ_Your account is not licensed to use Configurable Apps that are not public. Please ask your organization administrator to assign you a user type that includes Essential Apps or an add-on Essential Apps license__________________________________________________________________________________________________________ớ."
   },
   "viewLoading": {
     "scripts": "Đang tìm nạp script..",
