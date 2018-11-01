@@ -54,6 +54,12 @@ export default class MinimalGallery extends Component<MinimalGalleryState, Compo
                     <Pager key="minimal-gallery-pager" />
                 </div>
             );
+        } else if (status === "noauth") {
+            return (
+                <div>
+                    <h3 class="center-style">{i18n.appLoading.noauth}</h3>
+                </div>
+            );
         }
         return (
             <div>

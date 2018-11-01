@@ -1,2 +1,2 @@
-declare const ApplicationBase: any;
-export = ApplicationBase;
+declare const base: any;
+export = base;

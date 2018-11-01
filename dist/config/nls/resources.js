@@ -18,7 +18,8 @@ define({
         "groupdata": "Querying group data..",
         "groupprocess": "Processing group response..",
         "groupitems": "Loading items..",
-        "failed": "Failed to load the application."
+        "failed": "Failed to load the application.",
+        "noauth": "Your account is not licensed to use Configurable Apps that are not public. Please ask your organization administrator to assign you a user type that includes Essential Apps or an add-on Essential Apps license."
       },
       viewLoading: {
         "scripts": "Fetching scripts..",

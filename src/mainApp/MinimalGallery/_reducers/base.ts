@@ -1,5 +1,6 @@
 import { MinimalGalleryState } from ".";
 import { SAVE_APP_BASE_RESULT, LOAD_APP_FAIL, LOAD_APP_PROGRESS, LOAD_APP_SUCCESS } from "../_actions";
+import { AUTHENTICATION_FAILED } from "../_actions/base";
 
 export interface BaseState {
     applicationBase: __esriApplicationBase.ApplicationBase;
@@ -38,6 +39,11 @@ export default (state: MinimalGalleryState["base"], action: { type: string, payl
             return {
                 ...state,
                 status: "success"
+            };
+        case AUTHENTICATION_FAILED:
+            return {
+                ...state,
+                status: "noauth"
             };
         default:
             return state;
