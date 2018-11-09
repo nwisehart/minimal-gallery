@@ -18,7 +18,8 @@ define({
     "groupprocess": "Γίνεται επεξεργασία απόκρισης ομάδας..",
     "groupitems": "Φόρτωση αντικειμένων..",
     "failed": "Αποτυχία φόρτωσης της εφαρμογής.",
-    "noauth": "π_Your account is not licensed to use Configurable Apps that are not public. Please ask your organization administrator to assign you a user type that includes Essential Apps or an add-on Essential Apps license__________________________________________________________________________________________________________Ω."
+    "noauth": "π_Your account is not licensed to use Configurable Apps that are not public. Please ask your organization administrator to assign you a user type that includes Essential Apps or an add-on Essential Apps license__________________________________________________________________________________________________________Ω.",
+    "notLicensed": "π_Not Licensed_____________Ω"
   },
   "viewLoading": {
     "scripts": "Λήψη σεναρίων..",

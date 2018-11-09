@@ -18,7 +18,8 @@ define({
     "groupprocess": "Procesare răspuns grup..",
     "groupitems": "Se încarcă elemente...",
     "failed": "Aplicaţia nu a putut fi încărcată.",
-    "noauth": "Ă_Your account is not licensed to use Configurable Apps that are not public. Please ask your organization administrator to assign you a user type that includes Essential Apps or an add-on Essential Apps license__________________________________________________________________________________________________________ș."
+    "noauth": "Ă_Your account is not licensed to use Configurable Apps that are not public. Please ask your organization administrator to assign you a user type that includes Essential Apps or an add-on Essential Apps license__________________________________________________________________________________________________________ș.",
+    "notLicensed": "Ă_Not Licensed_____________ș"
   },
   "viewLoading": {
     "scripts": "Colectare scripturi..",

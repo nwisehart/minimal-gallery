@@ -18,7 +18,8 @@ define({
     "groupprocess": "Behandler gruppesvar...",
     "groupitems": "Laster inn elementer...",
     "failed": "Kan ikke laste applikasjonen.",
-    "noauth": "å_Your account is not licensed to use Configurable Apps that are not public. Please ask your organization administrator to assign you a user type that includes Essential Apps or an add-on Essential Apps license__________________________________________________________________________________________________________ø."
+    "noauth": "å_Your account is not licensed to use Configurable Apps that are not public. Please ask your organization administrator to assign you a user type that includes Essential Apps or an add-on Essential Apps license__________________________________________________________________________________________________________ø.",
+    "notLicensed": "å_Not Licensed_____________ø"
   },
   "viewLoading": {
     "scripts": "Henter skript...",

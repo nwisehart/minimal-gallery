@@ -18,7 +18,8 @@ define({
     "groupprocess": "Käsitellään ryhmän vastausta...",
     "groupitems": "Ladataan kohteita...",
     "failed": "Sovelluksen lataus epäonnistui.",
-    "noauth": "Å_Your account is not licensed to use Configurable Apps that are not public. Please ask your organization administrator to assign you a user type that includes Essential Apps or an add-on Essential Apps license__________________________________________________________________________________________________________ö."
+    "noauth": "Å_Your account is not licensed to use Configurable Apps that are not public. Please ask your organization administrator to assign you a user type that includes Essential Apps or an add-on Essential Apps license__________________________________________________________________________________________________________ö.",
+    "notLicensed": "Å_Not Licensed_____________ö"
   },
   "viewLoading": {
     "scripts": "Noudetaan komentosarjoja...",

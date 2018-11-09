@@ -18,7 +18,8 @@ define({
     "groupprocess": "กำลังประมวลผลการตอบกลับของกลุ่ม..",
     "groupitems": "กำลังโหลดรายการ..",
     "failed": "ไม่สามารถโหลดแอปพลิเคชันได้",
-    "noauth": "ก้_Your account is not licensed to use Configurable Apps that are not public. Please ask your organization administrator to assign you a user type that includes Essential Apps or an add-on Essential Apps license__________________________________________________________________________________________________________ษฺ."
+    "noauth": "ก้_Your account is not licensed to use Configurable Apps that are not public. Please ask your organization administrator to assign you a user type that includes Essential Apps or an add-on Essential Apps license__________________________________________________________________________________________________________ษฺ.",
+    "notLicensed": "ก้_Not Licensed_____________ษฺ"
   },
   "viewLoading": {
     "scripts": "กำลังดึงข้อมูลสคริปต์..",

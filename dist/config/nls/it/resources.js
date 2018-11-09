@@ -18,7 +18,8 @@ define({
     "groupprocess": "Elaborazione delle risposte del gruppo..",
     "groupitems": "Caricamento degli elementi..",
     "failed": "Impossibile caricare l’applicazione.",
-    "noauth": "é_Your account is not licensed to use Configurable Apps that are not public. Please ask your organization administrator to assign you a user type that includes Essential Apps or an add-on Essential Apps license__________________________________________________________________________________________________________È."
+    "noauth": "é_Your account is not licensed to use Configurable Apps that are not public. Please ask your organization administrator to assign you a user type that includes Essential Apps or an add-on Essential Apps license__________________________________________________________________________________________________________È.",
+    "notLicensed": "é_Not Licensed_____________È"
   },
   "viewLoading": {
     "scripts": "Recupero degli script..",

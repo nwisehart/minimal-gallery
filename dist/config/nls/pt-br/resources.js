@@ -18,7 +18,8 @@ define({
     "groupprocess": "Processando resposta do grupo...",
     "groupitems": "Carregando itens...",
     "failed": "Falha ao carregar o aplicativo.",
-    "noauth": "ã_Your account is not licensed to use Configurable Apps that are not public. Please ask your organization administrator to assign you a user type that includes Essential Apps or an add-on Essential Apps license__________________________________________________________________________________________________________Ç."
+    "noauth": "ã_Your account is not licensed to use Configurable Apps that are not public. Please ask your organization administrator to assign you a user type that includes Essential Apps or an add-on Essential Apps license__________________________________________________________________________________________________________Ç.",
+    "notLicensed": "ã_Not Licensed_____________Ç"
   },
   "viewLoading": {
     "scripts": "Buscando scripts..",

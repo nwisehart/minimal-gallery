@@ -18,7 +18,8 @@ define({
     "groupprocess": "Obdelovanje odziva skupine...",
     "groupitems": "Nalaganje elementov...",
     "failed": "Aplikacije ni bilo mogoče naložiti.",
-    "noauth": "Š_Your account is not licensed to use Configurable Apps that are not public. Please ask your organization administrator to assign you a user type that includes Essential Apps or an add-on Essential Apps license__________________________________________________________________________________________________________č."
+    "noauth": "Š_Your account is not licensed to use Configurable Apps that are not public. Please ask your organization administrator to assign you a user type that includes Essential Apps or an add-on Essential Apps license__________________________________________________________________________________________________________č.",
+    "notLicensed": "Š_Not Licensed_____________č"
   },
   "viewLoading": {
     "scripts": "Pridobivanje skript...",
