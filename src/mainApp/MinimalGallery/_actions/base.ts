@@ -15,7 +15,7 @@ export const loadApplicationBase = () => (dispatch: any, getState: () => Minimal
     base.applicationBase.load().then(
         (result: __esriApplicationBase.ApplicationConfig) => dispatch(queryGroupItems(result)),
         (err: any) => {
-            if (err.name === "identity-manager:authentication-failed") {
+            if (err.name === "identity-manager:not-authorized" || err.name === "identity-manager:authentication-failed") {
                 dispatch(loadAppNoAuth(err));
             } else {
                 dispatch(loadAppFail(err));

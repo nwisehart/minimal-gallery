@@ -57,7 +57,10 @@ export default class MinimalGallery extends Component<MinimalGalleryState, Compo
         } else if (status === "noauth") {
             return (
                 <div>
-                    <h3 class="center-style">{i18n.appLoading.noauth}</h3>
+                    <div key="no-auth-container" class="center-style" style="padding: 1rem;">
+                        <h3 key="no-license">{i18n.appLoading.notLicensed}</h3>
+                        <p key="no-auth">{i18n.appLoading.noauth}</p>
+                    </div>
                 </div>
             );
         }
