@@ -30,10 +30,17 @@ export const queryGroupItems = (applicationBaseResult: __esriApplicationBase.App
 
         // Boilerplate loaded properly so save it
         dispatch(saveAppBaseResult(applicationBaseResult));
-
         const state = getState();
         const applicationBase = state.base.applicationBase;
         const config = applicationBaseResult.config;
+
+        // Inject custom stylesheet if provided
+        if (config.customCSS && config.customCSS !== "") {
+            const customStyle = document.createElement("style");
+            customStyle.innerHTML = config.customCSS;
+            document.body.appendChild(customStyle);
+        }
+
         fetchAllGroupItems(applicationBase, config).then(
             (response: any) => {
                 const promises = response.results.map((item: any) => item.load());
