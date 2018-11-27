@@ -35,7 +35,8 @@ define({
   "header": {
     "agol": "Wyświetl w usłudze ArcGIS Online",
     "search": "Wyszukaj",
-    "signIn": "Zarejestruj się"
+    "signIn": "Zarejestruj się",
+    "signOut": "ł_Sign out_________________ą"
   },
   "pager": {
     "noResults": "Brak wyników wyszukiwania."

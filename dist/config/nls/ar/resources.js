@@ -35,7 +35,8 @@ define({
   "header": {
     "agol": "عرض على ArcGIS Online",
     "search": "بحث",
-    "signIn": "تسجيل الدخول"
+    "signIn": "تسجيل الدخول",
+    "signOut": "بيت_Sign out_________________لاحقة"
   },
   "pager": {
     "noResults": "لم يقم هذا البحث بإرجاع أية نتائج."

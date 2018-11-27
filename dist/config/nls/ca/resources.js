@@ -35,7 +35,8 @@ define({
   "header": {
     "agol": "Visualitza-ho a l'ArcGIS Online",
     "search": "Cerca",
-    "signIn": "Inicia la sessió"
+    "signIn": "Inicia la sessió",
+    "signOut": "ó_Sign out_________________à"
   },
   "pager": {
     "noResults": "La cerca no ha retornat cap resultat."
