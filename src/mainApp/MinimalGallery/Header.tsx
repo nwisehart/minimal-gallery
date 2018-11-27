@@ -1,7 +1,7 @@
 import Component from "../../Component";
 import { MinimalGalleryState } from ".";
-import { push, loadApplicationBase } from "./_actions";
-import { queryGroupItems } from "./_actions/base";
+import { push } from "./_actions";
+import { updateApplicationBase } from "./_actions/base";
 
 interface ComponentState {
     searchTerm: string;
@@ -18,6 +18,7 @@ export default class Header extends Component<MinimalGalleryState, ComponentStat
         this.handleSearch = this.handleSearch.bind(this);
         this.handleSearchChange = this.handleSearchChange.bind(this);
         this.handleSignIn = this.handleSignIn.bind(this);
+        this.handleSignOut = this.handleSignOut.bind(this);
     }
 
     public render() {
@@ -86,7 +87,9 @@ export default class Header extends Component<MinimalGalleryState, ComponentStat
             signInLink = (
                 <button
                     class="top-nav-btn"
+                    key="sign-in-btn"
                     onclick={this.handleSignIn}
+                    style={`color: ${config.headerTextColor}`}
                 >
                     <svg
                         xmlns="http://www.w3.org/2000/svg"
@@ -106,6 +109,37 @@ export default class Header extends Component<MinimalGalleryState, ComponentStat
                         <path d="M16.005 15.871a5.872 5.872 0 0 0 0-11.742 5.87 5.87 0 1 0 0 11.742zm11.567 7.188C27.27 19.036 20.023 18 16 18c-4.012 0-11.271 1.039-11.573 5.059C4.203 26.11 4.068 28.18 4.02 30h23.96c-.047-1.82-.184-3.891-.407-6.941z" />
                     </svg>
                     {this.props.base.i18n.header.signIn}
+                </button>
+            );
+        } else if (
+            this.props.base.applicationBaseResult.config.showSignInBtn &&
+            this.props.base.applicationBase.portal.user
+        ) {
+            signInLink = (
+                <button
+                    class="top-nav-btn"
+                    key="sign-out-btn"
+                    onclick={this.handleSignOut}
+                    style={`color: ${config.headerTextColor}`}
+                >
+                    <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        width="32"
+                        height="32"
+                        viewBox="0 0 32 32"
+                        style={`
+                            fill: currentColor;
+                            pointer-events: none;
+                            display: inline-block;
+                            width: 1em;
+                            height: 1em;
+                            vertical-align: -0.15em;
+                            padding-right: .5em;
+                        `}
+                    >
+                        <path d="M16.005 15.871a5.872 5.872 0 0 0 0-11.742 5.87 5.87 0 1 0 0 11.742zm11.567 7.188C27.27 19.036 20.023 18 16 18c-4.012 0-11.271 1.039-11.573 5.059C4.203 26.11 4.068 28.18 4.02 30h23.96c-.047-1.82-.184-3.891-.407-6.941z" />
+                    </svg>
+                    {`${this.props.base.i18n.header.signOut} (${this.props.base.applicationBase.portal.user.username})`}
                 </button>
             );
         }
@@ -171,9 +205,28 @@ export default class Header extends Component<MinimalGalleryState, ComponentStat
             const portal = new Portal();
             portal.authMode = "immediate";
             portal.load().then(() => {
-                this.dispatch(queryGroupItems(this.props.base.applicationBaseResult));
+                this.dispatch(updateApplicationBase({
+                    ...this.props.base.applicationBaseResult,
+                    portal
+                }));
             });
         });
+    }
+
+    private handleSignOut() {
+        window["require"](
+            ["esri/portal/Portal", "esri/identity/IdentityManager"],
+            (Portal: __esri.PortalConstructor, IdentityManager: __esri.IdentityManager) => {
+                IdentityManager.destroyCredentials();
+                const portal = new Portal();
+                portal.load().then(() => {
+                    this.dispatch(updateApplicationBase({
+                        ...this.props.base.applicationBaseResult,
+                        portal
+                    }));
+                });
+            }
+        );
     }
 }
 

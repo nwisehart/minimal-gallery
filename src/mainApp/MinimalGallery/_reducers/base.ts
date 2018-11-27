@@ -14,6 +14,7 @@ export default (state: MinimalGalleryState["base"], action: { type: string, payl
     switch (action.type) {
         case SAVE_APP_BASE_RESULT:
             const perPage = parseInt(action.payload.config.itemsPerPage, 10);
+            state.applicationBase.portal = action.payload.portal;
             return {
                 ...state,
                 loadMessage: "groupItems",

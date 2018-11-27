@@ -36,7 +36,8 @@ define({
       header: {
         "agol": "View on ArcGIS Online",
         "search": "Search",
-        "signIn": "Sign in"
+        "signIn": "Sign in",
+        "signOut": "Sign out"
       },
       pager: {
         "noResults": "Your search did not return any results."

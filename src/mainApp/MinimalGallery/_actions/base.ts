@@ -25,6 +25,12 @@ export const loadApplicationBase = () => (dispatch: any, getState: () => Minimal
     );
 };
 
+export const updateApplicationBase = (applicationBaseResult: __esriApplicationBase.ApplicationConfig) =>
+    (dispatch: any) => {
+        dispatch({ type: SAVE_APP_BASE_RESULT, payload: applicationBaseResult });
+        dispatch(queryGroupItems(applicationBaseResult));
+    };
+
 export const queryGroupItems = (applicationBaseResult: __esriApplicationBase.ApplicationConfig) =>
     (dispatch: any, getState: () => MinimalGalleryState) => {
 
