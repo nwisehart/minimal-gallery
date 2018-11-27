@@ -18,8 +18,8 @@ define({
     "groupprocess": "正在处理组响应..",
     "groupitems": "正在加载项目..",
     "failed": "无法加载应用程序。",
-    "noauth": "试_Your account is not licensed to use Configurable Apps that are not public. Please ask your organization administrator to assign you a user type that includes Essential Apps or an add-on Essential Apps license__________________________________________________________________________________________________________验.",
-    "notLicensed": "试_Not Licensed_____________验"
+    "noauth": "您的帐户无权使用非公共的可配置应用程序。 请联系您的组织管理员为您分配包含基本应用程序或附加基本应用程序许可的用户类型。",
+    "notLicensed": "未经许可"
   },
   "viewLoading": {
     "scripts": "正在获取脚本..",

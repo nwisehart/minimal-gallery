@@ -18,8 +18,8 @@ define({
     "groupprocess": "Đang xử lý phản hồi nhóm..",
     "groupitems": "Đang tải mục...",
     "failed": "Không thể tải ứng dụng.",
-    "noauth": "Đ_Your account is not licensed to use Configurable Apps that are not public. Please ask your organization administrator to assign you a user type that includes Essential Apps or an add-on Essential Apps license__________________________________________________________________________________________________________ớ.",
-    "notLicensed": "Đ_Not Licensed_____________ớ"
+    "noauth": "Tài khoản của bạn không được cấp phép để sử dụng Ứng dụng có thể cấu hình mà không được công khai. Vui lòng yêu cầu quản trị viên của tổ chức bạn gán cho bạn loại người dùng có bao gồm các ứng dụng thiết yếu hoặc có giấy phép sử dụng các ứng dụng thiết yếu bổ trợ.",
+    "notLicensed": "Không được cấp phép"
   },
   "viewLoading": {
     "scripts": "Đang tìm nạp script..",

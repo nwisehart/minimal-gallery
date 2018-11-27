@@ -18,8 +18,8 @@ define({
     "groupprocess": "Apdorojamas grupės atsakymas..",
     "groupitems": "Įkeliami elementai...",
     "failed": "Nepavyko įkelti aplikacijos.",
-    "noauth": "Į_Your account is not licensed to use Configurable Apps that are not public. Please ask your organization administrator to assign you a user type that includes Essential Apps or an add-on Essential Apps license__________________________________________________________________________________________________________š.",
-    "notLicensed": "Į_Not Licensed_____________š"
+    "noauth": "Jūsų paskyra nelicencijuota naudoti ne viešas konfigūruojamas aplikacijas. Kreipkitės į organizacijos administratorių, kad paskirtų jums vartotojo tipą, kuris turi svarbiausias aplikacijas, arba suteiktų jums papildomą svarbiausių aplikacijų licenciją.",
+    "notLicensed": "Nelicencijuota"
   },
   "viewLoading": {
     "scripts": "Gaunami scenarijai..",

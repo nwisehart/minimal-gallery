@@ -18,8 +18,8 @@ define({
     "groupprocess": "グループの応答を処理しています..",
     "groupitems": "アイテムを読み込んでいます..",
     "failed": "アプリケーションを読み込めませんでした。",
-    "noauth": "須_Your account is not licensed to use Configurable Apps that are not public. Please ask your organization administrator to assign you a user type that includes Essential Apps or an add-on Essential Apps license__________________________________________________________________________________________________________鷗.",
-    "notLicensed": "須_Not Licensed_____________鷗"
+    "noauth": "パブリックでないテンプレートを使用するためのライセンスがアカウントに付与されていません。 組織の管理者に Essential Apps またはアドオン Essential Apps ライセンスを含むユーザー タイプを割り当てるよう依頼してください。",
+    "notLicensed": "ライセンスがありません。"
   },
   "viewLoading": {
     "scripts": "スクリプトを取得しています..",

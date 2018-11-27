@@ -18,8 +18,8 @@ define({
     "groupprocess": "Grupivastuse töötlemine..",
     "groupitems": "Üksuste laadimine...",
     "failed": "Rakenduse laadimine nurjus.",
-    "noauth": "Š_Your account is not licensed to use Configurable Apps that are not public. Please ask your organization administrator to assign you a user type that includes Essential Apps or an add-on Essential Apps license__________________________________________________________________________________________________________ä.",
-    "notLicensed": "Š_Not Licensed_____________ä"
+    "noauth": "Teie kontol puudub litsents konfigureeritavate rakenduste kasutamiseks, mis ei ole avalikud. Paluge oma organisatsiooni administraatoril määrata teile kasutajatüüp, mis sisaldab olulisi rakendusi või oluliste rakenduse lisalitsentsi.",
+    "notLicensed": "Litsents puudub"
   },
   "viewLoading": {
     "scripts": "Skriptide toomine..",

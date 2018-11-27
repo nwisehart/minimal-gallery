@@ -18,8 +18,8 @@ define({
     "groupprocess": "Traitement de la réponse du groupe...",
     "groupitems": "Chargement des éléments...",
     "failed": "Echec du chargement de l’application.",
-    "noauth": "æ_Your account is not licensed to use Configurable Apps that are not public. Please ask your organization administrator to assign you a user type that includes Essential Apps or an add-on Essential Apps license__________________________________________________________________________________________________________Â.",
-    "notLicensed": "æ_Not Licensed_____________Â"
+    "noauth": "La licence de votre compte ne permet pas d’utiliser des applications configurables non publiques. Demandez à l’administrateur de votre organisation de vous attribuer un type d’utilisateur qui inclut une licence Essential Apps ou une licence Essential Apps additionnelle.",
+    "notLicensed": "Pas de licence"
   },
   "viewLoading": {
     "scripts": "Extraction des scripts...",

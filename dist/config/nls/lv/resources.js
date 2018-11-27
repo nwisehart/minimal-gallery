@@ -18,8 +18,8 @@ define({
     "groupprocess": "Tiek apstrādāta grupas atbilde…",
     "groupitems": "Notiek vienību ielādēšana…",
     "failed": "Neizdevās ielādēt lietotni.",
-    "noauth": "ķ_Your account is not licensed to use Configurable Apps that are not public. Please ask your organization administrator to assign you a user type that includes Essential Apps or an add-on Essential Apps license__________________________________________________________________________________________________________ū.",
-    "notLicensed": "ķ_Not Licensed_____________ū"
+    "noauth": "Jūsu kontam nav licences, lai izmantotu konfigurējamās lietotnes, kas nav publiskas. Pieprasiet savas organizācijas administratoram piešķirt jums lietotāja veidu, kurā iekļauts lietotņu komplekts Essential Apps vai papildinājumlietotņu Essential Apps licence.",
+    "notLicensed": "Nav licences"
   },
   "viewLoading": {
     "scripts": "Tiek ienesti skripti…",

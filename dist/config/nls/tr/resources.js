@@ -18,8 +18,8 @@ define({
     "groupprocess": "Grup yanıtı işleniyor..",
     "groupitems": "Öğeler yükleniyor..",
     "failed": "Uygulama yüklenemedi.",
-    "noauth": "ı_Your account is not licensed to use Configurable Apps that are not public. Please ask your organization administrator to assign you a user type that includes Essential Apps or an add-on Essential Apps license__________________________________________________________________________________________________________İ.",
-    "notLicensed": "ı_Not Licensed_____________İ"
+    "noauth": "Hesabınız herkese açık olmayan Yapılandırılabilir Uygulamaları kullanmak için lisanslandırılmamış. Lütfen kuruluş yöneticinizden Temel Uygulamalar veya eklenti Temel Uygulamalar lisansı içeren bir kullanıcı türü atamasını isteyin.",
+    "notLicensed": "Lisanslı Değil"
   },
   "viewLoading": {
     "scripts": "Komutlar gönderiliyor..",

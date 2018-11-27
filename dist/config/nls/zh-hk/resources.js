@@ -18,8 +18,8 @@ define({
     "groupprocess": "正在處理群組回應..",
     "groupitems": "正在載入項目..",
     "failed": "無法載入應用程式。",
-    "noauth": "試_Your account is not licensed to use Configurable Apps that are not public. Please ask your organization administrator to assign you a user type that includes Essential Apps or an add-on Essential Apps license__________________________________________________________________________________________________________驗.",
-    "notLicensed": "試_Not Licensed_____________驗"
+    "noauth": "您的帳號未經授權，無法使用非公開的可配置應用程式。 請聯繫您的組織管理員，請其將包含基礎應用程式或附加元件基礎應用程式授權的使用者類型指派給您。",
+    "notLicensed": "未經許可"
   },
   "viewLoading": {
     "scripts": "正在擷取指令碼...",

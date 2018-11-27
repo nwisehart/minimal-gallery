@@ -18,8 +18,8 @@ define({
     "groupprocess": "מעבד תגובת קבוצה..",
     "groupitems": "טוען פריטים..",
     "failed": "טעינת היישום נכשלה.",
-    "noauth": "כן_Your account is not licensed to use Configurable Apps that are not public. Please ask your organization administrator to assign you a user type that includes Essential Apps or an add-on Essential Apps license__________________________________________________________________________________________________________ש.",
-    "notLicensed": "כן_Not Licensed_____________ש"
+    "noauth": "החשבון שלך אינו מורשה להשתמש באפליקציות הניתנות להגדרה שאינן ציבוריות. בקש ממנהל המערכת בארגון שלך להקצות לך סוג משתמש שכולל את Essential Apps או רישיון הרחבה ל-Essential Apps.",
+    "notLicensed": "ללא רישיון"
   },
   "viewLoading": {
     "scripts": "שולף קובצי script..",

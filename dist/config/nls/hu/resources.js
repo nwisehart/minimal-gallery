@@ -18,8 +18,8 @@ define({
     "groupprocess": "Csoportválasz feldolgozása...",
     "groupitems": "Elemek betöltése...",
     "failed": "Nem sikerült betölteni az alkalmazást.",
-    "noauth": "í_Your account is not licensed to use Configurable Apps that are not public. Please ask your organization administrator to assign you a user type that includes Essential Apps or an add-on Essential Apps license__________________________________________________________________________________________________________ő.",
-    "notLicensed": "í_Not Licensed_____________ő"
+    "noauth": "Az Ön fiókjának licence nem terjed ki a nem nyilvános konfigurálható alkalmazásokra. Igényelje a szervezete adminisztrátorától, hogy rendeljen Önhöz olyan felhasználótípust, amely tartalmazza az alapvető alkalmazásokat, vagy egy kiegészítő alapvető alkalmazásokra vonatkozó licencet.",
+    "notLicensed": "Nincs licence"
   },
   "viewLoading": {
     "scripts": "Parancsfájlok lekérése...",

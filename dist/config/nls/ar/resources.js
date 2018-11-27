@@ -18,8 +18,8 @@ define({
     "groupprocess": "جارِ معالجة استجابة المجموعة..",
     "groupitems": "جارِ تحميل العناصر..",
     "failed": "فشل تحميل التطبيق.",
-    "noauth": "بيت_Your account is not licensed to use Configurable Apps that are not public. Please ask your organization administrator to assign you a user type that includes Essential Apps or an add-on Essential Apps license__________________________________________________________________________________________________________لاحقة.",
-    "notLicensed": "بيت_Not Licensed_____________لاحقة"
+    "noauth": "حسابك غير مرخص لاستخدام التطبيقات القابلة للتكوين غير العامة. رجاءً اطلب من مسئولي المؤسسة تعيينك كنوع مستخدم يتضمن التطبيقات الأساسية أو ترخيص التطبيقات الأساسية المضافة.",
+    "notLicensed": "غير مرخص"
   },
   "viewLoading": {
     "scripts": "جارِ إحضار البرامج النصية..",

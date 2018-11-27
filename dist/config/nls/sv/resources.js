@@ -18,8 +18,8 @@ define({
     "groupprocess": "Bearbetar gruppsvar…",
     "groupitems": "Läser in objekt...",
     "failed": "Applikationen kunde inte läsas in.",
-    "noauth": "Å_Your account is not licensed to use Configurable Apps that are not public. Please ask your organization administrator to assign you a user type that includes Essential Apps or an add-on Essential Apps license__________________________________________________________________________________________________________ö.",
-    "notLicensed": "Å_Not Licensed_____________ö"
+    "noauth": "Ditt konto har ingen licens för att använda konfigurerbara appar som inte är tillgängliga för allmänheten. Be din organisations administratör att tilldela dig en användartyp som omfattar Essential Apps eller en tilläggslicens för Essential Apps.",
+    "notLicensed": "Inte licensierad"
   },
   "viewLoading": {
     "scripts": "Hämtar skript…",

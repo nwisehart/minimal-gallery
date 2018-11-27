@@ -18,8 +18,8 @@ define({
     "groupprocess": "Memproses jawaban grup..",
     "groupitems": "Memuat item..",
     "failed": "Gagal memuat aplikasi.",
-    "noauth": "ng_Your account is not licensed to use Configurable Apps that are not public. Please ask your organization administrator to assign you a user type that includes Essential Apps or an add-on Essential Apps license__________________________________________________________________________________________________________ny.",
-    "notLicensed": "ng_Not Licensed_____________ny"
+    "noauth": "Akun Anda tidak dilisensikan untuk menggunakan Aplikasi yang Dapat Dikonfigurasi yang bukan bersifat publik. Harap minta administrator organisasi Anda untuk menetapkan Anda jenis pengguna yang menyertakan lisensi Essential App atau add-on Essential App.",
+    "notLicensed": "Tidak Dilisensikan"
   },
   "viewLoading": {
     "scripts": "Mengambil skrip..",

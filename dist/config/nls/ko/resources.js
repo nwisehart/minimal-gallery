@@ -18,8 +18,8 @@ define({
     "groupprocess": "그룹 응답 처리 중...",
     "groupitems": "항목을 불러오는 중...",
     "failed": "응용프로그램을 불러오는 데 실패했습니다.",
-    "noauth": "한_Your account is not licensed to use Configurable Apps that are not public. Please ask your organization administrator to assign you a user type that includes Essential Apps or an add-on Essential Apps license__________________________________________________________________________________________________________빠.",
-    "notLicensed": "한_Not Licensed_____________빠"
+    "noauth": "귀하의 계정에는 공개 상태가 아닌 구성 설정 앱을 사용할 수 있는 라이선스가 없습니다. 필수 앱 또는 애드온 필수 앱 라이선스가 포함된 사용자 유형을 업무 지시하려면 기관 관리자에게 문의하세요.",
+    "notLicensed": "라이선스가 없음"
   },
   "viewLoading": {
     "scripts": "스크립트를 가져오는 중...",

@@ -18,8 +18,8 @@ define({
     "groupprocess": "समूह की प्रतिक्रिया तैयार हो रही है..",
     "groupitems": "आइटम लोड हो रहे हैं..",
     "failed": "एप्लिकेशन लोड करना विफल हुआ।",
-    "noauth": "आ_Your account is not licensed to use Configurable Apps that are not public. Please ask your organization administrator to assign you a user type that includes Essential Apps or an add-on Essential Apps license__________________________________________________________________________________________________________ज.",
-    "notLicensed": "आ_Not Licensed_____________ज"
+    "noauth": "आपके खाते को ऐसे कॉन्फ़िगर करने योग्य ऐप्स का उपयोग करने के लिए लाइसेंस प्राप्त नहीं है जो गैर-सार्वजनिक हैं। कृपया अपने संगठन व्यवस्थापक से आपको एक ऐसा उपयोगकर्ता प्रकार असाइन करने के लिए कहें जिसमें आवश्यक ऐप्स या एड-ऑन आवश्यक ऐप्स लाइसेंस शामिल है।",
+    "notLicensed": "लाइसेंस प्राप्त नहीं है"
   },
   "viewLoading": {
     "scripts": "स्क्रिप्ट प्राप्त की जा रही हैं..",

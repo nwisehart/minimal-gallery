@@ -18,8 +18,8 @@ define({
     "groupprocess": "Groepsreactie wordt verwerkt..",
     "groupitems": "Items laden..",
     "failed": "Laden van de toepassing is mislukt.",
-    "noauth": "Ĳ_Your account is not licensed to use Configurable Apps that are not public. Please ask your organization administrator to assign you a user type that includes Essential Apps or an add-on Essential Apps license__________________________________________________________________________________________________________ä.",
-    "notLicensed": "Ĳ_Not Licensed_____________ä"
+    "noauth": "Uw account heeft geen licentie om configureerbare apps te gebruiken die niet openbaar zijn. Vraag uw organisatiebeheerder om u een gebruikerstype toe te wijzen dat Essential Apps of een add-on Essential Apps-licentie bevat.",
+    "notLicensed": "Geen licentie"
   },
   "viewLoading": {
     "scripts": "Scripts worden geladen..",

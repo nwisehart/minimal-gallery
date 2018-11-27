@@ -18,8 +18,8 @@ define({
     "groupprocess": "Zpracovávám skupinovou odpověď..",
     "groupitems": "Probíhá načítání položek..",
     "failed": "Nepodařilo se načíst aplikaci",
-    "noauth": "Ř_Your account is not licensed to use Configurable Apps that are not public. Please ask your organization administrator to assign you a user type that includes Essential Apps or an add-on Essential Apps license__________________________________________________________________________________________________________ů.",
-    "notLicensed": "Ř_Not Licensed_____________ů"
+    "noauth": "Váš účet nevlastní licenci k používání konfigurovatelných aplikací, které nejsou veřejné. Požádejte prosím správce své organizace, aby vám přidělil typ uživatele, jehož součástí jsou základní aplikace nebo doplňková licence základních aplikací.",
+    "notLicensed": "Chybí licence"
   },
   "viewLoading": {
     "scripts": "Vyvolávání skriptů..",
