@@ -1,7 +1,7 @@
 import Component from "../../Component";
 import { MinimalGalleryState } from ".";
 import { push } from "./_actions";
-import { updateApplicationBase } from "./_actions/base";
+import { updateApplicationBase, signOut, signIn } from "./_actions/base";
 
 interface ComponentState {
     searchTerm: string;
@@ -201,32 +201,11 @@ export default class Header extends Component<MinimalGalleryState, ComponentStat
     }
 
     private handleSignIn() {
-        window["require"](["esri/portal/Portal"], (Portal: __esri.PortalConstructor) => {
-            const portal = new Portal();
-            portal.authMode = "immediate";
-            portal.load().then(() => {
-                this.dispatch(updateApplicationBase({
-                    ...this.props.base.applicationBaseResult,
-                    portal
-                }));
-            });
-        });
+        this.dispatch(signIn());
     }
 
     private handleSignOut() {
-        window["require"](
-            ["esri/portal/Portal", "esri/identity/IdentityManager"],
-            (Portal: __esri.PortalConstructor, IdentityManager: __esri.IdentityManager) => {
-                IdentityManager.destroyCredentials();
-                const portal = new Portal();
-                portal.load().then(() => {
-                    this.dispatch(updateApplicationBase({
-                        ...this.props.base.applicationBaseResult,
-                        portal
-                    }));
-                });
-            }
-        );
+        this.dispatch(signOut());
     }
 }
 

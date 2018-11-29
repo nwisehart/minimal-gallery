@@ -6,6 +6,9 @@ export const AUTHENTICATION_FAILED = "AUTHENTICATION_FAILED";
 
 import * as all from "dojo/promise/all";
 import * as Deferred from "dojo/Deferred";
+import * as IdentityManager from "esri/identity/IdentityManager";
+import * as Portal from "esri/portal/Portal";
+import * as cookie from "dojo/cookie";
 import { updateItems, hashChange } from ".";
 import { MinimalGalleryState } from "..";
 import supportedItemTypes from "../_utilities/supportedItemTypes";
@@ -67,7 +70,7 @@ export const queryGroupItems = (applicationBaseResult: __esriApplicationBase.App
 
 const fetchAllGroupItems = (applicationBase: MinimalGalleryState["base"]["applicationBase"], config: any) => {
     const dfd = new Deferred;
-    
+
     applicationBase.queryGroupItems(
         config.group,
         {
@@ -86,7 +89,7 @@ const fetchAllGroupItems = (applicationBase: MinimalGalleryState["base"]["applic
                         num: 100,
                         sortField: (config.sortField ? config.sortField : "numviews"),
                         sortOrder: (config.sortOrder ? config.sortOrder : "desc"),
-                        start:  100 + (i * 100)
+                        start: 100 + (i * 100)
                     } as __esri.PortalQueryParams
                 )
             ));
@@ -107,6 +110,44 @@ const fetchAllGroupItems = (applicationBase: MinimalGalleryState["base"]["applic
     });
 
     return dfd;
+};
+
+export const signIn = () => (dispatch: any, getState: () => MinimalGalleryState) => {
+    const state = getState();
+    const portal = new Portal({ url: state.base.applicationBase.portal.url });
+    portal.authMode = "immediate";
+    portal.load().then(() => {
+        dispatch(updateApplicationBase({
+            ...state.base.applicationBaseResult,
+            portal
+        }));
+    });
+};
+
+export const signOut = () => (dispatch: any, getState: () => MinimalGalleryState) => {
+    IdentityManager.destroyCredentials();
+
+    cookie("esri_auth", undefined, {
+        path: "/",
+        domain: ".arcgis.com",
+        expires: -1
+    });
+    cookie("esri_auth", undefined, {
+        path: "/",
+        domain: `.${document.domain}`,
+        expires: -1
+    });
+
+    const state = getState();
+    const portal = new Portal({ url: state.base.applicationBase.portal.url });
+    portal.authMode = "auto";
+    portal.load().then(() => {
+        portal.user = null as any;
+        dispatch(updateApplicationBase({
+            ...state.base.applicationBaseResult,
+            portal
+        }));
+    });
 };
 
 const saveAppBaseResult = (applicationBaseResult: __esriApplicationBase.ApplicationConfig) => ({
