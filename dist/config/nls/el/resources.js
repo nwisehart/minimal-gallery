@@ -36,7 +36,7 @@ define({
     "agol": "Προβολή στο ArcGIS Online",
     "search": "Αναζήτηση",
     "signIn": "Είσοδος",
-    "signOut": "π_Sign out_________________Ω"
+    "signOut": "Έξοδος"
   },
   "pager": {
     "noResults": "Η αναζήτηση δεν επέστρεψε κανένα αποτέλεσμα."

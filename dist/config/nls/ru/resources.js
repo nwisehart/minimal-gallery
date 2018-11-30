@@ -36,7 +36,7 @@ define({
     "agol": "Просмотреть в ArcGIS Online",
     "search": "Поиск",
     "signIn": "Авторизация",
-    "signOut": "Ж_Sign out_________________Я"
+    "signOut": "Выход из учетной записи"
   },
   "pager": {
     "noResults": "В результате поиска ничего не найдено."

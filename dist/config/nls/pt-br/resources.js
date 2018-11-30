@@ -36,7 +36,7 @@ define({
     "agol": "Visualizar no ArcGIS Online",
     "search": "Pesquisar",
     "signIn": "Entrar",
-    "signOut": "ã_Sign out_________________Ç"
+    "signOut": "Sair"
   },
   "pager": {
     "noResults": "A pesquisa não retornou quaisquer resultados."

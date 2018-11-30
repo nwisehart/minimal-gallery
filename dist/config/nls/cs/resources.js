@@ -36,7 +36,7 @@ define({
     "agol": "Zobrazit v systému ArcGIS Online",
     "search": "Hledat",
     "signIn": "Přihlásit",
-    "signOut": "Ř_Sign out_________________ů"
+    "signOut": "Odhlásit se"
   },
   "pager": {
     "noResults": "Nebyly nalezeny žádné výsledky."

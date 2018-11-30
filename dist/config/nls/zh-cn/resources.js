@@ -36,7 +36,7 @@ define({
     "agol": "在 ArcGIS Online 上查看",
     "search": "搜索",
     "signIn": "登录",
-    "signOut": "试_Sign out_________________验"
+    "signOut": "登出"
   },
   "pager": {
     "noResults": "搜索未返回任何结果。"

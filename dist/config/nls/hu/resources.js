@@ -36,7 +36,7 @@ define({
     "agol": "Megtekintés az ArcGIS Online webhelyen",
     "search": "Keresés",
     "signIn": "Bejelentkezés",
-    "signOut": "í_Sign out_________________ő"
+    "signOut": "Kijelentkezés"
   },
   "pager": {
     "noResults": "A keresés nem adott vissza eredményt."

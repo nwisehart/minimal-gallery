@@ -36,7 +36,7 @@ define({
     "agol": "ArcGIS Online पर देखें",
     "search": "खोजें",
     "signIn": "साइन इन करें",
-    "signOut": "आ_Sign out_________________ज"
+    "signOut": "साइन आउट करें"
   },
   "pager": {
     "noResults": "आपकी खोज से कोई परिणाम नहीं मिला."

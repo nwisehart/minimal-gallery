@@ -36,7 +36,7 @@ define({
     "agol": "ArcGIS Online üzerinde görüntüle",
     "search": "Arama",
     "signIn": "Oturum aç",
-    "signOut": "ı_Sign out_________________İ"
+    "signOut": "Oturumu kapat"
   },
   "pager": {
     "noResults": "Aramanız hiçbir sonuç döndürmedi."
