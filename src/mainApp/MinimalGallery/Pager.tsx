@@ -19,6 +19,10 @@ export default class Pager extends Component<MinimalGalleryState> {
         const displayItems = this.props.items.filteredItems;
 
         const pages = Math.ceil(displayItems.length / config.itemsPerPage);
+        //No pager rendered if only a single page
+        if (pages <= 1) {
+            return;
+        }
 
         const prevButtonClasses = {
             "btn": true,
