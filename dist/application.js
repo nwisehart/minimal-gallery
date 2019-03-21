@@ -444,7 +444,6 @@ Object.defineProperty(exports, "__esModule", { value: true });
 var fileTypes = {
     "360 VR Experience": "file",
     "App Builder Extension": "file",
-    "Application": "file",
     "ArcGIS Pro Add In": "file",
     "ArcGIS Pro Configuration": "file",
     "ArcPad Package": "file",
@@ -524,7 +523,7 @@ var fileTypes = {
     "Form": "file",
     "Workforce Project": "file"
 };
-exports.default = __assign({}, fileTypes, { "Web Map": "webmap", "Web Mapping Application": "webapp", "Web Scene": "webscene", "Dashboard": "webapp" });
+exports.default = __assign({}, fileTypes, { "Web Map": "webmap", "Web Mapping Application": "webapp", "Web Scene": "webscene", "Dashboard": "webapp", "Application": "webapp" });
 
 
 /***/ }),
@@ -2011,7 +2010,8 @@ var getPanelType = function (state) {
             "Web Mapping Application": "app",
             "Web Map": "map",
             "Web Scene": "scene",
-            "Dashboard": "app"
+            "Dashboard": "app",
+            "Application": "app"
         };
         if (recognizedTypes[type]) {
             return recognizedTypes[type];
