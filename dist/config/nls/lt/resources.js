@@ -12,13 +12,13 @@ define({
   },
   "appLoading": {
     "init": "Paleidžiama aplikacija..",
-    "login": "Tikrinami vartotojo prisijungimo duomenys..",
+    "login": "Tikrinami naudotojo prisijungimo duomenys..",
     "portalapp": "Teikiama užklausa dėl portalo ir aplikacijos..",
     "groupdata": "Teikiama užklausa dėl grupės duomenų..",
     "groupprocess": "Apdorojamas grupės atsakymas..",
     "groupitems": "Įkeliami elementai...",
     "failed": "Nepavyko įkelti aplikacijos.",
-    "noauth": "Jūsų paskyra nelicencijuota naudoti ne viešas konfigūruojamas aplikacijas. Kreipkitės į organizacijos administratorių, kad paskirtų jums vartotojo tipą, kuris turi svarbiausias aplikacijas, arba suteiktų jums papildomą svarbiausių aplikacijų licenciją.",
+    "noauth": "Jūsų paskyra nelicencijuota naudoti ne viešas konfigūruojamas aplikacijas. Kreipkitės į organizacijos administratorių, kad paskirtų jums naudotojo tipą, kuris turi svarbiausias aplikacijas, arba suteiktų jums papildomą svarbiausių aplikacijų licenciją.",
     "notLicensed": "Nelicencijuota"
   },
   "viewLoading": {
