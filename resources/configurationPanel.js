@@ -371,18 +371,6 @@
 				"value": "bottom-left"
 			}],
 			"tooltip": "Controls the placement of a Search Widget on gallery-embedded or fullscreen maps and scenes."
-		}, {
-			"label": "Basemap group",
-			"fieldName": "basemapGroupTitle",
-			"type": "string",
-			"tooltip": "Name of a public group containing basemaps, or leave blank to use the organization's basemap group",
-			"placeholder": "Default organization basemaps"
-		}, {
-			"label": "Basemap group owner",
-			"fieldName": "basemapGroupOwner",
-			"type": "string",
-			"tooltip": "Username of basemap group owner",
-			"placeholder": "Default organization basemaps"
 		}]
 	}],
 	"values": {
