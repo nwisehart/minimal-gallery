@@ -88,4 +88,5 @@ export default {
   "Web Scene": "webscene",
   "Dashboard": "webapp",
   "Application": "webapp",
+  "StoryMap": "webapp"
 };

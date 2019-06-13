@@ -25,7 +25,8 @@ const getPanelType = (
       "Web Map": "map",
       "Web Scene": "scene",
       "Dashboard": "app",
-      "Application": "app"
+      "Application": "app",
+      "StoryMap": "app"
     };
     if (recognizedTypes[type]) { return recognizedTypes[type]; }
     return "file";

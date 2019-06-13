@@ -258,7 +258,7 @@
 				"value": ""
 			}, {
 				"label": "Apps",
-				"value": "Web Mapping Application, Mobile Application, Code Attachment, Operations Dashboard Add In, Operation View,Operations Dashboard Extension, Native Application, Native Application Template, Native Application Installer, Workforce Project, Form, Insights Workbook, Insights Model, Insights Page, Dashboard, Hub Initiative, Hub Site Application, Hub Page, AppBuilder Widget Package"
+				"value": "Web Mapping Application, Mobile Application, Code Attachment, Operations Dashboard Add In, Operation View,Operations Dashboard Extension, Native Application, Native Application Template, Native Application Installer, Workforce Project, Form, Insights Workbook, Insights Model, Insights Page, Dashboard, Hub Initiative, Hub Site Application, Hub Page, AppBuilder Widget Package, StoryMap"
 			}, {
 				"label": "Data Files",
 				"value": "Symbol Set, Color Set, Shapefile, File Geodatabase, CSV, CAD Drawing, Service Definition, Document Link, Microsoft Word, Microsoft Powerpoint, Microsoft Excel, PDF, Image, Visio Document, iWork Keynote, iWork Pages, iWork Numbers, Report Template, Statistical Data Collection, SQLite Geodatabase, Content Category Set"
