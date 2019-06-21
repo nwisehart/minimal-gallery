@@ -1,4 +1,4 @@
-define(["dojo/io-query","esri/core/promiseUtils","esri/identity/IdentityManager","esri/portal/Portal","dojo/promise/all","esri/identity/OAuthInfo","dojo/_base/kernel","esri/config","esri/portal/PortalItem","esri/portal/PortalQueryParams","dojo/_base/declare","esri/core/accessorSupport/decorators","esri/widgets/Widget","esri/widgets/support/widget","dojo/Deferred","dojo/cookie","esri/core/requireUtils","esri/widgets/Expand"], function(__WEBPACK_EXTERNAL_MODULE_2__, __WEBPACK_EXTERNAL_MODULE_6__, __WEBPACK_EXTERNAL_MODULE_7__, __WEBPACK_EXTERNAL_MODULE_8__, __WEBPACK_EXTERNAL_MODULE_9__, __WEBPACK_EXTERNAL_MODULE_14__, __WEBPACK_EXTERNAL_MODULE_15__, __WEBPACK_EXTERNAL_MODULE_16__, __WEBPACK_EXTERNAL_MODULE_17__, __WEBPACK_EXTERNAL_MODULE_18__, __WEBPACK_EXTERNAL_MODULE_20__, __WEBPACK_EXTERNAL_MODULE_22__, __WEBPACK_EXTERNAL_MODULE_23__, __WEBPACK_EXTERNAL_MODULE_25__, __WEBPACK_EXTERNAL_MODULE_26__, __WEBPACK_EXTERNAL_MODULE_27__, __WEBPACK_EXTERNAL_MODULE_39__, __WEBPACK_EXTERNAL_MODULE_52__) { return /******/ (function(modules) { // webpackBootstrap
+define(["dojo/io-query","esri/core/promiseUtils","esri/identity/IdentityManager","esri/portal/Portal","dojo/promise/all","esri/identity/OAuthInfo","dojo/_base/kernel","esri/config","esri/portal/PortalItem","esri/portal/PortalQueryParams","dojo/_base/declare","esri/core/accessorSupport/decorators","esri/widgets/Widget","esri/widgets/support/widget","dojo/Deferred","dojo/cookie","esri/core/requireUtils","esri/widgets/Expand"], function(__WEBPACK_EXTERNAL_MODULE_2__, __WEBPACK_EXTERNAL_MODULE_6__, __WEBPACK_EXTERNAL_MODULE_7__, __WEBPACK_EXTERNAL_MODULE_8__, __WEBPACK_EXTERNAL_MODULE_9__, __WEBPACK_EXTERNAL_MODULE_14__, __WEBPACK_EXTERNAL_MODULE_15__, __WEBPACK_EXTERNAL_MODULE_16__, __WEBPACK_EXTERNAL_MODULE_17__, __WEBPACK_EXTERNAL_MODULE_18__, __WEBPACK_EXTERNAL_MODULE_20__, __WEBPACK_EXTERNAL_MODULE_22__, __WEBPACK_EXTERNAL_MODULE_23__, __WEBPACK_EXTERNAL_MODULE_25__, __WEBPACK_EXTERNAL_MODULE_26__, __WEBPACK_EXTERNAL_MODULE_27__, __WEBPACK_EXTERNAL_MODULE_39__, __WEBPACK_EXTERNAL_MODULE_40__) { return /******/ (function(modules) { // webpackBootstrap
 /******/ 	// The module cache
 /******/ 	var installedModules = {};
 /******/
@@ -595,7 +595,7 @@ exports.reducers = _reducers_1.reducers;
 var all = __webpack_require__(9);
 var promiseUtils = __webpack_require__(6);
 var requireUtils = __webpack_require__(39);
-var Expand = __webpack_require__(52);
+var Expand = __webpack_require__(40);
 var widgetKey = {
     compassWidget: "esri/widgets/Compass",
     homeWidget: "esri/widgets/Home",
@@ -1350,7 +1350,7 @@ Object.defineProperty(exports, "__esModule", { value: true });
 var decorators_1 = __webpack_require__(22);
 var Widget = __webpack_require__(23);
 var MinimalGallery_1 = __webpack_require__(24);
-var router_1 = __webpack_require__(51);
+var router_1 = __webpack_require__(52);
 var Component_1 = __webpack_require__(0);
 var thunk = Component_1.middlewares.thunk, debug = Component_1.middlewares.debug;
 var MainApp = /** @class */ (function (_super) {
@@ -1417,8 +1417,8 @@ var _actions_1 = __webpack_require__(1);
 var Header_1 = __webpack_require__(30);
 var Gallery_1 = __webpack_require__(31);
 var Viewer_1 = __webpack_require__(35);
-var Pager_1 = __webpack_require__(43);
-var _reducers_1 = __webpack_require__(44);
+var Pager_1 = __webpack_require__(44);
+var _reducers_1 = __webpack_require__(45);
 exports.reducers = _reducers_1.reducers;
 var MinimalGallery = /** @class */ (function (_super) {
     __extends(MinimalGallery, _super);
@@ -2081,7 +2081,7 @@ var ioQuery = __webpack_require__(2);
 var Component_1 = __webpack_require__(0);
 var _actions_1 = __webpack_require__(1);
 var View_1 = __webpack_require__(36);
-var convertHex_1 = __webpack_require__(42);
+var convertHex_1 = __webpack_require__(43);
 var supportedItemTypes_1 = __webpack_require__(4);
 var Viewer = /** @class */ (function (_super) {
     __extends(Viewer, _super);
@@ -2185,9 +2185,9 @@ exports.default = Viewer;
 Object.defineProperty(exports, "__esModule", { value: true });
 var MapView_1 = __webpack_require__(37);
 exports.MapView = MapView_1.MapView;
-var AppView_1 = __webpack_require__(40);
+var AppView_1 = __webpack_require__(41);
 exports.AppView = AppView_1.AppView;
-var SceneView_1 = __webpack_require__(41);
+var SceneView_1 = __webpack_require__(42);
 exports.SceneView = SceneView_1.SceneView;
 
 
@@ -2275,6 +2275,12 @@ module.exports = __WEBPACK_EXTERNAL_MODULE_39__;
 
 /***/ }),
 /* 40 */
+/***/ (function(module, exports) {
+
+module.exports = __WEBPACK_EXTERNAL_MODULE_40__;
+
+/***/ }),
+/* 41 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var __extends = (this && this.__extends) || (function () {
@@ -2305,7 +2311,7 @@ exports.AppView = AppView;
 
 
 /***/ }),
-/* 41 */
+/* 42 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var __extends = (this && this.__extends) || (function () {
@@ -2361,7 +2367,7 @@ exports.SceneView = SceneView;
 
 
 /***/ }),
-/* 42 */
+/* 43 */
 /***/ (function(module, exports) {
 
 Object.defineProperty(exports, "__esModule", { value: true });
@@ -2376,7 +2382,7 @@ exports.default = function (hex, opacity) {
 
 
 /***/ }),
-/* 43 */
+/* 44 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var __extends = (this && this.__extends) || (function () {
@@ -2461,17 +2467,17 @@ exports.default = Pager;
 
 
 /***/ }),
-/* 44 */
+/* 45 */
 /***/ (function(module, exports, __webpack_require__) {
 
 Object.defineProperty(exports, "__esModule", { value: true });
 var Component_1 = __webpack_require__(0);
-var base_1 = __webpack_require__(45);
-var items_1 = __webpack_require__(46);
-var router_1 = __webpack_require__(47);
-var filter_1 = __webpack_require__(48);
-var page_1 = __webpack_require__(49);
-var viewer_1 = __webpack_require__(50);
+var base_1 = __webpack_require__(46);
+var items_1 = __webpack_require__(47);
+var router_1 = __webpack_require__(48);
+var filter_1 = __webpack_require__(49);
+var page_1 = __webpack_require__(50);
+var viewer_1 = __webpack_require__(51);
 exports.reducers = Component_1.combineReducers({
     base: base_1.default,
     items: items_1.default,
@@ -2483,7 +2489,7 @@ exports.reducers = Component_1.combineReducers({
 
 
 /***/ }),
-/* 45 */
+/* 46 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var __assign = (this && this.__assign) || Object.assign || function(t) {
@@ -2518,7 +2524,7 @@ exports.default = function (state, action) {
 
 
 /***/ }),
-/* 46 */
+/* 47 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var __assign = (this && this.__assign) || Object.assign || function(t) {
@@ -2569,14 +2575,14 @@ function filterItems(items, filter, allowedItemTypes) {
     return items.filter(function (item) { return (allowedItemTypes[item.type] && (item.title.toLowerCase().indexOf(filter) !== -1 ||
         item.type.toLowerCase().indexOf(filter) !== -1 ||
         item.owner.toLowerCase().indexOf(filter) !== -1 ||
-        (item.tags && item.tags.map(function (tag) { return tag.toLowerCase(); }).indexOf(filter) !== -1) ||
+        (item.tags && item.tags.map(function (tag) { return tag.toLowerCase(); }).indexOf(filter.toLowerCase()) !== -1) ||
         (item.description && item.description.indexOf(filter) !== -1) ||
         (item.snippet && item.snippet.indexOf(filter) !== -1))); });
 }
 
 
 /***/ }),
-/* 47 */
+/* 48 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var __assign = (this && this.__assign) || Object.assign || function(t) {
@@ -2604,7 +2610,7 @@ exports.default = function (state, action) {
 
 
 /***/ }),
-/* 48 */
+/* 49 */
 /***/ (function(module, exports, __webpack_require__) {
 
 Object.defineProperty(exports, "__esModule", { value: true });
@@ -2623,7 +2629,7 @@ exports.default = function (state, action) {
 
 
 /***/ }),
-/* 49 */
+/* 50 */
 /***/ (function(module, exports, __webpack_require__) {
 
 Object.defineProperty(exports, "__esModule", { value: true });
@@ -2645,7 +2651,7 @@ exports.default = function (state, action) {
 
 
 /***/ }),
-/* 50 */
+/* 51 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var __assign = (this && this.__assign) || Object.assign || function(t) {
@@ -2679,7 +2685,7 @@ exports.default = function (state, action) {
 
 
 /***/ }),
-/* 51 */
+/* 52 */
 /***/ (function(module, exports, __webpack_require__) {
 
 Object.defineProperty(exports, "__esModule", { value: true });
@@ -2701,12 +2707,6 @@ function startHistoryListener(store) {
 }
 exports.startHistoryListener = startHistoryListener;
 
-
-/***/ }),
-/* 52 */
-/***/ (function(module, exports) {
-
-module.exports = __WEBPACK_EXTERNAL_MODULE_52__;
 
 /***/ })
 /******/ ])});;
