@@ -6,6 +6,7 @@ export { reducers } from "./_reducers";
 import * as all from "dojo/promise/all";
 import * as promiseUtils from "esri/core/promiseUtils";
 import * as requireUtils from "esri/core/requireUtils";
+import * as Expand from "esri/widgets/Expand";
 
 interface ComponentState {
     status: string;
@@ -17,7 +18,8 @@ const widgetKey = {
     homeWidget: "esri/widgets/Home",
     legendWidget: "esri/widgets/Legend",
     locateWidget: "esri/widgets/Locate",
-    searchWidget: "esri/widgets/Search"
+    searchWidget: "esri/widgets/Search",
+    expandWidget: "esri/widgets/Expand"
 };
 
 export default class ViewBase extends Component<ViewState, ComponentState> {
@@ -123,7 +125,15 @@ export default class ViewBase extends Component<ViewState, ComponentState> {
         return requireUtils.when(window["require"], modules.map((item) => item["module"]))
             .then((constructors) => {
                 constructors.forEach((Constructor: any, i: number) => {
-                    const widget = new Constructor({ view });
+                    let widget = new Constructor({ view });
+                    if ( modules[i]["module"] === "esri/widgets/Legend" ) {
+                        // create expand widget to go around legend
+                        widget = new Expand({
+                            expandIconClass: widget.iconClass || "esri-icon-layer-list",
+                            view: view, 
+                            content: widget
+                        });
+                    }
                     if (widget.activeLayerInfos) {
                         widget.watch("activeLayerInfos.length", () => {
                             view.ui.add(widget, modules[i]["position"]);
