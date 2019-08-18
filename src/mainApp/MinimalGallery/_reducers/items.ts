@@ -75,6 +75,9 @@ function filterItems(items: __Component.Pojo[], filter: string, allowedItemTypes
             (item.tags && item.tags.map((tag: string) => tag.toLowerCase()).indexOf(filter.toLowerCase()) !== -1) ||
             (item.description && item.description.indexOf(filter) !== -1) ||
             (item.snippet && item.snippet.indexOf(filter) !== -1)
+        ) && (
+            (item.type && item.type !== "StoryMap") ||
+            (item.type && item.typeKeywords && item.type === "StoryMap" && item.typeKeywords.indexOf("smstatusdraft") === -1) 
         )
     ));
 }

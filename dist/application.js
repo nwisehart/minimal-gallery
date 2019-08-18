@@ -2577,7 +2577,8 @@ function filterItems(items, filter, allowedItemTypes) {
         item.owner.toLowerCase().indexOf(filter) !== -1 ||
         (item.tags && item.tags.map(function (tag) { return tag.toLowerCase(); }).indexOf(filter.toLowerCase()) !== -1) ||
         (item.description && item.description.indexOf(filter) !== -1) ||
-        (item.snippet && item.snippet.indexOf(filter) !== -1))); });
+        (item.snippet && item.snippet.indexOf(filter) !== -1)) && ((item.type && item.type !== "StoryMap") ||
+        (item.type && item.typeKeywords && item.type === "StoryMap" && item.typeKeywords.indexOf("smstatusdraft") === -1))); });
 }
 
 
