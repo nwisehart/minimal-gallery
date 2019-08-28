@@ -36,7 +36,8 @@ define({
     "agol": "Vaata ArcGIS Online keskkonnas",
     "search": "Otsi",
     "signIn": "Logi sisse",
-    "signOut": "Logi välja"
+    "signOut": "Logi välja",
+    "menu": "Š_Menu_________ä"
   },
   "pager": {
     "noResults": "Otsing ei andnud tulemusi."

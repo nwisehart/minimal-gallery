@@ -36,7 +36,8 @@ define({
     "agol": "ArcGIS Online での表示",
     "search": "検索",
     "signIn": "サイン イン",
-    "signOut": "サイン アウト"
+    "signOut": "サイン アウト",
+    "menu": "須_Menu_________鷗"
   },
   "pager": {
     "noResults": "検索結果はありませんでした。"

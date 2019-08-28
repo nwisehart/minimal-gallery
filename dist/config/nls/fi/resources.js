@@ -36,7 +36,8 @@ define({
     "agol": "Näytä ArcGIS Onlinessa",
     "search": "Etsi",
     "signIn": "Kirjaudu sisään",
-    "signOut": "Kirjaudu ulos"
+    "signOut": "Kirjaudu ulos",
+    "menu": "Å_Menu_________ö"
   },
   "pager": {
     "noResults": "Ei tuloksia, jotka vastaavat hakuasi."

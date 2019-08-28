@@ -36,7 +36,8 @@ define({
     "agol": "Peržiūrėti ArcGIS Online",
     "search": "Ieškoti",
     "signIn": "Prisijungti",
-    "signOut": "Atsijungti"
+    "signOut": "Atsijungti",
+    "menu": "Į_Menu_________š"
   },
   "pager": {
     "noResults": "Paieška nieko nerado."

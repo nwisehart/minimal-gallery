@@ -36,7 +36,8 @@ define({
     "agol": "Prikaži na ArcGIS Online",
     "search": "Pretraži",
     "signIn": "Prijavi me",
-    "signOut": "Odjavite se"
+    "signOut": "Odjavite se",
+    "menu": "Č_Menu_________ž"
   },
   "pager": {
     "noResults": "Pretraga nije dala nijedan rezultat."

@@ -36,7 +36,8 @@ define({
     "agol": "Tampilkan di ArcGIS Online",
     "search": "Cari",
     "signIn": "Masuk",
-    "signOut": "Keluar"
+    "signOut": "Keluar",
+    "menu": "ng_Menu_________ny"
   },
   "pager": {
     "noResults": "Pencarian Anda tidak menunjukkan hasil."

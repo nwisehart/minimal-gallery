@@ -36,7 +36,8 @@ define({
     "agol": "הצג ב-ArcGIS Online",
     "search": "חיפוש",
     "signIn": "התחבר",
-    "signOut": "התנתק"
+    "signOut": "התנתק",
+    "menu": "כן_Menu_________ש"
   },
   "pager": {
     "noResults": "החיפוש שלך לא העלה תוצאות."

@@ -36,7 +36,8 @@ define({
     "agol": "Vis på ArcGIS Online",
     "search": "Søk",
     "signIn": "Logg på",
-    "signOut": "Logg av"
+    "signOut": "Logg av",
+    "menu": "å_Menu_________ø"
   },
   "pager": {
     "noResults": "Søket ga ingen resultater."
