@@ -5,6 +5,7 @@ import { updateApplicationBase, signOut, signIn } from "./_actions/base";
 
 interface ComponentState {
     searchTerm: string;
+    mobileMenuOpen: boolean;
 }
 
 export default class Header extends Component<MinimalGalleryState, ComponentState> {
@@ -12,13 +13,15 @@ export default class Header extends Component<MinimalGalleryState, ComponentStat
         super(store);
 
         this.state = {
-            searchTerm: this.props.filter
+            searchTerm: this.props.filter,
+            mobileMenuOpen: false
         };
 
         this.handleSearch = this.handleSearch.bind(this);
         this.handleSearchChange = this.handleSearchChange.bind(this);
         this.handleSignIn = this.handleSignIn.bind(this);
         this.handleSignOut = this.handleSignOut.bind(this);
+        this.handleMenuClick = this.handleMenuClick.bind(this);
     }
 
     public render() {
@@ -27,10 +30,28 @@ export default class Header extends Component<MinimalGalleryState, ComponentStat
 
         const headSearch = config.headerSearch ? (
             <nav
-                class="class-top-nav-list right"
+                class="class-top-nav-list header-nav-search"
                 role="navigation"
                 title="usernav"
             >
+                <form class="inline-block padding-leader-half header-search-form" role="search" onsubmit={this.handleSearch}>
+                    <input
+                        title={config.searchPlaceholder}
+                        type="search"
+                        placeholder={config.searchPlaceholder}
+                        name="q"
+                        value={this.state.searchTerm}
+                        style="margin-top: -1px;"
+                        oninput={this.handleSearchChange}
+                    />
+                    <button type="submit" class="hide">{config.searchPlaceholder}</button>
+                </form>
+                <a href="/" class="icon-ui-menu top-nav-link js-drawer-toggle" data-drawer="top-nav" onclick={this.handleMenuClick}><span class="phone-hide">Menu</span></a>
+            </nav>
+        ) : null;
+
+        const tabletHeadSearch = config.headerSearch ? (
+            <nav class="class-top-nav-list" role="navigation" title="usernav">
                 <form class="inline-block padding-leader-half" role="search" onsubmit={this.handleSearch}>
                     <input
                         title={config.searchPlaceholder}
@@ -46,21 +67,24 @@ export default class Header extends Component<MinimalGalleryState, ComponentStat
             </nav>
         ) : null;
 
-        const tabletHeadSearch = config.headerSearch ? (
-            <nav class="class-top-nav-list right" role="navigation" title="usernav">
-                <form class="inline-block padding-leader-half" role="search" onsubmit={this.handleSearch}>
-                    <input
-                        title={config.searchPlaceholder}
-                        type="search"
-                        placeholder={config.searchPlaceholder}
-                        name="q"
-                        value={this.state.searchTerm}
-                        style="margin-top: -1px;"
-                        oninput={this.handleSearchChange}
-                    />
-                    <button type="submit" class="hide">{config.searchPlaceholder}</button>
-                </form>
-            </nav>
+        const mobileHeadSearch = config.headerSearch ? (
+            <form 
+                class="inline-block padding-leader-half right" 
+                role="search" 
+                onsubmit={this.handleSearch} 
+                onclick={(e: Event) => { e.stopPropagation(); }}
+            >
+                <input
+                    title={config.searchPlaceholder}
+                    type="search"
+                    placeholder={config.searchPlaceholder}
+                    name="q"
+                    value={this.state.searchTerm}
+                    style="margin-top: -1px;"
+                    oninput={this.handleSearchChange}
+                />
+                <button type="submit" class="hide">{config.searchPlaceholder}</button>
+            </form>
         ) : null;
 
         const headImage = config.headerImage ? (
@@ -74,6 +98,7 @@ export default class Header extends Component<MinimalGalleryState, ComponentStat
                 style={`color: ${config.headerTextColor}`}
                 title={config.agolLinkText}
                 target="_blank"
+                onclick={this.agolLinkHandler}
             >
                 {config.agolLinkText}
             </a>
@@ -156,8 +181,6 @@ export default class Header extends Component<MinimalGalleryState, ComponentStat
                                 </a>
                             </a>
                             {headSearch}
-                            {signInLink}
-                            {agolLink}
                         </div>
 
                         <div class="tablet-show top-nav-flex">
@@ -167,11 +190,25 @@ export default class Header extends Component<MinimalGalleryState, ComponentStat
                                         {config.headerText}
                                     </a>
                                 </a>
-                                {tabletHeadSearch}
                             </header>
+                            <span class="phone-hide">{tabletHeadSearch}</span>
+                            <nav class="top-nav-flex-list" role="navigation" aria-labelledby="topnav">
+                                <a href="/" class="icon-ui-menu top-nav-link js-drawer-toggle" data-drawer="top-nav" onclick={this.handleMenuClick}><span class="phone-hide">Menu</span></a>
+                            </nav>
                         </div>
                     </div>
 
+                </div>
+                <div class="drawer drawer-right js-drawer" data-drawer="top-nav" tabindex="0">
+                <nav class="drawer-nav" role="navigation">
+                    <aside class="side-nav">
+                        <ul class="drawer-block-list">
+                            <li><span class="phone-show">{mobileHeadSearch}</span></li>
+                            <li>{agolLink}</li>
+                            <li>{signInLink}</li> 
+                        </ul>
+                    </aside>
+                </nav>
                 </div>
             </header>
         );
@@ -185,13 +222,16 @@ export default class Header extends Component<MinimalGalleryState, ComponentStat
 
     private handleSearch(e?: Event) {
         if (e) {
-            e.preventDefault();
+            e.stopPropagation();
         }
         const query = this.state.searchTerm.length > 0 ? `query=${this.state.searchTerm}` : "";
         this.dispatch(push(`${query}`));
     }
 
     private handleSearchChange(e: any) {
+        if (e) {
+            e.stopPropagation();
+        }
         this.setState({
             searchTerm: e.target.value
         });
@@ -206,6 +246,50 @@ export default class Header extends Component<MinimalGalleryState, ComponentStat
 
     private handleSignOut() {
         this.dispatch(signOut());
+    }
+
+    private agolLinkHandler(e: Event) {
+        e.stopPropagation();
+    }
+
+    private handleMenuClick(e: any) {
+        // prevent default
+        e.preventDefault();
+        e.stopPropagation();
+
+        // show/hide nav
+        const option = e.target.dataset.drawer;
+        const drawer = document.querySelector(`.js-drawer[data-drawer="${option}"]`);
+        const html = document.querySelector("html");
+
+        // open it
+        if (!this.state.mobileMenuOpen) {
+            if ( !!drawer ) {
+                drawer.setAttribute("tabindex", "0");
+                drawer.classList.add("is-active");
+                drawer.addEventListener( "click", this.handleMenuClick);
+            }
+            if (!!html) {
+                html.classList.add("overflow-hidden");
+            }
+        } else {
+        // close it
+            if (drawer) {
+                drawer.removeAttribute("tabindex");
+                drawer.classList.remove("is-active");
+                drawer.removeEventListener( "click", this.handleMenuClick);
+            }
+            if (!!html) {
+                setTimeout(() => {
+                    html.classList.remove("overflow-hidden");
+                },         300);
+            }
+        }
+
+        // toggle state
+        this.setState({
+            mobileMenuOpen: !this.state.mobileMenuOpen
+        });
     }
 }
 

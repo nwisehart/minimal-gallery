@@ -293,3 +293,15 @@
     border-bottom-color: #0079c1;
     text-decoration: none;
 }
+
+.header-search-form {
+    position: absolute;
+    left: 50%;
+    margin-left: -80px;
+    width: 160px;
+}
+
+.drawer-block-list > * {
+    display: block;
+    float: none;
+}
