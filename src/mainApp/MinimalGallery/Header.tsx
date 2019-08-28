@@ -193,7 +193,7 @@ export default class Header extends Component<MinimalGalleryState, ComponentStat
                             </header>
                             <span class="phone-hide">{tabletHeadSearch}</span>
                             <nav class="top-nav-flex-list" role="navigation" aria-labelledby="topnav">
-                                <a href="/" class="icon-ui-menu top-nav-link js-drawer-toggle" data-drawer="top-nav" onclick={this.handleMenuClick}><span class="phone-hide">Menu</span></a>
+                                <a href="/" class="icon-ui-menu top-nav-link js-drawer-toggle" data-drawer="top-nav" onclick={this.handleMenuClick}><span class="phone-hide">`${this.props.base.i18n.header.menu}`</span></a>
                             </nav>
                         </div>
                     </div>
