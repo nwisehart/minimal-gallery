@@ -146,6 +146,10 @@
 				"tooltip": "The URL for the link displayed next to the gallery title."
 			}]
 		}, {
+			"type": "boolean",
+			"label": "Enable sign-in button",
+			"fieldName": "showSignInBtn"
+		}, {
 			"type": "conditional",
 			"condition": false,
 			"label": "Open items full screen",
@@ -406,6 +410,7 @@
 		"showAgolLink": true,
 		"agolLinkText": "View on ArcGIS Online",
 		"agolLinkLocation": "http://www.arcgis.com/home/group.html?id=${GROUP_ID}",
+		"showSignInBtn": false,
 		"showItemSummary": false,
 		"summaryTruncLength": 100,
 		"showSummaryTooltip": true,
