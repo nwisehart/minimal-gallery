@@ -305,3 +305,26 @@
     display: block;
     float: none;
 }
+
+.full-width-grid-container {
+    width: auto;
+    max-width: none;
+    margin: 0;
+    flex: 1 1 auto;
+}
+
+.full-width-grid {
+    float: none;
+    margin: 0 auto;
+}
+
+#viewDiv {
+    min-height: 100%;
+    display: flex;
+    flex-flow: column;
+}
+
+.pager-class {
+    flex: 0 1 auto;
+    background-color: white;
+}

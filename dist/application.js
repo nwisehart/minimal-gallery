@@ -1730,8 +1730,8 @@ var Gallery = /** @class */ (function (_super) {
         if (this.props.viewer.fullscreen) {
             return null;
         }
-        return (tsx("div", { class: "grid-container leader-1", style: "background-color: " + this.props.base.applicationBaseResult.config.bgColor + ";" },
-            tsx("div", { class: "column-24" },
+        return (tsx("div", { class: "grid-container padding-leader-1 full-width-grid-container", style: "background-color: " + this.props.base.applicationBaseResult.config.bgColor + ";" },
+            tsx("div", { class: "column-24 full-width-grid" },
                 tsx("div", { class: "padding-leader-1 block-group block-group-5-up tablet-block-group-3-up phone-block-group-1-up" }, this.mapItemsToChildren()))));
     };
     Gallery.prototype.componentWillReceiveProps = function (nextProps) {
@@ -2496,7 +2496,7 @@ var Pager = /** @class */ (function (_super) {
             var isActive = _this.props.page === i + 1;
             return (tsx("a", { id: "page-" + (i + 1) + "-button", title: "page-" + (i + 1), class: "btn" + (!isActive ? " btn-transparent" : ""), onclick: _this.handlePageButton, role: "link", tabindex: "0", style: "\n                        color: " + (isActive ? config.buttonTextColor : config.buttonBgColor) + ";\n                        background-color: " + (isActive ? config.buttonBgColor : null) + ";\n                        border: " + (isActive ? "1px solid " + config.buttonBgColor : "none") + "\n                    ", key: "page-button-" + (i + 1) + "-" + _this.props.items.displayKey }, i + 1));
         });
-        return (tsx("div", { class: "text-center trailer-1 leader-1", key: "pager" },
+        return (tsx("div", { class: "text-center padding-trailer-1 padding-leader-1 pager-class", key: "pager" },
             tsx("a", { id: "previous", title: "previous", classes: prevButtonClasses, role: "link", tabindex: "0", style: "color:" + config.buttonBgColor + ";", key: "previous-button", onclick: this.handlePrevious }, "Previous"),
             pageButtons,
             tsx("a", { id: "next", title: "next", classes: nextButtonClasses, role: "link", tabindex: "0", style: "color:" + config.buttonBgColor + ";", key: "next-button", onclick: this.handleNext }, "Next")));

@@ -60,7 +60,7 @@ export default class Pager extends Component<MinimalGalleryState> {
         });
 
         return (
-            <div class="text-center trailer-1 leader-1" key="pager">
+            <div class="text-center padding-trailer-1 padding-leader-1 pager-class" key="pager">
                 <a
                     id="previous"
                     title="previous"
