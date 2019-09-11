@@ -46,7 +46,7 @@ export default class Header extends Component<MinimalGalleryState, ComponentStat
                     />
                     <button type="submit" class="hide">{config.searchPlaceholder}</button>
                 </form>
-                <a href="/" class="icon-ui-menu top-nav-link js-drawer-toggle" data-drawer="top-nav" onclick={this.handleMenuClick}><span class="phone-hide no-click">Menu</span></a>
+                <a href="/" class="icon-ui-menu top-nav-link js-drawer-toggle" data-drawer="top-nav" onclick={this.handleMenuClick}><span class="phone-hide no-click">{this.props.base.i18n.header.menu}</span></a>
             </nav>
         ) : null;
 
@@ -69,7 +69,7 @@ export default class Header extends Component<MinimalGalleryState, ComponentStat
 
         const mobileHeadSearch = config.headerSearch ? (
             <form 
-                class="inline-block padding-leader-half right" 
+                class="inline-block padding-leader-1 margin-right-1 right" 
                 role="search" 
                 onsubmit={this.handleSearch} 
                 onclick={(e: Event) => { e.stopPropagation(); }}
@@ -111,7 +111,7 @@ export default class Header extends Component<MinimalGalleryState, ComponentStat
         ) {
             signInLink = (
                 <button
-                    class="top-nav-btn"
+                    class="top-nav-btn mobile-sign-in"
                     key="sign-in-btn"
                     onclick={this.handleSignIn}
                     style={`color: ${config.headerTextColor}`}
@@ -193,14 +193,15 @@ export default class Header extends Component<MinimalGalleryState, ComponentStat
                             </header>
                             <span class="phone-hide">{tabletHeadSearch}</span>
                             <nav class="top-nav-flex-list" role="navigation" aria-labelledby="topnav">
-                                <a href="/" class="icon-ui-menu top-nav-link js-drawer-toggle" data-drawer="top-nav" onclick={this.handleMenuClick}><span class="phone-hide no-click">`${this.props.base.i18n.header.menu}`</span></a>
+                                <a href="/" class="icon-ui-menu top-nav-link js-drawer-toggle" data-drawer="top-nav" onclick={this.handleMenuClick}><span class="phone-hide no-click">{this.props.base.i18n.header.menu}</span></a>
                             </nav>
                         </div>
                     </div>
 
                 </div>
                 <div class="drawer drawer-right js-drawer" data-drawer="top-nav" tabindex="0">
-                <nav class="drawer-nav" role="navigation">
+                <nav class="drawer-nav" role="navigation" onclick={( e: Event ) => { e.stopPropagation(); }}>
+                    <p class="menu-title">{this.props.base.i18n.header.menu}</p>
                     <aside class="side-nav">
                         <ul class="drawer-block-list">
                             <li><span class="phone-show">{mobileHeadSearch}</span></li>
@@ -267,12 +268,8 @@ export default class Header extends Component<MinimalGalleryState, ComponentStat
             mobileMenuOpen: !this.state.mobileMenuOpen
         });
 
-        console.log("New State: ", this.state.mobileMenuOpen)
-        console.log(e.target)
-
         // open it
         if (this.state.mobileMenuOpen) {
-            console.log(drawer, html)
             if ( !!drawer ) {
                 drawer.setAttribute("tabindex", "0");
                 drawer.classList.add("is-active");
