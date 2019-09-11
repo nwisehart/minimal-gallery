@@ -46,7 +46,7 @@ export default class Header extends Component<MinimalGalleryState, ComponentStat
                     />
                     <button type="submit" class="hide">{config.searchPlaceholder}</button>
                 </form>
-                <a href="/" class="icon-ui-menu top-nav-link js-drawer-toggle" data-drawer="top-nav" onclick={this.handleMenuClick}><span class="phone-hide">Menu</span></a>
+                <a href="/" class="icon-ui-menu top-nav-link js-drawer-toggle" data-drawer="top-nav" onclick={this.handleMenuClick}><span class="phone-hide no-click">Menu</span></a>
             </nav>
         ) : null;
 
@@ -193,7 +193,7 @@ export default class Header extends Component<MinimalGalleryState, ComponentStat
                             </header>
                             <span class="phone-hide">{tabletHeadSearch}</span>
                             <nav class="top-nav-flex-list" role="navigation" aria-labelledby="topnav">
-                                <a href="/" class="icon-ui-menu top-nav-link js-drawer-toggle" data-drawer="top-nav" onclick={this.handleMenuClick}><span class="phone-hide">`${this.props.base.i18n.header.menu}`</span></a>
+                                <a href="/" class="icon-ui-menu top-nav-link js-drawer-toggle" data-drawer="top-nav" onclick={this.handleMenuClick}><span class="phone-hide no-click">`${this.props.base.i18n.header.menu}`</span></a>
                             </nav>
                         </div>
                     </div>
@@ -262,8 +262,17 @@ export default class Header extends Component<MinimalGalleryState, ComponentStat
         const drawer = document.querySelector(`.js-drawer[data-drawer="${option}"]`);
         const html = document.querySelector("html");
 
+        // toggle state
+        this.setState({
+            mobileMenuOpen: !this.state.mobileMenuOpen
+        });
+
+        console.log("New State: ", this.state.mobileMenuOpen)
+        console.log(e.target)
+
         // open it
-        if (!this.state.mobileMenuOpen) {
+        if (this.state.mobileMenuOpen) {
+            console.log(drawer, html)
             if ( !!drawer ) {
                 drawer.setAttribute("tabindex", "0");
                 drawer.classList.add("is-active");
@@ -285,11 +294,6 @@ export default class Header extends Component<MinimalGalleryState, ComponentStat
                 },         300);
             }
         }
-
-        // toggle state
-        this.setState({
-            mobileMenuOpen: !this.state.mobileMenuOpen
-        });
     }
 }
 

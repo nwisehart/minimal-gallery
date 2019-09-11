@@ -1558,7 +1558,7 @@ var Header = /** @class */ (function (_super) {
                 tsx("input", { title: config.searchPlaceholder, type: "search", placeholder: config.searchPlaceholder, name: "q", value: this.state.searchTerm, style: "margin-top: -1px;", oninput: this.handleSearchChange }),
                 tsx("button", { type: "submit", class: "hide" }, config.searchPlaceholder)),
             tsx("a", { href: "/", class: "icon-ui-menu top-nav-link js-drawer-toggle", "data-drawer": "top-nav", onclick: this.handleMenuClick },
-                tsx("span", { class: "phone-hide" }, "Menu")))) : null;
+                tsx("span", { class: "phone-hide no-click" }, "Menu")))) : null;
         var tabletHeadSearch = config.headerSearch ? (tsx("nav", { class: "class-top-nav-list", role: "navigation", title: "usernav" },
             tsx("form", { class: "inline-block padding-leader-half", role: "search", onsubmit: this.handleSearch },
                 tsx("input", { title: config.searchPlaceholder, type: "search", placeholder: config.searchPlaceholder, name: "q", value: this.state.searchTerm, style: "margin-top: -1px;", oninput: this.handleSearchChange }),
@@ -1597,7 +1597,7 @@ var Header = /** @class */ (function (_super) {
                         tsx("span", { class: "phone-hide" }, tabletHeadSearch),
                         tsx("nav", { class: "top-nav-flex-list", role: "navigation", "aria-labelledby": "topnav" },
                             tsx("a", { href: "/", class: "icon-ui-menu top-nav-link js-drawer-toggle", "data-drawer": "top-nav", onclick: this.handleMenuClick },
-                                tsx("span", { class: "phone-hide" },
+                                tsx("span", { class: "phone-hide no-click" },
                                     "`$",
                                     this.props.base.i18n.header.menu,
                                     "`")))))),
@@ -1650,8 +1650,15 @@ var Header = /** @class */ (function (_super) {
         var option = e.target.dataset.drawer;
         var drawer = document.querySelector(".js-drawer[data-drawer=\"" + option + "\"]");
         var html = document.querySelector("html");
+        // toggle state
+        this.setState({
+            mobileMenuOpen: !this.state.mobileMenuOpen
+        });
+        console.log("New State: ", this.state.mobileMenuOpen);
+        console.log(e.target);
         // open it
-        if (!this.state.mobileMenuOpen) {
+        if (this.state.mobileMenuOpen) {
+            console.log(drawer, html);
             if (!!drawer) {
                 drawer.setAttribute("tabindex", "0");
                 drawer.classList.add("is-active");
@@ -1674,10 +1681,6 @@ var Header = /** @class */ (function (_super) {
                 }, 300);
             }
         }
-        // toggle state
-        this.setState({
-            mobileMenuOpen: !this.state.mobileMenuOpen
-        });
     };
     return Header;
 }(Component_1.default));

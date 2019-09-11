@@ -328,3 +328,7 @@
     flex: 0 1 auto;
     background-color: white;
 }
+
+.no-click {
+    pointer-events: none;
+}
