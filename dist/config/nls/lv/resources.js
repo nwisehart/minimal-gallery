@@ -37,7 +37,7 @@ define({
     "search": "Meklēt",
     "signIn": "Pierakstīties",
     "signOut": "Izrakstīties",
-    "menu": "ķ_Menu_________ū"
+    "menu": "Izvēlne"
   },
   "pager": {
     "noResults": "Jūsu meklēšana nedeva nekādus rezultātus."

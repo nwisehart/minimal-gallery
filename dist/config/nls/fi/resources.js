@@ -37,7 +37,7 @@ define({
     "search": "Etsi",
     "signIn": "Kirjaudu sisään",
     "signOut": "Kirjaudu ulos",
-    "menu": "Å_Menu_________ö"
+    "menu": "Valikko"
   },
   "pager": {
     "noResults": "Ei tuloksia, jotka vastaavat hakuasi."

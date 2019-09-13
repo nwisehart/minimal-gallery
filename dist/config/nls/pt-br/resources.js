@@ -37,7 +37,7 @@ define({
     "search": "Pesquisar",
     "signIn": "Entrar",
     "signOut": "Sair",
-    "menu": "ã_Menu_________Ç"
+    "menu": "Menu"
   },
   "pager": {
     "noResults": "A pesquisa não retornou quaisquer resultados."

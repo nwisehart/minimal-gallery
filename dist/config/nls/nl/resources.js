@@ -37,7 +37,7 @@ define({
     "search": "Zoeken",
     "signIn": "Aanmelden",
     "signOut": "Meld u af",
-    "menu": "Ĳ_Menu_________ä"
+    "menu": "Menu"
   },
   "pager": {
     "noResults": "Uw zoekactie heeft geen resultaten geretourneerd."

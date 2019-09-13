@@ -37,7 +37,7 @@ define({
     "search": "Cari",
     "signIn": "Masuk",
     "signOut": "Keluar",
-    "menu": "ng_Menu_________ny"
+    "menu": "Menu"
   },
   "pager": {
     "noResults": "Pencarian Anda tidak menunjukkan hasil."

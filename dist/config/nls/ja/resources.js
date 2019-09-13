@@ -37,7 +37,7 @@ define({
     "search": "検索",
     "signIn": "サイン イン",
     "signOut": "サイン アウト",
-    "menu": "須_Menu_________鷗"
+    "menu": "メニュー"
   },
   "pager": {
     "noResults": "検索結果はありませんでした。"

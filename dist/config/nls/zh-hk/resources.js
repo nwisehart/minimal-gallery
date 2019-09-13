@@ -37,7 +37,7 @@ define({
     "search": "搜尋",
     "signIn": "登入",
     "signOut": "登出",
-    "menu": "試_Menu_________驗"
+    "menu": "功能表"
   },
   "pager": {
     "noResults": "搜尋未返回任何結果。"

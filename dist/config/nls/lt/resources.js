@@ -37,7 +37,7 @@ define({
     "search": "Ieškoti",
     "signIn": "Prisijungti",
     "signOut": "Atsijungti",
-    "menu": "Į_Menu_________š"
+    "menu": "Meniu"
   },
   "pager": {
     "noResults": "Paieška nieko nerado."

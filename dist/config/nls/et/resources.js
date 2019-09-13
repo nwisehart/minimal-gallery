@@ -37,7 +37,7 @@ define({
     "search": "Otsi",
     "signIn": "Logi sisse",
     "signOut": "Logi välja",
-    "menu": "Š_Menu_________ä"
+    "menu": "Menüü"
   },
   "pager": {
     "noResults": "Otsing ei andnud tulemusi."

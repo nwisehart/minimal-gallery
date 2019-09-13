@@ -37,7 +37,7 @@ define({
     "search": "Išči",
     "signIn": "Prijava",
     "signOut": "Odjava",
-    "menu": "Š_Menu_________č"
+    "menu": "Meni"
   },
   "pager": {
     "noResults": "Vaše iskanje ni vrnilo nobenih rezultatov."

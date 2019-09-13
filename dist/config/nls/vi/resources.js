@@ -37,7 +37,7 @@ define({
     "search": "Tìm kiếm",
     "signIn": "Đăng nhập",
     "signOut": "Đăng xuất",
-    "menu": "Đ_Menu_________ớ"
+    "menu": "Menu"
   },
   "pager": {
     "noResults": "Tìm kiếm của bạn không trả về kết quả nào."

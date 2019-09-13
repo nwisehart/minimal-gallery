@@ -37,7 +37,7 @@ define({
     "search": "Cerca",
     "signIn": "Inicia la sessió",
     "signOut": "Tanca la sessió",
-    "menu": "ó_Menu_________à"
+    "menu": "Menú"
   },
   "pager": {
     "noResults": "La cerca no ha retornat cap resultat."

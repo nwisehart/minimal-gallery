@@ -37,7 +37,7 @@ define({
     "search": "Hledat",
     "signIn": "Přihlásit",
     "signOut": "Odhlásit se",
-    "menu": "Ř_Menu_________ů"
+    "menu": "Nabídka"
   },
   "pager": {
     "noResults": "Nebyly nalezeny žádné výsledky."

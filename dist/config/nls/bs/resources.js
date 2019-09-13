@@ -37,7 +37,7 @@ define({
     "search": "Potraži",
     "signIn": "Prijavite se",
     "signOut": "Odjava",
-    "menu": "Č_Menu_________ž"
+    "menu": "Izbornik"
   },
   "pager": {
     "noResults": "Pretraživanje nije pronašlo rezultate."

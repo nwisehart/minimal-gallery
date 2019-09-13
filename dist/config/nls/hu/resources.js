@@ -37,7 +37,7 @@ define({
     "search": "Keresés",
     "signIn": "Bejelentkezés",
     "signOut": "Kijelentkezés",
-    "menu": "í_Menu_________ő"
+    "menu": "Menü"
   },
   "pager": {
     "noResults": "A keresés nem adott vissza eredményt."

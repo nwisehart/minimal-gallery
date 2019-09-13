@@ -37,7 +37,7 @@ define({
     "search": "חיפוש",
     "signIn": "התחבר",
     "signOut": "התנתק",
-    "menu": "כן_Menu_________ש"
+    "menu": "תפריט"
   },
   "pager": {
     "noResults": "החיפוש שלך לא העלה תוצאות."

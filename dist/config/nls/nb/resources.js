@@ -37,7 +37,7 @@ define({
     "search": "Søk",
     "signIn": "Logg på",
     "signOut": "Logg av",
-    "menu": "å_Menu_________ø"
+    "menu": "Meny"
   },
   "pager": {
     "noResults": "Søket ga ingen resultater."

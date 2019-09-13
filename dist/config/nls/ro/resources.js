@@ -37,7 +37,7 @@ define({
     "search": "Căutare",
     "signIn": "Conectare",
     "signOut": "Deconectare",
-    "menu": "Ă_Menu_________ș"
+    "menu": "Meniu"
   },
   "pager": {
     "noResults": "Căutarea dvs. nu a returnat niciun rezultat."

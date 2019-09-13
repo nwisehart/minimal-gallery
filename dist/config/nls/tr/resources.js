@@ -37,7 +37,7 @@ define({
     "search": "Arama",
     "signIn": "Oturum aç",
     "signOut": "Oturumu kapat",
-    "menu": "ı_Menu_________İ"
+    "menu": "Menü"
   },
   "pager": {
     "noResults": "Aramanız hiçbir sonuç döndürmedi."
