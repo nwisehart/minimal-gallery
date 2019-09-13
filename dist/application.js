@@ -1557,13 +1557,13 @@ var Header = /** @class */ (function (_super) {
             tsx("form", { class: "inline-block padding-leader-half header-search-form", role: "search", onsubmit: this.handleSearch },
                 tsx("input", { title: config.searchPlaceholder, type: "search", placeholder: config.searchPlaceholder, name: "q", value: this.state.searchTerm, style: "margin-top: -1px;", oninput: this.handleSearchChange }),
                 tsx("button", { type: "submit", class: "hide" }, config.searchPlaceholder)),
-            tsx("a", { href: "/", class: "icon-ui-menu top-nav-link js-drawer-toggle", "data-drawer": "top-nav", onclick: this.handleMenuClick },
-                tsx("span", { class: "phone-hide" }, "Menu")))) : null;
+            tsx("a", { href: "/", class: "icon-ui-menu top-nav-link js-drawer-toggle", "data-drawer": "top-nav", onclick: this.handleMenuClick, style: "color: " + config.headerTextColor },
+                tsx("span", { class: "phone-hide no-click" }, this.props.base.i18n.header.menu)))) : null;
         var tabletHeadSearch = config.headerSearch ? (tsx("nav", { class: "class-top-nav-list", role: "navigation", title: "usernav" },
             tsx("form", { class: "inline-block padding-leader-half", role: "search", onsubmit: this.handleSearch },
                 tsx("input", { title: config.searchPlaceholder, type: "search", placeholder: config.searchPlaceholder, name: "q", value: this.state.searchTerm, style: "margin-top: -1px;", oninput: this.handleSearchChange }),
                 tsx("button", { type: "submit", class: "hide" }, config.searchPlaceholder)))) : null;
-        var mobileHeadSearch = config.headerSearch ? (tsx("form", { class: "inline-block padding-leader-half right", role: "search", onsubmit: this.handleSearch, onclick: function (e) { e.stopPropagation(); } },
+        var mobileHeadSearch = config.headerSearch ? (tsx("form", { class: "inline-block padding-leader-1 margin-right-1 right", role: "search", onsubmit: this.handleSearch, onclick: function (e) { e.stopPropagation(); } },
             tsx("input", { title: config.searchPlaceholder, type: "search", placeholder: config.searchPlaceholder, name: "q", value: this.state.searchTerm, style: "margin-top: -1px;", oninput: this.handleSearchChange }),
             tsx("button", { type: "submit", class: "hide" }, config.searchPlaceholder))) : null;
         var headImage = config.headerImage ? (tsx("img", { src: config.headerImageLocation, class: "header-image", alt: config.headerText })) : null;
@@ -1571,7 +1571,7 @@ var Header = /** @class */ (function (_super) {
         var signInLink = null;
         if (!this.props.base.applicationBase.portal["credential"] &&
             this.props.base.applicationBaseResult.config.showSignInBtn) {
-            signInLink = (tsx("button", { class: "top-nav-btn", key: "sign-in-btn", onclick: this.handleSignIn, style: "color: " + config.headerTextColor },
+            signInLink = (tsx("button", { class: "top-nav-btn mobile-sign-in", key: "sign-in-btn", onclick: this.handleSignIn, style: "color: " + config.headerTextColor },
                 tsx("svg", { xmlns: "http://www.w3.org/2000/svg", width: "32", height: "32", viewBox: "0 0 32 32", style: "\n                            fill: currentColor;\n                            pointer-events: none;\n                            display: inline-block;\n                            width: 1em;\n                            height: 1em;\n                            vertical-align: -0.15em;\n                            padding-right: .5em;\n                        " },
                     tsx("path", { d: "M16.005 15.871a5.872 5.872 0 0 0 0-11.742 5.87 5.87 0 1 0 0 11.742zm11.567 7.188C27.27 19.036 20.023 18 16 18c-4.012 0-11.271 1.039-11.573 5.059C4.203 26.11 4.068 28.18 4.02 30h23.96c-.047-1.82-.184-3.891-.407-6.941z" })),
                 this.props.base.i18n.header.signIn));
@@ -1596,13 +1596,11 @@ var Header = /** @class */ (function (_super) {
                                 tsx("a", { class: "top-nav-title", style: "color: " + config.headerTextColor }, config.headerText))),
                         tsx("span", { class: "phone-hide" }, tabletHeadSearch),
                         tsx("nav", { class: "top-nav-flex-list", role: "navigation", "aria-labelledby": "topnav" },
-                            tsx("a", { href: "/", class: "icon-ui-menu top-nav-link js-drawer-toggle", "data-drawer": "top-nav", onclick: this.handleMenuClick },
-                                tsx("span", { class: "phone-hide" },
-                                    "`$",
-                                    this.props.base.i18n.header.menu,
-                                    "`")))))),
+                            tsx("a", { href: "/", class: "icon-ui-menu top-nav-link js-drawer-toggle", "data-drawer": "top-nav", onclick: this.handleMenuClick, style: "color: " + config.headerTextColor },
+                                tsx("span", { class: "phone-hide no-click" }, this.props.base.i18n.header.menu)))))),
             tsx("div", { class: "drawer drawer-right js-drawer", "data-drawer": "top-nav", tabindex: "0" },
-                tsx("nav", { class: "drawer-nav", role: "navigation" },
+                tsx("nav", { class: "drawer-nav", role: "navigation", onclick: function (e) { e.stopPropagation(); }, style: "background-color: " + config.headColor },
+                    tsx("p", { class: "menu-title", style: "color: " + config.headerTextColor }, this.props.base.i18n.header.menu),
                     tsx("aside", { class: "side-nav" },
                         tsx("ul", { class: "drawer-block-list" },
                             tsx("li", null,
@@ -1650,8 +1648,12 @@ var Header = /** @class */ (function (_super) {
         var option = e.target.dataset.drawer;
         var drawer = document.querySelector(".js-drawer[data-drawer=\"" + option + "\"]");
         var html = document.querySelector("html");
+        // toggle state
+        this.setState({
+            mobileMenuOpen: !this.state.mobileMenuOpen
+        });
         // open it
-        if (!this.state.mobileMenuOpen) {
+        if (this.state.mobileMenuOpen) {
             if (!!drawer) {
                 drawer.setAttribute("tabindex", "0");
                 drawer.classList.add("is-active");
@@ -1674,10 +1676,6 @@ var Header = /** @class */ (function (_super) {
                 }, 300);
             }
         }
-        // toggle state
-        this.setState({
-            mobileMenuOpen: !this.state.mobileMenuOpen
-        });
     };
     return Header;
 }(Component_1.default));
