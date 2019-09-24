@@ -359,7 +359,7 @@ var fetchAllGroupItems = function (applicationBase, config) {
                 num: 100,
                 sortField: (config.sortField ? config.sortField : "numviews"),
                 sortOrder: (config.sortOrder ? config.sortOrder : "desc"),
-                start: 100 + (i * 100)
+                start: 101 + (i * 100)
             })); });
             all(promises).then(function (responses) {
                 var allItems = responses.reduce(function (p, c) {
