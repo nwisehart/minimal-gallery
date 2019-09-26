@@ -39,7 +39,6 @@ export default class Header extends Component<MinimalGalleryState, ComponentStat
                         title={config.searchPlaceholder}
                         type="search"
                         placeholder={config.searchPlaceholder}
-                        name="q"
                         value={this.state.searchTerm}
                         style="margin-top: -1px;"
                         oninput={this.handleSearchChange}
@@ -65,7 +64,6 @@ export default class Header extends Component<MinimalGalleryState, ComponentStat
                         title={config.searchPlaceholder}
                         type="search"
                         placeholder={config.searchPlaceholder}
-                        name="q"
                         value={this.state.searchTerm}
                         style="margin-top: -1px;"
                         oninput={this.handleSearchChange}
@@ -86,7 +84,6 @@ export default class Header extends Component<MinimalGalleryState, ComponentStat
                     title={config.searchPlaceholder}
                     type="search"
                     placeholder={config.searchPlaceholder}
-                    name="q"
                     value={this.state.searchTerm}
                     style="margin-top: -1px;"
                     oninput={this.handleSearchChange}
@@ -246,6 +243,7 @@ export default class Header extends Component<MinimalGalleryState, ComponentStat
 
     private handleSearch(e?: Event) {
         if (e) {
+            e.preventDefault();
             e.stopPropagation();
         }
         const query = this.state.searchTerm.length > 0 ? `query=${this.state.searchTerm}` : "";
