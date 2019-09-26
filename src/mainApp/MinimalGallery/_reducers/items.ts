@@ -46,7 +46,7 @@ export default (state: ItemsState = initialState, action: { type: string, payloa
                     viewerItem: viewerItem ? viewerItem : {},
                     filteredItems: filterItems(
                         state.allItems,
-                        hashParams.query ? hashParams.query : "",
+                        hashParams.query ? hashParams.query.toLowerCase() : "",
                         state.allowedItemTypes
                     ),
                     displayKey: Math.random().toString(36).substring(7)
@@ -56,7 +56,7 @@ export default (state: ItemsState = initialState, action: { type: string, payloa
                 ...state,
                 filteredItems: filterItems(
                     state.allItems,
-                    hashParams.query ? hashParams.query : "",
+                    hashParams.query ? hashParams.query.toLowerCase() : "",
                     state.allowedItemTypes
                 ),
                 displayKey: Math.random().toString(36).substring(7)

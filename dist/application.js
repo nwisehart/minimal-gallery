@@ -1555,16 +1555,16 @@ var Header = /** @class */ (function (_super) {
         var config = this.props.base.applicationBaseResult.config;
         var headSearch = config.headerSearch ? (tsx("nav", { class: "class-top-nav-list header-nav-search", role: "navigation", title: "usernav" },
             tsx("form", { class: "inline-block padding-leader-half header-search-form", role: "search", onsubmit: this.handleSearch },
-                tsx("input", { title: config.searchPlaceholder, type: "search", placeholder: config.searchPlaceholder, name: "q", value: this.state.searchTerm, style: "margin-top: -1px;", oninput: this.handleSearchChange }),
+                tsx("input", { title: config.searchPlaceholder, type: "search", placeholder: config.searchPlaceholder, value: this.state.searchTerm, style: "margin-top: -1px;", oninput: this.handleSearchChange }),
                 tsx("button", { type: "submit", class: "hide" }, config.searchPlaceholder)),
             tsx("a", { href: "/", class: "icon-ui-menu top-nav-link js-drawer-toggle", "data-drawer": "top-nav", onclick: this.handleMenuClick, style: "color: " + config.headerTextColor },
                 tsx("span", { class: "phone-hide no-click" }, this.props.base.i18n.header.menu)))) : null;
         var tabletHeadSearch = config.headerSearch ? (tsx("nav", { class: "class-top-nav-list", role: "navigation", title: "usernav" },
             tsx("form", { class: "inline-block padding-leader-half", role: "search", onsubmit: this.handleSearch },
-                tsx("input", { title: config.searchPlaceholder, type: "search", placeholder: config.searchPlaceholder, name: "q", value: this.state.searchTerm, style: "margin-top: -1px;", oninput: this.handleSearchChange }),
+                tsx("input", { title: config.searchPlaceholder, type: "search", placeholder: config.searchPlaceholder, value: this.state.searchTerm, style: "margin-top: -1px;", oninput: this.handleSearchChange }),
                 tsx("button", { type: "submit", class: "hide" }, config.searchPlaceholder)))) : null;
         var mobileHeadSearch = config.headerSearch ? (tsx("form", { class: "inline-block padding-leader-1 margin-right-1 right", role: "search", onsubmit: this.handleSearch, onclick: function (e) { e.stopPropagation(); } },
-            tsx("input", { title: config.searchPlaceholder, type: "search", placeholder: config.searchPlaceholder, name: "q", value: this.state.searchTerm, style: "margin-top: -1px;", oninput: this.handleSearchChange }),
+            tsx("input", { title: config.searchPlaceholder, type: "search", placeholder: config.searchPlaceholder, value: this.state.searchTerm, style: "margin-top: -1px;", oninput: this.handleSearchChange }),
             tsx("button", { type: "submit", class: "hide" }, config.searchPlaceholder))) : null;
         var headImage = config.headerImage ? (tsx("img", { src: config.headerImageLocation, class: "header-image", alt: config.headerText })) : null;
         var agolLink = config.showAgolLink ? (tsx("a", { class: "top-nav-link", href: appendProtocol(config.agolLinkLocation.replace("${GROUP_ID}", config.group)), style: "color: " + config.headerTextColor, title: config.agolLinkText, target: "_blank", onclick: this.agolLinkHandler }, config.agolLinkText)) : null;
@@ -1615,6 +1615,7 @@ var Header = /** @class */ (function (_super) {
     };
     Header.prototype.handleSearch = function (e) {
         if (e) {
+            e.preventDefault();
             e.stopPropagation();
         }
         var query = this.state.searchTerm.length > 0 ? "query=" + this.state.searchTerm : "";
@@ -2624,9 +2625,9 @@ exports.default = function (state, action) {
             var hashParams_1 = ioQuery.queryToObject(action.payload);
             if (hashParams_1.viewer) {
                 var viewerItem = state.allItems.filter(function (item) { return item.id === hashParams_1.viewer; })[0];
-                return __assign({}, state, { viewerItem: viewerItem ? viewerItem : {}, filteredItems: filterItems(state.allItems, hashParams_1.query ? hashParams_1.query : "", state.allowedItemTypes), displayKey: Math.random().toString(36).substring(7) });
+                return __assign({}, state, { viewerItem: viewerItem ? viewerItem : {}, filteredItems: filterItems(state.allItems, hashParams_1.query ? hashParams_1.query.toLowerCase() : "", state.allowedItemTypes), displayKey: Math.random().toString(36).substring(7) });
             }
-            return __assign({}, state, { filteredItems: filterItems(state.allItems, hashParams_1.query ? hashParams_1.query : "", state.allowedItemTypes), displayKey: Math.random().toString(36).substring(7) });
+            return __assign({}, state, { filteredItems: filterItems(state.allItems, hashParams_1.query ? hashParams_1.query.toLowerCase() : "", state.allowedItemTypes), displayKey: Math.random().toString(36).substring(7) });
         default:
             return state;
     }
