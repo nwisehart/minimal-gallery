@@ -2602,6 +2602,7 @@ var _actions_1 = __webpack_require__(1);
 var initialState = {
     allowedItemTypes: {},
     allItems: [],
+    appId: "",
     filteredItems: [],
     displayKey: "",
     viewerItem: {}
@@ -2618,9 +2619,9 @@ exports.default = function (state, action) {
                     .reduce(function (r, c) {
                     r[c] = true;
                     return r;
-                }, {}) });
+                }, {}), appId: action.payload.config.appid });
         case _actions_1.UPDATE_ITEMS:
-            return __assign({}, state, { allItems: action.payload });
+            return __assign({}, state, { allItems: action.payload.filter(function (item) { return item.id !== state.appId; }) });
         case _actions_1.HASH_CHANGE:
             var hashParams_1 = ioQuery.queryToObject(action.payload);
             if (hashParams_1.viewer) {

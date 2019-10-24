@@ -4,6 +4,7 @@ import { UPDATE_ITEMS, FILTER_ITEMS, HASH_CHANGE, SAVE_APP_BASE_RESULT } from ".
 export interface ItemsState {
     allowedItemTypes: { [type: string]: boolean };
     allItems: __Component.Pojo[];
+    appId: string;
     filteredItems: __Component.Pojo[];
     displayKey: string;
     viewerItem: __Component.Pojo;
@@ -12,6 +13,7 @@ export interface ItemsState {
 const initialState: ItemsState = {
     allowedItemTypes: {},
     allItems: [],
+    appId: "",
     filteredItems: [],
     displayKey: "",
     viewerItem: {}
@@ -30,12 +32,13 @@ export default (state: ItemsState = initialState, action: { type: string, payloa
                     .reduce((r: ItemsState["allowedItemTypes"], c: string) => {
                         r[c] = true;
                         return r;
-                    }, {})
+                    }, {}),
+                appId: action.payload.config.appid
             };
         case UPDATE_ITEMS:
             return {
                 ...state,
-                allItems: action.payload
+                allItems: action.payload.filter((item: any) => item.id !== state.appId)
             };
         case HASH_CHANGE:
             const hashParams = ioQuery.queryToObject(action.payload);
